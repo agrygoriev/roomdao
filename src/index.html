@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Room DAO Coin</title>
+	<link rel="apple-touch-icon" sizes="57x57" href="img/mobico/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="img/mobico/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/mobico/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/mobico/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/mobico/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/mobico/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="img/mobico/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/mobico/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/mobico/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="img/mobico/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/mobico/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/mobico/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/mobico/favicon-16x16.png">
+	<link rel="manifest" href="manifest.json">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="img/mobico/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,500&amp;subset=cyrillic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&amp;subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
+	<link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+	<header>
+		<nav class="desktop-menu">
+			<div class="logo">
+				<svg id="logo-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 48">
+					<style type="text/css">
+					.st0{fill:#202020;}
+					.st1{fill:#88cdc8;}
+					</style>
+					<path class="st0" d="M1.2 17.2c0-.6.2-1.2.7-1.7.5-.5 1-.7 1.7-.7s1.2.2 1.7.7c.5.5.7 1 .7 1.7v2.6c3.3-3.3 7.2-4.9 11.7-4.9 2.3 0 4.4.4 6.3 1.2.4.1.7.3 1 .6.4.5.7 1 .7 1.7s-.2 1.2-.7 1.7-1 .7-1.7.7c-.4 0-.7-.1-1-.2-1.4-.6-2.9-.9-4.6-.9-3.2 0-6 1.1-8.3 3.4S6 28.1 6 31.4v14.1c0 .6-.2 1.2-.7 1.7s-1 .7-1.7.7-1.2-.2-1.7-.7-.7-1-.7-1.7V17.2z" style="fill:#202020;"/>
+					<path class="st1" d="M62.1 31.2c0 4.5-1.6 8.4-4.8 11.6-3.2 3.2-7.1 4.8-11.6 4.8s-8.4-1.6-11.6-4.8c-3.2-3.2-4.8-7.1-4.8-11.6s1.6-8.4 4.8-11.6 7.1-4.8 11.6-4.8 8.4 1.6 11.6 4.8c3.2 3.2 4.8 7.1 4.8 11.6zM45.7 19.5c-3.2 0-6 1.1-8.3 3.4s-3.4 5-3.4 8.3 1.1 6 3.4 8.3c2.3 2.3 5 3.4 8.3 3.4 3.2 0 6-1.1 8.3-3.4s3.4-5 3.4-8.3-1.1-6-3.4-8.3-5-3.4-8.3-3.4zm53.9 11.7c0 4.5-1.6 8.4-4.8 11.6-3.2 3.2-7.1 4.8-11.6 4.8s-8.4-1.6-11.6-4.8-4.8-7.1-4.8-11.6 1.6-8.4 4.8-11.6c3.2-3.2 7.1-4.8 11.6-4.8s8.4 1.6 11.6 4.8c3.2 3.2 4.8 7.1 4.8 11.6zM83.2 19.5c-3.2 0-6 1.1-8.3 3.4s-3.4 5-3.4 8.3 1.1 6 3.4 8.3 5 3.4 8.3 3.4c3.2 0 6-1.1 8.3-3.4s3.4-5 3.4-8.3-1.1-6-3.4-8.3-5-3.4-8.3-3.4z" style="fill:#88cdc8;"/>
+					<path class="st0" d="M109 45.3c0 .6-.2 1.2-.7 1.7s-1 .7-1.7.7-1.2-.2-1.7-.7-.7-1-.7-1.7V17.2c0-.6.2-1.2.7-1.7.5-.5 1-.7 1.7-.7s1.2.2 1.7.7c.5.5.7 1 .7 1.7v.6c2.3-2 5.1-3 8.2-3 3.6 0 6.6 1.3 9.1 3.8.5.5 1 1.1 1.4 1.7.4-.6.9-1.1 1.4-1.7 2.5-2.5 5.6-3.8 9.1-3.8 3.6 0 6.6 1.3 9.1 3.8s3.8 5.6 3.8 9.1v17.6c0 .6-.2 1.2-.7 1.7s-1 .7-1.7.7-1.2-.2-1.7-.7-.7-1-.7-1.7V27.7c0-2.3-.8-4.2-2.4-5.8-1.6-1.6-3.5-2.4-5.8-2.4s-4.2.8-5.8 2.4-2.4 3.5-2.4 5.8v17.6c0 .6-.2 1.2-.7 1.7s-1 .7-1.7.7-1.2-.2-1.7-.7-.7-1-.7-1.7V27.7c0-2.3-.8-4.2-2.4-5.8-1.6-1.6-3.5-2.4-5.8-2.4s-4.2.8-5.8 2.4c-1.6 1.6-2.4 3.5-2.4 5.8v17.6h.3zM184 3c0-.6.2-1.2.7-1.7s1-.7 1.7-.7 1.2.2 1.7.7.7 1 .7 1.7v28.2c0 4.5-1.6 8.4-4.8 11.6-3.2 3.2-7.1 4.8-11.6 4.8s-8.4-1.6-11.6-4.8c-3.2-3.2-4.8-7.1-4.8-11.6s1.6-8.4 4.8-11.6 7.1-4.8 11.6-4.8 8.4 1.6 11.6 4.8l.1.1L184 3zm0 28.2c0-3.2-1.1-6-3.4-8.3s-5-3.4-8.3-3.4c-3.2 0-6 1.1-8.3 3.4s-3.4 5-3.4 8.3 1.1 6 3.4 8.3 5 3.4 8.3 3.4c3.2 0 6-1.1 8.3-3.4s3.4-5 3.4-8.3zm37.5 11.5c-3.3 3.3-7.2 4.9-11.7 4.9s-8.4-1.6-11.6-4.8c-3.2-3.2-4.8-7.1-4.8-11.6s1.6-8.4 4.8-11.6 7.1-4.8 11.6-4.8 8.4 1.6 11.6 4.8c3.2 3.2 4.8 7.1 4.8 11.6v14.1c0 .6-.2 1.2-.7 1.7s-1 .7-1.7.7-1.2-.2-1.7-.7-.7-1-.7-1.7l.1-2.6zm-11.7-23.2c-3.2 0-6 1.1-8.3 3.4s-3.4 5-3.4 8.3 1.1 6 3.4 8.3 5 3.4 8.3 3.4c3.2 0 6-1.1 8.3-3.4s3.4-5 3.4-8.3-1.1-6-3.4-8.3-5.1-3.4-8.3-3.4z" style="fill:#202020;"/>
+					<path class="st1" d="M263.7 31.2c0 4.5-1.6 8.4-4.8 11.6-3.2 3.2-7.1 4.8-11.6 4.8s-8.4-1.6-11.6-4.8c-3.2-3.2-4.8-7.1-4.8-11.6s1.6-8.4 4.8-11.6 7.1-4.8 11.6-4.8 8.4 1.6 11.6 4.8c3.2 3.2 4.8 7.1 4.8 11.6zm-16.4-11.7c-3.2 0-6 1.1-8.3 3.4s-3.4 5-3.4 8.3 1.1 6 3.4 8.3 5 3.4 8.3 3.4c3.2 0 6-1.1 8.3-3.4 2.3-2.3 3.4-5 3.4-8.3s-1.1-6-3.4-8.3-5.1-3.4-8.3-3.4z" style="fill:#88cdc8;"/>
+				</svg>
+			</div>
+			<ul class="menu-list">
+				<li><a href="#mission">Миссия</a></li>
+				<li><a href="#desc">Токены ROOMDAO</a></li>
+				<li><a href="#roadmap-h2">Дорожная карта</a></li>
+				<li><a href="#our-team-h2">Команда</a></li>
+				<li><a href="#">FAQ</a></li>
+				<li><a href="#about-us-h2">О нас пишут</a></li>
+				<!-- <li class="signin">Вход</li> -->
+			</ul>
+			<span class="lang-switch">
+				<select>
+					<option value="ru">RU</option>
+					<option value="en">EN</option>
+				</select>
+			</span>
+		</nav>
+		<nav class="mobile-menu">
+			<div class="logo">
+				<svg id="logo-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 48">
+					<style type="text/css">
+					.st0{fill:#ffffff;}
+					.st1{fill:#88cdc8;}
+					</style>
+					<path class="st0" d="M1.2 17.2c0-.6.2-1.2.7-1.7.5-.5 1-.7 1.7-.7s1.2.2 1.7.7c.5.5.7 1 .7 1.7v2.6c3.3-3.3 7.2-4.9 11.7-4.9 2.3 0 4.4.4 6.3 1.2.4.1.7.3 1 .6.4.5.7 1 .7 1.7s-.2 1.2-.7 1.7-1 .7-1.7.7c-.4 0-.7-.1-1-.2-1.4-.6-2.9-.9-4.6-.9-3.2 0-6 1.1-8.3 3.4S6 28.1 6 31.4v14.1c0 .6-.2 1.2-.7 1.7s-1 .7-1.7.7-1.2-.2-1.7-.7-.7-1-.7-1.7V17.2z"/>
+					<path class="st1" d="M62.1 31.2c0 4.5-1.6 8.4-4.8 11.6-3.2 3.2-7.1 4.8-11.6 4.8s-8.4-1.6-11.6-4.8c-3.2-3.2-4.8-7.1-4.8-11.6s1.6-8.4 4.8-11.6 7.1-4.8 11.6-4.8 8.4 1.6 11.6 4.8c3.2 3.2 4.8 7.1 4.8 11.6zM45.7 19.5c-3.2 0-6 1.1-8.3 3.4s-3.4 5-3.4 8.3 1.1 6 3.4 8.3c2.3 2.3 5 3.4 8.3 3.4 3.2 0 6-1.1 8.3-3.4s3.4-5 3.4-8.3-1.1-6-3.4-8.3-5-3.4-8.3-3.4zm53.9 11.7c0 4.5-1.6 8.4-4.8 11.6-3.2 3.2-7.1 4.8-11.6 4.8s-8.4-1.6-11.6-4.8-4.8-7.1-4.8-11.6 1.6-8.4 4.8-11.6c3.2-3.2 7.1-4.8 11.6-4.8s8.4 1.6 11.6 4.8c3.2 3.2 4.8 7.1 4.8 11.6zM83.2 19.5c-3.2 0-6 1.1-8.3 3.4s-3.4 5-3.4 8.3 1.1 6 3.4 8.3 5 3.4 8.3 3.4c3.2 0 6-1.1 8.3-3.4s3.4-5 3.4-8.3-1.1-6-3.4-8.3-5-3.4-8.3-3.4z" style="fill:#88cdc8;"/>
+					<path class="st0" d="M109 45.3c0 .6-.2 1.2-.7 1.7s-1 .7-1.7.7-1.2-.2-1.7-.7-.7-1-.7-1.7V17.2c0-.6.2-1.2.7-1.7.5-.5 1-.7 1.7-.7s1.2.2 1.7.7c.5.5.7 1 .7 1.7v.6c2.3-2 5.1-3 8.2-3 3.6 0 6.6 1.3 9.1 3.8.5.5 1 1.1 1.4 1.7.4-.6.9-1.1 1.4-1.7 2.5-2.5 5.6-3.8 9.1-3.8 3.6 0 6.6 1.3 9.1 3.8s3.8 5.6 3.8 9.1v17.6c0 .6-.2 1.2-.7 1.7s-1 .7-1.7.7-1.2-.2-1.7-.7-.7-1-.7-1.7V27.7c0-2.3-.8-4.2-2.4-5.8-1.6-1.6-3.5-2.4-5.8-2.4s-4.2.8-5.8 2.4-2.4 3.5-2.4 5.8v17.6c0 .6-.2 1.2-.7 1.7s-1 .7-1.7.7-1.2-.2-1.7-.7-.7-1-.7-1.7V27.7c0-2.3-.8-4.2-2.4-5.8-1.6-1.6-3.5-2.4-5.8-2.4s-4.2.8-5.8 2.4c-1.6 1.6-2.4 3.5-2.4 5.8v17.6h.3zM184 3c0-.6.2-1.2.7-1.7s1-.7 1.7-.7 1.2.2 1.7.7.7 1 .7 1.7v28.2c0 4.5-1.6 8.4-4.8 11.6-3.2 3.2-7.1 4.8-11.6 4.8s-8.4-1.6-11.6-4.8c-3.2-3.2-4.8-7.1-4.8-11.6s1.6-8.4 4.8-11.6 7.1-4.8 11.6-4.8 8.4 1.6 11.6 4.8l.1.1L184 3zm0 28.2c0-3.2-1.1-6-3.4-8.3s-5-3.4-8.3-3.4c-3.2 0-6 1.1-8.3 3.4s-3.4 5-3.4 8.3 1.1 6 3.4 8.3 5 3.4 8.3 3.4c3.2 0 6-1.1 8.3-3.4s3.4-5 3.4-8.3zm37.5 11.5c-3.3 3.3-7.2 4.9-11.7 4.9s-8.4-1.6-11.6-4.8c-3.2-3.2-4.8-7.1-4.8-11.6s1.6-8.4 4.8-11.6 7.1-4.8 11.6-4.8 8.4 1.6 11.6 4.8c3.2 3.2 4.8 7.1 4.8 11.6v14.1c0 .6-.2 1.2-.7 1.7s-1 .7-1.7.7-1.2-.2-1.7-.7-.7-1-.7-1.7l.1-2.6zm-11.7-23.2c-3.2 0-6 1.1-8.3 3.4s-3.4 5-3.4 8.3 1.1 6 3.4 8.3 5 3.4 8.3 3.4c3.2 0 6-1.1 8.3-3.4s3.4-5 3.4-8.3-1.1-6-3.4-8.3-5.1-3.4-8.3-3.4z" />
+					<path class="st1" d="M263.7 31.2c0 4.5-1.6 8.4-4.8 11.6-3.2 3.2-7.1 4.8-11.6 4.8s-8.4-1.6-11.6-4.8c-3.2-3.2-4.8-7.1-4.8-11.6s1.6-8.4 4.8-11.6 7.1-4.8 11.6-4.8 8.4 1.6 11.6 4.8c3.2 3.2 4.8 7.1 4.8 11.6zm-16.4-11.7c-3.2 0-6 1.1-8.3 3.4s-3.4 5-3.4 8.3 1.1 6 3.4 8.3 5 3.4 8.3 3.4c3.2 0 6-1.1 8.3-3.4 2.3-2.3 3.4-5 3.4-8.3s-1.1-6-3.4-8.3-5.1-3.4-8.3-3.4z" style="fill:#88cdc8;"/>
+				</svg>
+			</div>
+			<div class="lang-switch">
+				<select>
+					<option value="ru">RU</option>
+					<option value="en">EN</option>
+				</select>
+			</div>
+			<div class="dropdown">
+				<div class="sandwich">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			<div class="mobile-menu-list"></div>
+		</nav>
+		<section class="overlay-menu">
+			<ul class="overlay-menu-list">
+				<li class="overlay-menu-item"><a href="#mission">Миссия</a></li>
+				<li class="overlay-menu-item"><a href="#desc">Токены ROOMDAO</a></li>
+				<li class="overlay-menu-item"><a href="#roadmap-h2">Дорожная карта</a></li>
+				<li class="overlay-menu-item"><a href="#our-team-h2">Команда</a></li>
+				<li class="overlay-menu-item"><a href="#">FAQ</a></li>
+				<li class="overlay-menu-item"><a href="#about-us-h2">О нас пишут</a></li>
+				<li class="overlay-menu-item"><a href="#">Вход</a></li>
+			</ul>
+		</section>
+	</header>
+	<main>
+		<section class="main-desc">
+			<div class="logo-main">
+				<img src="img/roomdao-logo-center.svg" alt="">
+			</div>
+			<h1 class="desc-text">
+				Децентрализированная туристическая &shy;P2P&minus;платформа обмена и аренды недвижимости &shy;на базе блокчейн
+			</h1>
+			<div class="buttons">
+				<button type="button" class="btn ani-btn">
+					<span class="btn-text">
+						Скачать Whitepaper
+					</span>
+					<span class="whitepaper-logo">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486 486">
+							<g fill="#ffffff">
+								<path d="M452.5 285c15 0 27 12 27 27v147c0 15-12 27-27 27h-418c-15 0-28-12-28-27V312c0-15 13-27 28-27s27 12 27 27v119h364V312c0-15 12-27 27-27z"/>
+								<path d="M224.5 346l-110-110c-11-11-11-27 0-38s27-11 38 0l64 63V27c0-15 12-27 27-27s27 12 27 27v234l63-63c11-11 28-11 39 0s11 27 0 38l-110 110c-5 5-12 8-19 8s-14-3-19-8z"/>
+							</g>
+						</svg>
+					</span>
+				</button>
+				<button type="button" class="btn">Купить токены</button>
+				<button type="button" class="btn">Скачать презентацию</button>
+			</div>
+		</section>
+		<section class="counter-box">
+				<h2>До окончания продажи ROMCOIN осталось:</h2>
+			<section class="counter">
+				<div class="counter-col">
+					<h2><span class="days">30</span></h2>
+					<h3>дней</h3>
+				</div>
+				<span class="counter-divider">:</span>
+				<div class="counter-col">
+					<h2><span class="hours">11</span></h2>
+					<h3>часов</h3>
+				</div>
+				<span class="counter-divider">:</span>
+				<div class="counter-col">
+					<h2><span class="minutes">45</span></h2>
+					<h3>минут</h3>
+				</div>
+				<span class="counter-divider">:</span>
+				<div class="counter-col">
+					<h2><span class="seconds">07</span></h2>
+					<h3>секунд</h3>
+				</div>
+			</section>
+			<section class="icons">
+				<a href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+						<style type="text/css">
+							.st0{fill:#BBBDBD;}
+							.st0:hover{fill:#00d9a2;}
+						</style>
+						<path class="st0" d="M26 0C11.6 0 0 11.7 0 26s11.6 26 26 26 26-11.7 26-26S40.4 0 26 0zm12.2 31.2c-.1 1-.3 1.8-.7 2.5-.3.7-.8 1.3-1.3 1.8s-1.2.9-2 1.2c-.8.3-1.6.6-2.5.7s-1.8.3-3 .3V43h-3.1v-5.1h-2.5V43H20v-5.2h-6.3l.6-3.7h2.3c.7 0 1.1-.3 1.2-1V18.9c-.2-.9-.8-1.4-1.8-1.4h-2.3v-3.4H20V9h3.1v5h2.5V9h3.1v5.2c1.1.1 2 .3 2.9.5.8.2 1.6.5 2.3.9.7.4 1.3.9 1.7 1.6s.7 1.4.7 2.3c.3 2.5-.6 4.2-2.7 5.3 1.6.4 2.8 1.1 3.6 2.1.9 1 1.2 2.4 1 4.3zM23.9 24h1.9c.4 0 .8-.1 1.1-.1.3 0 .6-.1 1-.2s.7-.2 1-.4c.3-.2.5-.3.8-.6.3-.2.4-.5.6-.8.1-.3.2-.7.2-1 0-.4-.1-.9-.3-1.2l-.6-.9c-.3-.2-.6-.4-1-.6-.4-.2-.8-.3-1.1-.3s-.8-.1-1.2-.2c-.5 0-.9-.1-1.2 0h-1.9V24h.7zm7.1 4.3c-.3-.3-.7-.5-1.2-.6-.5-.2-.9-.3-1.3-.4-.4-.1-.9-.1-1.5-.2-.6 0-1.1-.1-1.4-.1h-2.3v7h2.9c.5 0 .9 0 1.2-.1.3 0 .7-.1 1.2-.2s.8-.2 1.1-.3c.3-.1.6-.3 1-.4.3-.2.6-.4.8-.6.2-.2.4-.5.5-.8.1-.3.2-.7.2-1 0-.5-.1-.9-.3-1.3-.4-.4-.6-.7-.9-1z" fill="#bbbdbd"/>
+					</svg>
+				</a>
+				<a href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+						<style type="text/css">
+							.st0{fill:#BBBDBD;}
+							.st0:hover{fill:#00d9a2;}
+						</style>
+						<g>
+							<g>
+								<path class="st0" d="M26 0C11.7 0 0 11.7 0 26s11.7 26 26 26 26-11.7 26-26S40.3 0 26 0zm6.5 26.9h-4.2V42H22V26.9h-3v-5.3h3v-3.4c0-2.5 1.2-6.3 6.3-6.3h4.6V17h-3.4c-.5 0-1.3.3-1.3 1.5v3.1H33l-.5 5.3z"/>
+							</g>
+						</g>
+				   </svg>
+				</a>
+				<a href="#">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 52 52" style="enable-background:new 0 0 52 52;" xml:space="preserve">
+						<style type="text/css">
+							.st0{fill:none;}
+							.st1{fill:#BBBDBD;}
+							.st1:hover{fill:#00d9a2;}
+						</style>
+						<path class="st0" d="M655.6,141c33.2-19.1,63.2-15.2,90.8,11.5c1.9-1.6,3.8-3.4,6-5c1.5-1.1,1.6-2,0.2-3.2c-3.8-3.3-7.3-7-11.4-10
+							c-11.9-9-25.4-14.1-40.2-15.4c-8.2-0.7-16.5-0.2-24.5,1.8c-8.9,2.2-17.3,5.7-25,10.8c-0.8,0.5-1.8,0.9-1,2.1
+							C652.2,136.1,653.9,138.6,655.6,141z"/>
+						<path class="st0" d="M982.4,439.8c-3.4-13.4-9.9-25-20.9-33.6c-13.2-10.4-28.7-14.4-45.2-15.2c-5.3-0.2-10.7-0.1-16,0.4
+							c-7.2,0.7-14.4,1.5-21.5,2.9c-16.1,3.3-31.7,8.3-46.7,14.9c-2.1,0.9-4.2,1.8-6.3,2.8c0.2-1.3,0.6-2.1,1.2-2.9
+							c15.6-23.3,26.8-48.6,35.2-75.2c5.1-16,9-32.3,11.1-48.9c1.3-10,2.6-20.1,3-30.2c0.5-11.1,0.2-22.2-0.4-33.2
+							c-0.5-9.4-1.7-18.8-3.2-28.1c-2.5-14.7-7.3-28.6-14.6-41.6c-7.4-13.2-17.7-23.9-28.9-33.6c0.7,9.3,1.8,18.5,1.9,27.8
+							c0.1,8.5-0.5,17.1-1.2,25.6c-0.6,7.5-1.5,15-2.9,22.4c-3.6,19.2-9.8,37.6-19.2,54.8c-15.4,28.3-37.3,50.1-65.9,65
+							c-27.1,14.1-56.2,19.9-86.4,20.5c-10.2,0.2-20.3-0.3-30.5-0.4c-14.4-0.1-28.6-1.2-42.8-3.7c-18-3.2-34.9-9.3-49.9-19.9
+							c-0.6-0.4-1.3-0.8-2.3-1.5c0.4,1.3,0.7,2.1,0.9,2.9c9.8,28.8,28.4,50.3,54.3,65.7c22.2,13.2,46,22.6,71,28.9
+							c7.5,1.9,15.2,3,22.9,4.2c3.6,0.6,4.2,0.6,3.9,4.3c-0.4,6-0.9,12-1.8,18c-3.1,21.5-10.2,41.7-20.7,60.7c-8.5,15.3-19,29-33.3,39.5
+							c-11.1,8.2-23.5,13.4-37.5,13.3c-6.4,0-12.9-0.8-19.3-1.8c-13.9-2.1-26.9-6.8-38.4-15c-0.3-0.2-0.8-0.4-1.6-0.8
+							c0.9,3.4,1.6,6.3,2.5,9.2c7.6,23.1,22.1,39.8,45.2,48.5c10.4,3.9,21.2,4.8,32.1,5.5c14,1,28,0.8,41.9-0.9c16.1-2,31.5-6.4,46.4-12.7
+							c21.6-9.1,41.8-20.8,61.6-33.2c27.2-16.9,54-34.4,81-51.5c16-10.1,32.2-19.7,50-26.3c12-4.5,24.2-7.4,37.1-5.7
+							c9.7,1.3,17.8,5.5,24.3,12.9c5.9,6.6,10.1,14.3,12.8,22.6c2.6,7.8,4.5,15.8,6.6,23.3c6.9-15.4,12.2-31.7,13.1-49.3
+							C985.5,460.6,985,450.1,982.4,439.8z"/>
+						<path class="st1" d="M26,0C11.6,0,0,11.6,0,26s11.6,26,26,26s26-11.6,26-26S40.4,0,26,0z M17.8,18.2c-0.7-0.9-1.1-1.9-1.2-3.1
+							c-0.3-2.4,0.4-4.6,2.1-6.3c1-1.1,2.3-1.7,3.8-2c0.2,0,0.4-0.1,0.6-0.1c0,0,0.1,0,0.1,0c0.3,0,0.7,0,1,0c0.2,0,0.4,0.1,0.7,0.1
+							c1,0.1,1.9,0.5,2.7,1c1.7,1.1,2.8,2.7,3.2,4.7c0.4,2.3-0.1,4.4-1.6,6.2c-0.7,0.8-1.6,1.4-2.6,1.9c-1.1,0.5-2.2,0.8-3.3,1
+							c-0.5,0.1-1.1,0.2-1.6,0.2c-1.4,0.2-2.8,0.2-4.2,0.2c-0.7,0-1.4-0.1-2.1-0.1c0,0,0,0,0,0c1.2-0.8,2.5-1.7,3.7-2.5
+							C18.5,19.1,18.1,18.7,17.8,18.2z M43.9,37.9c-0.2-0.6-0.3-1.1-0.5-1.7c-0.2-0.6-0.5-1.2-0.9-1.7c-0.5-0.5-1.1-0.9-1.8-0.9
+							c-0.9-0.1-1.9,0.1-2.7,0.4c-1.3,0.5-2.5,1.2-3.7,1.9c-2,1.3-4,2.5-6,3.8c-1.5,0.9-2.9,1.8-4.5,2.4c-1.1,0.5-2.2,0.8-3.4,0.9
+							c-1,0.1-2.1,0.1-3.1,0.1c-0.8-0.1-1.6-0.1-2.4-0.4c-1.7-0.6-2.8-1.9-3.3-3.6c-0.1-0.2-0.1-0.4-0.2-0.7c0.1,0,0.1,0,0.1,0.1
+							c0.9,0.6,1.8,0.9,2.8,1.1c0.5,0.1,0.9,0.1,1.4,0.1c1,0,1.9-0.4,2.8-1c1-0.8,1.8-1.8,2.4-2.9c0.8-1.4,1.3-2.9,1.5-4.5
+							c0.1-0.4,0.1-0.9,0.1-1.3c0-0.3,0-0.3-0.3-0.3c-0.6-0.1-1.1-0.2-1.7-0.3c-1.8-0.5-3.6-1.2-5.2-2.1c-1.9-1.1-3.3-2.7-4-4.8
+							c0-0.1,0-0.1-0.1-0.2c0.1,0.1,0.1,0.1,0.2,0.1c1.1,0.8,2.3,1.2,3.7,1.5c1,0.2,2.1,0.3,3.1,0.3c0.8,0,1.5,0,2.2,0
+							c2.2,0,4.4-0.5,6.4-1.5c2.1-1.1,3.7-2.7,4.8-4.8c0.7-1.3,1.1-2.6,1.4-4c0.1-0.5,0.2-1.1,0.2-1.6c0.1-0.6,0.1-1.3,0.1-1.9
+							c0-0.7-0.1-1.4-0.1-2c0.8,0.7,1.6,1.5,2.1,2.5c0.5,1,0.9,2,1.1,3.1c0.1,0.7,0.2,1.4,0.2,2.1c0,0.8,0.1,1.6,0,2.4
+							c0,0.7-0.1,1.5-0.2,2.2c-0.2,1.2-0.4,2.4-0.8,3.6c-0.6,2-1.4,3.8-2.6,5.5c0,0.1-0.1,0.1-0.1,0.2c0.2-0.1,0.3-0.1,0.5-0.2
+							c1.1-0.5,2.3-0.9,3.4-1.1c0.5-0.1,1.1-0.2,1.6-0.2c0.4,0,0.8-0.1,1.2,0c1.2,0.1,2.4,0.4,3.3,1.1c0.8,0.6,1.3,1.5,1.5,2.5
+							c0.2,0.8,0.2,1.5,0.2,2.3C44.8,35.5,44.4,36.7,43.9,37.9z"/>
+				   </svg>
+				</a>
+				<a href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+						<style type="text/css">
+							.st0{fill:#BBBDBD;}
+							.st0:hover{fill:#00d9a2;}
+						</style>
+						<path class="st0" d="M26,0C11.6,0,0,11.6,0,26s11.6,26,26,26s26-11.6,26-26C52,11.6,40.4,0,26,0z M19.5,38.6H13V15.8h6.5V38.6z
+						M16.5,14.4c-1.7,0-3-1.4-3-3s1.4-3,3-3c1.7,0,3,1.4,3,3C19.5,13.1,18.1,14.4,16.5,14.4z M42.2,38.6h-6.5V24.5
+					   c0-1.6-0.5-2.8-2.5-2.8c-3.4,0-4,2.8-4,2.8v14.1h-6.5V15.8h6.5V18c0.9-0.7,3.2-2.2,6.5-2.2c2.1,0,6.5,1.3,6.5,8.9L42.2,38.6
+					   L42.2,38.6z"/>
+					</svg>
+				</a>
+				<a href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+						<style type="text/css">
+							.st0{fill:#BBBDBD;}
+							.st0:hover{fill:#00d9a2;}
+						</style>
+						<path class="st0" d="M26 0C11.7 0 0 11.7 0 26s11.7 26 26 26 26-11.7 26-26S40.3 0 26 0zm11.6 20v.8c0 7.9-6 17-17 17-3.4 0-6.5-1-9.2-2.7.5.1.9.1 1.4.1 2.8 0 5.4-1 7.4-2.6-2.6 0-4.8-1.8-5.6-4.2.4.1.7.1 1.1.1.5 0 1.1-.1 1.6-.2-2.7-.5-4.8-3-4.8-5.9v-.1c.8.4 1.7.7 2.7.7-1.6-1.1-2.7-2.9-2.7-5 0-1.1.3-2.1.8-3 3 3.6 7.4 6 12.3 6.3-.1-.4-.2-.9-.2-1.4 0-3.3 2.7-6 6-6 1.7 0 3.3.7 4.4 1.9 1.4-.3 2.6-.8 3.8-1.5-.5 1.4-1.4 2.6-2.6 3.3 1.2-.1 2.4-.5 3.4-.9-.6 1.5-1.6 2.5-2.8 3.3z"/>
+					</svg>
+				</a>
+				<a href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+						<style type="text/css">
+							.st0{fill:#BBBDBD;}
+							.st0:hover{fill:#00d9a2;}
+						</style>
+						<path class="st0" d="M26 0C11.6 0 0 11.6 0 26s11.6 26 26 26 26-11.6 26-26S40.4 0 26 0zm15.4 15.6c-.5 2.3-5.3 22.6-6.2 24.4-.7 1.4-1.7 1.6-2.3 1.6-.7 0-1.2-.3-1.3-.4l-7.1-5-2.6 2.6c-.7.7-1.4 1.1-2.2 1.1-1.1 0-1.8-.8-2-1.3v-.1l-3-8.1c-1.5-.2-5.2-.9-6.8-2.4-.8-.7-1.1-1.5-1-2.3.1-1 .8-1.5.9-1.6.1 0 .1-.1.2-.1l28.8-11.2h.1c.5-.2 1-.2 1.5-.2 1.8 0 3 1.2 3 2.7v.3zm-4.8 1.1c.3.4.2.9-.1 1.2l-13.2 11-2.1 6.4c-.2.3-.5.5-.8.5h-.1c-.4 0-.7-.2-.8-.6L16.9 28c-.2-.4 0-.9.4-1.1l18.1-10.4c.5-.3 1-.2 1.2.2z" fill="#bbbdbd"/>
+					</svg>
+				</a>
+				<a href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+						<style type="text/css">
+							.st0{fill:#BBBDBD;}
+							.st0:hover{fill:#00d9a2;}
+						</style>
+						<path fill="#bbbdbd" d="M24.4 23.9l6.9 10.6-6.9-10.7z"/>
+						<path class="st0" d="M26 .3C11.6.3 0 11.9 0 26.3s11.6 26 26 26 26-11.6 26-26S40.4.3 26 .3zm-1 23.5l6.5-9.9 8.7 4.4-2.5 4.3-6.4 11-6.3-9.8zm4.9 9.4l-8.7-4.4v-9.2l8.7 13.6zm8.5-10l1.9-3.4v18.6L32 34.3l6.4-11.1zm-26.8-2.9V14l8.6 4.3v20.1l-8.6-4.3V20.3z"/>
+					</svg>
+				</a>
+			</section>
+			<section class="subscribe">
+				<h2>Подписаться на новости:</h2>
+				<form action="submit">
+					<input type="email" class="email" placeholder="Введите ваш e-mail">
+					<button class="btn btn-blue submit">
+						Подписаться
+					</button>
+				</form>
+			</section>
+		</section>
+		<section class="desc" id="mission">
+			<h2 class="desc-h2">Что такое ROOMDAO?</h2>
+			<div class="desc-columns">
+				<div class="col desc-col">
+					<p class="text-bold">
+						Наш проект - это социальная сеть для обмена и прямой аренды недвижимости по всему миру без посредников!
+					</p>
+					<p>
+						На нашей платформе люди могут разместить объявление о своей квартире, выбрать из сотни вариантов в любой точке мира, связаться напрямую с владельцем и договориться о времени и условиях обмена!
+					</p>
+				</div>
+				<div class="col desc-col">
+					<p>Рынок аренды недвижимости и аренды отелей огромен. Но так ли необходимо тратить такие огромные деньги на организацию отдыха?</p>
+					<p>Ведь на той стороне земного шара, куда вы хотите отправиться, существует огромное количество людей, желающих посмотреть вашу страну и город!</p>
+				</div>
+			</div>
+		</section>
+		<section class="bubbles-divider">
+			<div class="bubbles-left">
+				<div class="bubble bubble-1"></div>
+				<div class="bubble bubble-2"></div>
+				<div class="bubble bubble-3"></div>
+				<div class="bubble bubble-4"></div>
+			</div>
+			<div class="bubbles-text">
+				<h2 class="bubbles-divider-h2">
+					Обменивайтесь Вашей недвижимостью с другими участниками нашей платформы БЕСПЛАТНО!
+				</h2>
+				<a href="#" class="btn join-btn">Присоединиться</a>
+			</div>
+			<div class="bubbles-right">
+				<div class="bubble bubble-5"></div>
+				<div class="bubble bubble-6"></div>
+				<div class="bubble bubble-7"></div>
+			</div>
+		</section>
+		<section class="cards">
+			<article class="card">
+				<img src="img/worldwide-icon.svg" alt="Огромный выбор недвижимости" class="cards-icon worldwide-icon">
+				<h2 class="cards-h2">Огромный выбор недвижимости</h2>
+				<p class="cards-text">Наличие большого маркетплейса по туристическим услугам в выбранном объекте (прокаты авто, рестораны, турагентства, гиды, такси и т.д. - все будет добавлено на нашу платформу).</p>
+			</article>
+			<article class="card">
+				<img src="img/sharing-icon.svg" alt="Прямое общение без посредников" class="cards-icon">
+				<h2 class="cards-h2">Прямое общение без посредников</h2>
+				<p class="cards-text">Наличие большого маркетплейса по туристическим услугам в выбранном объекте (прокаты авто, рестораны, турагентства, гиды, такси и т.д. - все будет добавлено на нашу платформу).</p>
+			</article>
+			<article class="card">
+				<img src="img/chat-icon.svg" alt="Децентрализированная система рейтингов" class="cards-icon">
+				<h2 class="cards-h2">Децентрализированная система рейтингов</h2>
+				<p class="cards-text">Децентрализированная система отзывов и рейтингов позволит клиентам выбрать лучших среди поставщиков услуг, а поставщикам - улучшить качество предлагаемых услуг!</p>
+			</article>
+			<article class="card">
+				<img src="img/money-icon.svg" alt="Удобная платежная система" class="cards-icon">
+				<h2 class="cards-h2">Удобная платежная система</h2>
+				<p class="cards-text">Наличие большого маркетплейса по туристическим услугам в выбранном объекте (прокаты авто, рестораны, турагентства, гиды, такси и т.д. - все будет добавлено на нашу платформу).</p>
+			</article>
+			<article class="card">
+				<img src="img/computer-icon.svg" alt="Бесплатная регистрация" class="cards-icon">
+				<h2 class="cards-h2">Бесплатная регистрация</h2>
+				<p class="cards-text">Наличие большого маркетплейса по туристическим услугам в выбранном объекте (прокаты авто, рестораны, турагентства, гиды, такси и т.д. - все будет добавлено на нашу платформу).</p>
+			</article>
+			<article class="card">
+				<img src="img/percentage-icon.svg" alt="0% комиссий" class="cards-icon">
+				<h2 class="cards-h2">0% комиссий</h2>
+				<p class="cards-text">Наличие большого маркетплейса по туристическим услугам в выбранном объекте (прокаты авто, рестораны, турагентства, гиды, такси и т.д. - все будет добавлено на нашу платформу).</p>
+			</article>
+		</section>
+		<section class="desc opportunities-desc">
+			<div class="desc-columns">
+				<div class="col desc-col">
+					<p>Маркетплейс дает возможность отдыхающим связаться напрямую с гидами, турагентами, прокатными компаниями и т.д. без лишних комиссий и посредников.</p>
+					<p>Выбирайте любые услуги из сотни предложений по организации Вашего отдыха. Туристические агентства, экскурсионные бюро, прокаты любых автомобилей, мопедов, воздушных шаров - любые предложения ВЫ найдете в нашей экосистеме РУМДАО.</p>
+				</div>
+				<div class="col desc-col">
+					<p>Маркетплейс дает возможность отдыхающим связаться напрямую с гидами, турагентами, прокатными компаниями и т.д. без лишних комиссий и посредников.</p>
+					<p>Выбирайте любые услуги из сотни предложений по организации Вашего отдыха. Туристические агентства, экскурсионные бюро, прокаты любых автомобилей, мопедов, воздушных шаров - любые предложения ВЫ найдете в нашей экосистеме РУМДАО.</p>
+				</div>
+			</div>
+		</section>
+		<section class="video">
+			<iframe id="player" type="text/html" src="http://www.youtube.com/embed/kv9RXavURq8?enablejsapi=1&amp;origin=http://roomdao-io" frameborder="0"></iframe>
+		</section>
+		<section class="bubbles-divider" id="first-world">
+			<div class="bubbles-left">
+				<div class="bubble bubble-1"></div>
+				<div class="bubble bubble-2"></div>
+				<div class="bubble bubble-3"></div>
+				<div class="bubble bubble-4"></div>
+			</div>
+			<div class="bubbles-text">
+				<h2 class="bubbles-divider-h2">
+					ПЕРВЫЙ В МИРЕ децентрализированный туристический Маркет-плейс
+				</h2>
+				<a href="#" class="btn join-btn">Присоединиться</a>
+			</div>
+			<div class="bubbles-right">
+				<div class="bubble bubble-5"></div>
+				<div class="bubble bubble-6"></div>
+				<div class="bubble bubble-7"></div>
+			</div>
+		</section>
+		<section class="desc" id="desc">
+			<h2 class="desc-h2">Токены ROOMDAO</h2>
+			<div class="desc-columns">
+				<div class="col desc-col">
+					<p>Токены РОМКОЙН являются платежным инструментом внутри нашей экосистемы РОМДАО. <br>С помощью токенов вы можете арендовать недвижимость, застраховать свой объект при обмене, а также оплатить любую из выбранных Вами услуг.</p>
+					<p>Наши токены можно приобрести на платформе РУМДАО в личном кабинете или на крупнейших криптобиржах.</p>
+					<p>Бонусные токены начисляются владельцам за каждый добавленный в систему объект.</p>
+				</div>
+				<div class="col desc-col">
+					<h2>Токены ROOMDAO используются внутри системы для:</h2>
+					<ul>
+						<li>покупки дополнительных баллов</li>
+						<li>оплаты размещения объявлений на маркетплейсе</li>
+						<li>оплаты рекламного листинга объявлений</li>
+						<li>оплаты объектов для аренды (не для обмена)</li>
+						<li>страхования объектов</li>
+						<small><em>* также внутри системы можно менять накопленные баллы на токены</em></small>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="spider-features">
+			<div class="features col-features col-left">
+				<div class="feature margin-left">
+					<div class="feature-icon">
+						<img src="img/bar-chart.svg" alt="">
+					</div>
+					<p>Стоимость токена привязана к стоимости ЕФИРИУМА - одной из самых перспективных валют. Рост эфириума даст дополнительное увеличение стоимости актива.</p>
+				</div>
+				<div class="feature-divider"></div>
+				<div class="feature">
+					<div class="feature-icon">
+						<img src="img/computer_procent.svg" alt="">
+					</div>
+					<p>Владельцы токенов могут использовать их внутри платформы и извлекать из этого не только материальную выгоду, но и получать дисконт на все услуги на платформе.</p>
+				</div>
+				<div class="feature-divider"></div>
+				<div class="feature margin-left">
+					<div class="feature-icon">
+						<img src="img/startup.svg" alt="">
+					</div>
+					<p>Запланировано участие во всех мероприятиях по криптовалютам и продвижению проекта с их широким анонсом в соцсетях и каналах развития.</p>
+				</div>
+			</div>
+			<div class="feature-divider"></div>
+			<div class="phone-with-logo">
+				<img src="img/circles.svg" alt="">
+				<div class="phone-sqr-bg">
+					<img src="img/phone.png" alt="">
+					<div class="phone-screen"></div>
+					<img src="img/rd-logo.svg" class="phone-screen-logo"></img>
+				</div>	
+			</div>
+			<div class="features col-features col-right">
+				<div class="feature right margin-right">
+					<div class="feature-icon">
+						<img src="img/user.svg" alt="">
+					</div>
+					<p>При владении нашей платформой 100% выпущенных токенов 15% годовой прибыли будет начисляться в личный кабинет инвесторов нашей платформы.</p>
+				</div>
+				<div class="feature-divider"></div>
+				<div class="feature right">
+					<div class="feature-icon">
+						<img src="img/settings.svg" alt="">
+					</div>
+					<p>Для дальнейшего пополнения резервного фонда РУМДАО будет скупать токены на биржах, что приведет к резкому росту стоимости токена.</p>
+				</div>
+				<div class="feature-divider"></div>
+				<div class="feature right margin-right">
+					<div class="feature-icon">
+						<img src="img/piggy-bank.svg" alt="">
+					</div>
+					<p>Наш сервис направлен на максимальное привлечение клиентов на платформу, на которой 80% услуг можно будет приобрести за токены.</p>
+				</div>
+			</div>
+		</section>
+		<section class="previews">
+			<h2>Previews</h2>
+			<p><span class="green">Mobile App</span> - alpha</p>
+			<p><span class="green">Dashboard</span> - test network</p>
+		</section>
+		<section class="tokens-emitted">
+			<div class="tokens-col" id="tokens-col-1">
+				<div class="circles">
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle circle-blue"></div>
+					<div class="circle circle-blue"></div>
+					<div class="circle circle-blue"></div>
+				</div>
+				<h2>150 000 000</h2>
+				<p>токенов всего выпускается</p>
+			</div>
+			<div class="tokens-col" id="tokens-col-2">
+				<div class="circles">
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+				</div>
+				<h2>100 000 000</h2>
+				<p>выходит в свободную продажу</p>
+			</div>
+			<div class="tokens-col" id="tokens-col-3">
+				<div class="circles">
+					<div class="circle circle-blue"></div>
+					<div class="circle circle-blue"></div>
+					<div class="circle circle-blue"></div>
+				</div>
+				<h2>50 000 000</h2>
+				<p>остается внутри системы</p>
+			</div>
+		</section>
+		<section class="pre-ico">
+			<div class="pre-ico-col-1">
+				<h2 id="preico-h2">PREICO</h2>
+				<h3>Softcap</h3>
+				<p>200 000 USD = 666 ETH = <span class="dark-green">1 000 000 ROMDAO</span></p>
+				<h3>Hardcap</h3>
+				<p>1 000 000 USD = 3333 ETH = <span class="dark-green">5 000 000 ROMDAO</span></p>
+				<h2 id="ico-h2">ICO</h2>
+				<h3>Softcap</h3>
+				<p>5 000 000 USD = 16 666 ETH = <span class="dark-green">25 000 000 ROMDAO</span></p>
+				<h3>Hardcap</h3>
+				<p>20 000 000 USD = 66 666 ETH = <span class="dark-green">100 000 000 ROMDAO</span></p>
+			</div>
+			<div class="pre-ico-col-2">
+				<div class="bubbles bubble-1"></div>
+				<div class="bubbles bubble-2"></div>
+				<h2>Курс</h2>
+				<ul>
+					<li class="icon-ether">1 ETH = <span class="bold"> 1500 ROMDAO</span></li>
+					<li class="icon-romdao">1 ROMDAO = <span class="bold"> 0.2 USD</span></li>
+					<li class="icon-romdao">100 000 000 ROMDAO = <span class="bold"> 66 666 ETH</span></li>
+				</ul>
+				<div class="bubbles bubble-3"></div>
+			</div>
+		</section>
+		<h2 id="roadmap-h2" class="section-h2">Roadmap</h2>
+			<div class="roadmap-slider">
+				<div class="slide">
+					<h2 class="slide-h2">Май 2017</h2>
+					<p class="slide-text">Запуск и тестирование бета-версии платформы и участие в конференциях</p>
+				</div>
+				<div class="slide">
+					<h2 class="slide-h2">Июнь 2017</h2>
+					<p class="slide-text">Не следует, однако забывать, что консультация с широким активом в значительной степени обуславливает создание форм развития.</p>
+				</div>
+				<div class="slide">
+					<h2 class="slide-h2">Июль 2017</h2>
+					<p class="slide-text">Задача организации, в особенности же новая модель организационной деятельности представляет собой интересный эксперимент проверки.</p>
+				</div>
+				<div class="slide">
+					<h2 class="slide-h2">Август 2017</h2>
+					<p class="slide-text">Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности требуют определения и уточнения существенных финансовых и административных условий. </p>
+				</div>
+				<div class="slide">
+					<h2 class="slide-h2">Сентябрь 2017</h2>
+					<p class="slide-text"> Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности играет важную роль в формировании систем массового участия.</p>
+				</div>
+				<div class="slide">
+					<h2 class="slide-h2">Октябрь 2017</h2>
+					<p class="slide-text">Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании новых предложений. </p>
+				</div>
+				<div class="slide">
+					<h2 class="slide-h2">Ноябрь 2017</h2>
+					<p class="slide-text">Равным образом постоянный количественный рост и сфера нашей активности способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.</p>
+				</div>
+				<div class="slide">
+					<h2 class="slide-h2">Декабрь 2017</h2>
+					<p class="slide-text">Таким образом начало повседневной работы по формированию позиции играет важную роль в формировании систем массового участия.</p>
+				</div>
+				<div class="slide">
+					<h2 class="slide-h2">Январь 2018</h2>
+					<p class="slide-text">Равным образом постоянное информационно-пропагандистское обеспечение нашей деятельности в значительной степени обуславливает создание систем массового участия.</p>
+				</div>
+			</div>
+		</section>
+		<section class="articles slider">
+			<ul class="slides">
+				<li class="article slide">
+					<img src="img/qa-meetup.png" alt="">
+					<h2>Simply about Complex</h2>
+					<p>Мы не ждём, когда блокчейн станет такой же обыденностью, как Интернет и смартфоны. На конференции мы собираем blockchain-энтузиастов от бизнеса и власти, которые уже сегодня знают о преимуществах новой технологии</p>
+					<p>Source: <a href="#">kiev.blockchainconf.world/ru</a></p>
+				</li>
+				<li class="article slide">
+					<img src="img/bb-conf.png" alt="">
+					<h2>Blockchain Conference Kiev</h2>
+					<p>Мы не ждём, когда блокчейн станет такой же обыденностью, как Интернет и смартфоны. На конференции мы собираем blockchain-энтузиастов от бизнеса и власти, которые уже сегодня знают о преимуществах новой технологии</p>
+					<p>Source: <a href="#">kiev.blockchainconf.world/ru</a></p>
+				</li>
+				<li class="article slide">
+					<img src="img/qa-meetup.png" alt="">
+					<h2>Simply about Complex</h2>
+					<p>Мы не ждём, когда блокчейн станет такой же обыденностью, как Интернет и смартфоны. На конференции мы собираем blockchain-энтузиастов от бизнеса и власти, которые уже сегодня знают о преимуществах новой технологии</p>
+					<p>Source: <a href="#">kiev.blockchainconf.world/ru</a></p>
+				</li>
+			</ul>
+		</section>
+		<h2 class="section-h2" id="our-team-h2">Наша команда</h2>
+		<section class="our-team">
+			<div class="our-team cards">
+				<div class="team card">
+					<div class="photo"><img src="img/photo-color.png" alt="Photo"></div>
+					<h2>Ангелина Стриженова</h2>
+					<h3>Специалист в области трейдинга</h3>
+					<p class="cards-text">Удобный сервис, можно просто выполнять приходящую sms-рекомендацию и не задумываться о выборе ценной бумаги.</p>
+					<div class="social-icons">
+						<a href="#">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+								<path class="st0" d="M26,0C11.7,0,0,11.7,0,26c0,14.3,11.7,26,26,26c14.3,0,26-11.7,26-26C52,11.7,40.3,0,26,0z M32.5,26.9h-4.2
+									c0,6.8,0,15.1,0,15.1H22c0,0,0-8.2,0-15.1h-3v-5.3h3v-3.4c0-2.5,1.2-6.3,6.3-6.3l4.6,0V17c0,0-2.8,0-3.4,0c-0.5,0-1.3,0.3-1.3,1.5
+									v3.1H33L32.5,26.9z"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="team card">
+					<div class="photo"><img src="img/photo-color.png" alt="Photo"></div>
+					<h2>Ангелина Стриженова</h2>
+					<h3>Специалист в области трейдинга</h3>
+					<p class="cards-text">Удобный сервис, можно просто выполнять приходящую sms-рекомендацию и не задумываться о выборе ценной бумаги.</p>
+					<div class="social-icons">
+						<a href="#">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+								<path class="st0" d="M26,0C11.7,0,0,11.7,0,26c0,14.3,11.7,26,26,26c14.3,0,26-11.7,26-26C52,11.7,40.3,0,26,0z M32.5,26.9h-4.2
+									c0,6.8,0,15.1,0,15.1H22c0,0,0-8.2,0-15.1h-3v-5.3h3v-3.4c0-2.5,1.2-6.3,6.3-6.3l4.6,0V17c0,0-2.8,0-3.4,0c-0.5,0-1.3,0.3-1.3,1.5
+									v3.1H33L32.5,26.9z"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="team card">
+					<div class="photo"><img src="img/photo-color.png" alt="Photo"></div>
+					<h2>Ангелина Стриженова</h2>
+					<h3>Специалист в области трейдинга</h3>
+					<p class="cards-text">Удобный сервис, можно просто выполнять приходящую sms-рекомендацию и не задумываться о выборе ценной бумаги.</p>
+					<div class="social-icons">
+						<a href="#">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+								<path class="st0" d="M26,0C11.7,0,0,11.7,0,26c0,14.3,11.7,26,26,26c14.3,0,26-11.7,26-26C52,11.7,40.3,0,26,0z M32.5,26.9h-4.2
+									c0,6.8,0,15.1,0,15.1H22c0,0,0-8.2,0-15.1h-3v-5.3h3v-3.4c0-2.5,1.2-6.3,6.3-6.3l4.6,0V17c0,0-2.8,0-3.4,0c-0.5,0-1.3,0.3-1.3,1.5
+									v3.1H33L32.5,26.9z"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="team card">
+					<div class="photo"><img src="img/photo-color.png" alt="Photo"></div>
+					<h2>Ангелина Стриженова</h2>
+					<h3>Специалист в области трейдинга</h3>
+					<p class="cards-text">Удобный сервис, можно просто выполнять приходящую sms-рекомендацию и не задумываться о выборе ценной бумаги.</p>
+					<div class="social-icons">
+						<a href="#">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+								<path class="st0" d="M26,0C11.7,0,0,11.7,0,26c0,14.3,11.7,26,26,26c14.3,0,26-11.7,26-26C52,11.7,40.3,0,26,0z M32.5,26.9h-4.2
+									c0,6.8,0,15.1,0,15.1H22c0,0,0-8.2,0-15.1h-3v-5.3h3v-3.4c0-2.5,1.2-6.3,6.3-6.3l4.6,0V17c0,0-2.8,0-3.4,0c-0.5,0-1.3,0.3-1.3,1.5
+									v3.1H33L32.5,26.9z"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="team card">
+					<div class="photo"><img src="img/photo-color.png" alt="Photo"></div>
+					<h2>Ангелина Стриженова</h2>
+					<h3>Специалист в области трейдинга</h3>
+					<p class="cards-text">Удобный сервис, можно просто выполнять приходящую sms-рекомендацию и не задумываться о выборе ценной бумаги.</p>
+					<div class="social-icons">
+						<a href="#">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+								<path class="st0" d="M26,0C11.7,0,0,11.7,0,26c0,14.3,11.7,26,26,26c14.3,0,26-11.7,26-26C52,11.7,40.3,0,26,0z M32.5,26.9h-4.2
+									c0,6.8,0,15.1,0,15.1H22c0,0,0-8.2,0-15.1h-3v-5.3h3v-3.4c0-2.5,1.2-6.3,6.3-6.3l4.6,0V17c0,0-2.8,0-3.4,0c-0.5,0-1.3,0.3-1.3,1.5
+									v3.1H33L32.5,26.9z"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="team card">
+					<div class="photo"><img src="img/photo-color.png" alt="Photo"></div>
+					<h2>Ангелина Стриженова</h2>
+					<h3>Специалист в области трейдинга</h3>
+					<p class="cards-text">Удобный сервис, можно просто выполнять приходящую sms-рекомендацию и не задумываться о выборе ценной бумаги.</p>
+					<div class="social-icons">
+						<a href="#">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+								<path class="st0" d="M26,0C11.7,0,0,11.7,0,26c0,14.3,11.7,26,26,26c14.3,0,26-11.7,26-26C52,11.7,40.3,0,26,0z M32.5,26.9h-4.2
+									c0,6.8,0,15.1,0,15.1H22c0,0,0-8.2,0-15.1h-3v-5.3h3v-3.4c0-2.5,1.2-6.3,6.3-6.3l4.6,0V17c0,0-2.8,0-3.4,0c-0.5,0-1.3,0.3-1.3,1.5
+									v3.1H33L32.5,26.9z"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="team card">
+					<div class="photo"><img src="img/photo-color.png" alt="Photo"></div>
+					<h2>Ангелина Стриженова</h2>
+					<h3>Специалист в области трейдинга</h3>
+					<p class="cards-text">Удобный сервис, можно просто выполнять приходящую sms-рекомендацию и не задумываться о выборе ценной бумаги.</p>
+					<div class="social-icons">
+						<a href="#">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+								<path class="st0" d="M26,0C11.7,0,0,11.7,0,26c0,14.3,11.7,26,26,26c14.3,0,26-11.7,26-26C52,11.7,40.3,0,26,0z M32.5,26.9h-4.2
+									c0,6.8,0,15.1,0,15.1H22c0,0,0-8.2,0-15.1h-3v-5.3h3v-3.4c0-2.5,1.2-6.3,6.3-6.3l4.6,0V17c0,0-2.8,0-3.4,0c-0.5,0-1.3,0.3-1.3,1.5
+									v3.1H33L32.5,26.9z"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="team card">
+					<div class="photo"><img src="img/photo-color.png" alt="Photo"></div>
+					<h2>Ангелина Стриженова</h2>
+					<h3>Специалист в области трейдинга</h3>
+					<p class="cards-text">Удобный сервис, можно просто выполнять приходящую sms-рекомендацию и не задумываться о выборе ценной бумаги.</p>
+					<div class="social-icons">
+						<a href="#">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+								<path class="st0" d="M26,0C11.7,0,0,11.7,0,26c0,14.3,11.7,26,26,26c14.3,0,26-11.7,26-26C52,11.7,40.3,0,26,0z M32.5,26.9h-4.2
+									c0,6.8,0,15.1,0,15.1H22c0,0,0-8.2,0-15.1h-3v-5.3h3v-3.4c0-2.5,1.2-6.3,6.3-6.3l4.6,0V17c0,0-2.8,0-3.4,0c-0.5,0-1.3,0.3-1.3,1.5
+									v3.1H33L32.5,26.9z"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<h2 class="section-h2" id="our-consults-h2">Наши консультанты</h2>
+		<section class="our-team our-consults">
+			<div class="our-team cards">
+				<div class="team card">
+					<div class="photo"><img src="img/photo-color.png" alt="Photo"></div>
+					<h2>Ангелина Стриженова</h2>
+					<h3>Специалист в области трейдинга</h3>
+					<p class="cards-text">Удобный сервис, можно просто выполнять приходящую sms-рекомендацию и не задумываться о выборе ценной бумаги.</p>
+					<div class="social-icons">
+						<a href="#">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+								<path class="st0" d="M26,0C11.7,0,0,11.7,0,26c0,14.3,11.7,26,26,26c14.3,0,26-11.7,26-26C52,11.7,40.3,0,26,0z M32.5,26.9h-4.2
+									c0,6.8,0,15.1,0,15.1H22c0,0,0-8.2,0-15.1h-3v-5.3h3v-3.4c0-2.5,1.2-6.3,6.3-6.3l4.6,0V17c0,0-2.8,0-3.4,0c-0.5,0-1.3,0.3-1.3,1.5
+									v3.1H33L32.5,26.9z"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="team card">
+					<div class="photo"><img src="img/photo-color.png" alt="Photo"></div>
+					<h2>Ангелина Стриженова</h2>
+					<h3>Специалист в области трейдинга</h3>
+					<p class="cards-text">Удобный сервис, можно просто выполнять приходящую sms-рекомендацию и не задумываться о выборе ценной бумаги.</p>
+					<div class="social-icons">
+						<a href="#">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+								<path class="st0" d="M26,0C11.7,0,0,11.7,0,26c0,14.3,11.7,26,26,26c14.3,0,26-11.7,26-26C52,11.7,40.3,0,26,0z M32.5,26.9h-4.2
+									c0,6.8,0,15.1,0,15.1H22c0,0,0-8.2,0-15.1h-3v-5.3h3v-3.4c0-2.5,1.2-6.3,6.3-6.3l4.6,0V17c0,0-2.8,0-3.4,0c-0.5,0-1.3,0.3-1.3,1.5
+									v3.1H33L32.5,26.9z"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="team card">
+					<div class="photo"><img src="img/photo-color.png" alt="Photo"></div>
+					<h2>Ангелина Стриженова</h2>
+					<h3>Специалист в области трейдинга</h3>
+					<p class="cards-text">Удобный сервис, можно просто выполнять приходящую sms-рекомендацию и не задумываться о выборе ценной бумаги.</p>
+					<div class="social-icons">
+						<a href="#">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+								<path class="st0" d="M26,0C11.7,0,0,11.7,0,26c0,14.3,11.7,26,26,26c14.3,0,26-11.7,26-26C52,11.7,40.3,0,26,0z M32.5,26.9h-4.2
+									c0,6.8,0,15.1,0,15.1H22c0,0,0-8.2,0-15.1h-3v-5.3h3v-3.4c0-2.5,1.2-6.3,6.3-6.3l4.6,0V17c0,0-2.8,0-3.4,0c-0.5,0-1.3,0.3-1.3,1.5
+									v3.1H33L32.5,26.9z"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="team card">
+					<div class="photo"><img src="img/photo-color.png" alt="Photo"></div>
+					<h2>Ангелина Стриженова</h2>
+					<h3>Специалист в области трейдинга</h3>
+					<p class="cards-text">Удобный сервис, можно просто выполнять приходящую sms-рекомендацию и не задумываться о выборе ценной бумаги.</p>
+					<div class="social-icons">
+						<a href="#">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+								<path class="st0" d="M26,0C11.7,0,0,11.7,0,26c0,14.3,11.7,26,26,26c14.3,0,26-11.7,26-26C52,11.7,40.3,0,26,0z M32.5,26.9h-4.2
+									c0,6.8,0,15.1,0,15.1H22c0,0,0-8.2,0-15.1h-3v-5.3h3v-3.4c0-2.5,1.2-6.3,6.3-6.3l4.6,0V17c0,0-2.8,0-3.4,0c-0.5,0-1.3,0.3-1.3,1.5
+									v3.1H33L32.5,26.9z"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="bubbles-divider" id="join-us">
+			<div class="bubbles-left">
+				<div class="bubble bubble-1"></div>
+				<div class="bubble bubble-2"></div>
+				<div class="bubble bubble-3"></div>
+				<div class="bubble bubble-4"></div>
+			</div>
+			<div class="bubbles-text">
+				<h2 class="bubbles-divider-h2">
+					ПРИСОЕДИНЯЙТЕСЬ!
+				</h2>
+				<section class="icons">
+					<a href="#">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+							<style type="text/css">
+								.st0{fill:#ffffff;}
+								.st0:hover{fill:#00d9a2;}
+							</style>
+							<path class="st0" d="M26 0C11.6 0 0 11.7 0 26s11.6 26 26 26 26-11.7 26-26S40.4 0 26 0zm12.2 31.2c-.1 1-.3 1.8-.7 2.5-.3.7-.8 1.3-1.3 1.8s-1.2.9-2 1.2c-.8.3-1.6.6-2.5.7s-1.8.3-3 .3V43h-3.1v-5.1h-2.5V43H20v-5.2h-6.3l.6-3.7h2.3c.7 0 1.1-.3 1.2-1V18.9c-.2-.9-.8-1.4-1.8-1.4h-2.3v-3.4H20V9h3.1v5h2.5V9h3.1v5.2c1.1.1 2 .3 2.9.5.8.2 1.6.5 2.3.9.7.4 1.3.9 1.7 1.6s.7 1.4.7 2.3c.3 2.5-.6 4.2-2.7 5.3 1.6.4 2.8 1.1 3.6 2.1.9 1 1.2 2.4 1 4.3zM23.9 24h2.9c.4 0 .8-.1 1.1-.1.3 0 .6-.1 1-.2s.7-.2 1-.4c.3-.2.5-.3.8-.6.3-.2.4-.5.6-.8.1-.3.2-.7.2-1 0-.4-.1-.9-.3-1.2l-.6-.9c-.3-.2-.6-.4-1-.6-.4-.2-.8-.3-1.1-.3s-.8-.1-1.2-.2c-.5 0-.9-.1-1.2 0h-1.9V24h.7zm7.1 4.3c-.3-.3-.7-.5-1.2-.6-.5-.2-.9-.3-1.3-.4-.4-.1-.9-.1-1.5-.2-.6 0-1.1-.1-1.4-.1h-2.3v7h2.9c.5 0 .9 0 1.2-.1.3 0 .7-.1 1.2-.2s.8-.2 1.1-.3c.3-.1.6-.3 1-.4.3-.2.6-.4.8-.6.2-.2.4-.5.5-.8.1-.3.2-.7.2-1 0-.5-.1-.9-.3-1.3-.4-.4-.6-.7-.9-1z" fill="#ffffff"/>
+						</svg>
+					</a>
+					<a href="#">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+							<style type="text/css">
+								.st0{fill:#ffffff;}
+								.st0:hover{fill:#00d9a2;}
+							</style>
+							<g>
+								<g>
+									<path class="st0" d="M26,0C11.7,0,0,11.7,0,26c0,14.3,11.7,26,26,26c14.3,0,26-11.7,26-26C52,11.7,40.3,0,26,0z M32.5,26.9h-4.2
+										c0,6.8,0,15.1,0,15.1H22c0,0,0-8.2,0-15.1h-3v-5.3h3v-3.4c0-2.5,1.2-6.3,6.3-6.3l4.6,0V17c0,0-2.8,0-3.4,0c-0.5,0-1.3,0.3-1.3,1.5
+										v3.1H33L32.5,26.9z"/>
+								</g>
+							</g>
+						</svg>
+					</a>
+					<a href="#">
+						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							viewBox="0 0 52 52" style="enable-background:new 0 0 52 52;" xml:space="preserve">
+							<style type="text/css">
+								.st0{fill:none;}
+								.st1{fill:#ffffff;}
+								.st1:hover{fill:#00d9a2;}
+							</style>
+							<path class="st0" d="M655.6,141c33.2-19.1,63.2-15.2,90.8,11.5c1.9-1.6,3.8-3.4,6-5c1.5-1.1,1.6-2,0.2-3.2c-3.8-3.3-7.3-7-11.4-10
+								c-11.9-9-25.4-14.1-40.2-15.4c-8.2-0.7-16.5-0.2-24.5,1.8c-8.9,2.2-17.3,5.7-25,10.8c-0.8,0.5-1.8,0.9-1,2.1
+								C652.2,136.1,653.9,138.6,655.6,141z"/>
+							<path class="st0" d="M982.4,439.8c-3.4-13.4-9.9-25-20.9-33.6c-13.2-10.4-28.7-14.4-45.2-15.2c-5.3-0.2-10.7-0.1-16,0.4
+								c-7.2,0.7-14.4,1.5-21.5,2.9c-16.1,3.3-31.7,8.3-46.7,14.9c-2.1,0.9-4.2,1.8-6.3,2.8c0.2-1.3,0.6-2.1,1.2-2.9
+								c15.6-23.3,26.8-48.6,35.2-75.2c5.1-16,9-32.3,11.1-48.9c1.3-10,2.6-20.1,3-30.2c0.5-11.1,0.2-22.2-0.4-33.2
+								c-0.5-9.4-1.7-18.8-3.2-28.1c-2.5-14.7-7.3-28.6-14.6-41.6c-7.4-13.2-17.7-23.9-28.9-33.6c0.7,9.3,1.8,18.5,1.9,27.8
+								c0.1,8.5-0.5,17.1-1.2,25.6c-0.6,7.5-1.5,15-2.9,22.4c-3.6,19.2-9.8,37.6-19.2,54.8c-15.4,28.3-37.3,50.1-65.9,65
+								c-27.1,14.1-56.2,19.9-86.4,20.5c-10.2,0.2-20.3-0.3-30.5-0.4c-14.4-0.1-28.6-1.2-42.8-3.7c-18-3.2-34.9-9.3-49.9-19.9
+								c-0.6-0.4-1.3-0.8-2.3-1.5c0.4,1.3,0.7,2.1,0.9,2.9c9.8,28.8,28.4,50.3,54.3,65.7c22.2,13.2,46,22.6,71,28.9
+								c7.5,1.9,15.2,3,22.9,4.2c3.6,0.6,4.2,0.6,3.9,4.3c-0.4,6-0.9,12-1.8,18c-3.1,21.5-10.2,41.7-20.7,60.7c-8.5,15.3-19,29-33.3,39.5
+								c-11.1,8.2-23.5,13.4-37.5,13.3c-6.4,0-12.9-0.8-19.3-1.8c-13.9-2.1-26.9-6.8-38.4-15c-0.3-0.2-0.8-0.4-1.6-0.8
+								c0.9,3.4,1.6,6.3,2.5,9.2c7.6,23.1,22.1,39.8,45.2,48.5c10.4,3.9,21.2,4.8,32.1,5.5c14,1,28,0.8,41.9-0.9c16.1-2,31.5-6.4,46.4-12.7
+								c21.6-9.1,41.8-20.8,61.6-33.2c27.2-16.9,54-34.4,81-51.5c16-10.1,32.2-19.7,50-26.3c12-4.5,24.2-7.4,37.1-5.7
+								c9.7,1.3,17.8,5.5,24.3,12.9c5.9,6.6,10.1,14.3,12.8,22.6c2.6,7.8,4.5,15.8,6.6,23.3c6.9-15.4,12.2-31.7,13.1-49.3
+								C985.5,460.6,985,450.1,982.4,439.8z" fill="#ffffff"/>
+							<path class="st1" d="M26,0C11.6,0,0,11.6,0,26s11.6,26,26,26s26-11.6,26-26S40.4,0,26,0z M17.8,18.2c-0.7-0.9-1.1-1.9-1.2-3.1
+								c-0.3-2.4,0.4-4.6,2.1-6.3c1-1.1,2.3-1.7,3.8-2c0.2,0,0.4-0.1,0.6-0.1c0,0,0.1,0,0.1,0c0.3,0,0.7,0,1,0c0.2,0,0.4,0.1,0.7,0.1
+								c1,0.1,1.9,0.5,2.7,1c1.7,1.1,2.8,2.7,3.2,4.7c0.4,2.3-0.1,4.4-1.6,6.2c-0.7,0.8-1.6,1.4-2.6,1.9c-1.1,0.5-2.2,0.8-3.3,1
+								c-0.5,0.1-1.1,0.2-1.6,0.2c-1.4,0.2-2.8,0.2-4.2,0.2c-0.7,0-1.4-0.1-2.1-0.1c0,0,0,0,0,0c1.2-0.8,2.5-1.7,3.7-2.5
+								C18.5,19.1,18.1,18.7,17.8,18.2z M43.9,37.9c-0.2-0.6-0.3-1.1-0.5-1.7c-0.2-0.6-0.5-1.2-0.9-1.7c-0.5-0.5-1.1-0.9-1.8-0.9
+								c-0.9-0.1-1.9,0.1-2.7,0.4c-1.3,0.5-2.5,1.2-3.7,1.9c-2,1.3-4,2.5-6,3.8c-1.5,0.9-2.9,1.8-4.5,2.4c-1.1,0.5-2.2,0.8-3.4,0.9
+								c-1,0.1-2.1,0.1-3.1,0.1c-0.8-0.1-1.6-0.1-2.4-0.4c-1.7-0.6-2.8-1.9-3.3-3.6c-0.1-0.2-0.1-0.4-0.2-0.7c0.1,0,0.1,0,0.1,0.1
+								c0.9,0.6,1.8,0.9,2.8,1.1c0.5,0.1,0.9,0.1,1.4,0.1c1,0,1.9-0.4,2.8-1c1-0.8,1.8-1.8,2.4-2.9c0.8-1.4,1.3-2.9,1.5-4.5
+								c0.1-0.4,0.1-0.9,0.1-1.3c0-0.3,0-0.3-0.3-0.3c-0.6-0.1-1.1-0.2-1.7-0.3c-1.8-0.5-3.6-1.2-5.2-2.1c-1.9-1.1-3.3-2.7-4-4.8
+								c0-0.1,0-0.1-0.1-0.2c0.1,0.1,0.1,0.1,0.2,0.1c1.1,0.8,2.3,1.2,3.7,1.5c1,0.2,2.1,0.3,3.1,0.3c0.8,0,1.5,0,2.2,0
+								c2.2,0,4.4-0.5,6.4-1.5c2.1-1.1,3.7-2.7,4.8-4.8c0.7-1.3,1.1-2.6,1.4-4c0.1-0.5,0.2-1.1,0.2-1.6c0.1-0.6,0.1-1.3,0.1-1.9
+								c0-0.7-0.1-1.4-0.1-2c0.8,0.7,1.6,1.5,2.1,2.5c0.5,1,0.9,2,1.1,3.1c0.1,0.7,0.2,1.4,0.2,2.1c0,0.8,0.1,1.6,0,2.4
+								c0,0.7-0.1,1.5-0.2,2.2c-0.2,1.2-0.4,2.4-0.8,3.6c-0.6,2-1.4,3.8-2.6,5.5c0,0.1-0.1,0.1-0.1,0.2c0.2-0.1,0.3-0.1,0.5-0.2
+								c1.1-0.5,2.3-0.9,3.4-1.1c0.5-0.1,1.1-0.2,1.6-0.2c0.4,0,0.8-0.1,1.2,0c1.2,0.1,2.4,0.4,3.3,1.1c0.8,0.6,1.3,1.5,1.5,2.5
+								c0.2,0.8,0.2,1.5,0.2,2.3C44.8,35.5,44.4,36.7,43.9,37.9z"/>
+						</svg>
+					</a>
+					<a href="#">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+							<style type="text/css">
+								.st0{fill:#ffffff;}
+								.st0:hover{fill:#00d9a2;}
+							</style>
+							<path class="st0" d="M26,0C11.6,0,0,11.6,0,26s11.6,26,26,26s26-11.6,26-26C52,11.6,40.4,0,26,0z M19.5,38.6H13V15.8h6.5V38.6z
+							M16.5,14.4c-1.7,0-3-1.4-3-3s1.4-3,3-3c1.7,0,3,1.4,3,3C19.5,13.1,18.1,14.4,16.5,14.4z M42.2,38.6h-6.5V24.5
+						   c0-1.6-0.5-2.8-2.5-2.8c-3.4,0-4,2.8-4,2.8v14.1h-6.5V15.8h6.5V18c0.9-0.7,3.2-2.2,6.5-2.2c2.1,0,6.5,1.3,6.5,8.9L42.2,38.6
+						   L42.2,38.6z" fill="#ffffff"/>
+						</svg>
+					</a>
+					<a href="#">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+							<style type="text/css">
+								.st0{fill:#ffffff;}
+								.st0:hover{fill:#00d9a2;}
+							</style>
+							<path class="st0" d="M26 0C11.7 0 0 11.7 0 26s11.7 26 26 26 26-11.7 26-26S40.3 0 26 0zm11.6 20v.8c0 7.9-6 17-17 17-3.4 0-6.5-1-9.2-2.7.5.1.9.1 1.4.1 2.8 0 5.4-1 7.4-2.6-2.6 0-4.8-1.8-5.6-4.2.4.1.7.1 1.1.1.5 0 1.1-.1 1.6-.2-2.7-.5-4.8-3-4.8-5.9v-.1c.8.4 1.7.7 2.7.7-1.6-1.1-2.7-2.9-2.7-5 0-1.1.3-2.1.8-3 3 3.6 7.4 6 12.3 6.3-.1-.4-.2-.9-.2-1.4 0-3.3 2.7-6 6-6 1.7 0 3.3.7 4.4 1.9 1.4-.3 2.6-.8 3.8-1.5-.5 1.4-1.4 2.6-2.6 3.3 1.2-.1 2.4-.5 3.4-.9-.6 1.5-1.6 2.5-2.8 3.3z" fill="#ffffff"/>
+						</svg>
+					</a>
+					<a href="#">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+							<style type="text/css">
+								/* .st0{fill:#ffffff;} */
+								.st0:hover{fill:#00d9a2;}
+							</style>
+							<path class="st0" d="M26 0C11.6 0 0 11.6 0 26s11.6 26 26 26 26-11.6 26-26S40.4 0 26 0zm15.4 15.6c-.5 2.3-5.3 22.6-6.2 24.4-.7 1.4-1.7 1.6-2.3 1.6-.7 0-1.2-.3-1.3-.4l-7.1-5-2.6 2.6c-.7.7-1.4 1.1-2.2 1.1-1.1 0-1.8-.8-2-1.3v-.1l-3-8.1c-1.5-.2-5.2-.9-6.8-2.4-.8-.7-1.1-1.5-1-2.3.1-1 .8-1.5.9-1.6.1 0 .1-.1.2-.1l28.8-11.2h.1c.5-.2 1-.2 1.5-.2 1.8 0 3 1.2 3 2.7v.3zm-4.8 1.1c.3.4.2.9-.1 1.2l-13.2 11-2.1 6.4c-.2.3-.5.5-.8.5h-.1c-.4 0-.7-.2-.8-.6L16.9 28c-.2-.4 0-.9.4-1.1l18.1-10.4c.5-.3 1-.2 1.2.2z" fill="#ffffff"/>
+						</svg>
+					</a>
+					<a href="#">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+							<style type="text/css">
+								.st0:hover{fill:#00d9a2;}
+							</style>
+							<path fill="#ffffff" d="M24.4 23.9l6.9 10.6-6.9-10.7z"/>
+							<path class="st0" d="M26 .3C11.6.3 0 11.9 0 26.3s11.6 26 26 26 26-11.6 26-26S40.4.3 26 .3zm-1 23.5l6.5-9.9 8.7 4.4-2.5 4.3-6.4 11-6.3-9.8zm4.9 9.4l-8.7-4.4v-9.2l8.7 13.6zm8.5-10l1.9-3.4v18.6L32 34.3l6.4-11.1zm-26.8-2.9V14l8.6 4.3v20.1l-8.6-4.3V20.3z"/>
+						</svg>
+					</a>
+				</section>
+			</div>
+			<div class="bubbles-right">
+				<div class="bubble bubble-5"></div>
+				<div class="bubble bubble-6"></div>
+				<div class="bubble bubble-7"></div>
+			</div>
+		</section>
+		<h2 class="section-h2" id="partners-h2">Наши партнеры</h2>
+		<section class="partners">
+			<div class="logo-row">
+				<a href="#" id="comsa-logo"></a>
+				<a href="#" id="kickico-logo"></a>
+				<a href="#" id="icoalert-logo"></a>
+				<a href="#" id="icostats-logo"></a>
+				<a href="#" id="icotracker-logo"></a>
+			</div>
+			<div class="logo-row">
+				<div class="logo-col">
+					<a href="#" id="icorating-logo"></a>
+				</div>	
+				<div class="logo-col">
+					<div class="logo-row">
+						<a href="#" id="tokenmarket-logo"></a>
+						<a href="#" id="smithcrown-logo"></a>
+						<a href="#" id="golos-logo"></a>
+					</div>
+					<div class="logo-row">
+						<a href="#" id="cyberfund-logo"></a>
+						<a href="#" id="coinschedule-logo"></a>
+						<a href="#" id="icowatch-logo"></a>
+					</div>
+				</div>
+				<div class="logo-col">
+					<a href="#" id="icobazaar-logo"></a>
+				</div>
+			</div>
+		</section>
+		<section class="partners-tablet">
+			<div class="logo-row">
+				<a href="#" id="comsa-logo"></a>
+				<a href="#" id="icoalert-logo"></a>
+				<a href="#" id="icostats-logo"></a>
+				<a href="#" id="kickico-logo"></a>
+				<a href="#" id="icorating-logo"></a>
+				<div class="logo-col">
+					<a href="#" id="tokenmarket-logo"></a>
+					<a href="#" id="cyberfund-logo"></a>
+				</div>
+				<a href="#" id="golos-logo"></a>
+				<a href="#" id="icobazaar-logo"></a>
+				<a href="#" id="icowatch-logo"></a>
+				<a href="#" id="icotracker-logo"></a>
+				<a href="#" id="smithcrown-logo"></a>
+				<a href="#" id="coinschedule-logo"></a>
+			</div>
+		</section>
+		<section class="partners-mobile">
+			<div class="logo-row">
+				<a href="#" id="comsa-logo"></a>
+				<a href="#" id="kickico-logo"></a>
+				<a href="#" id="icoalert-logo"></a>
+				<a href="#" id="icorating-logo"></a>
+				<div class="logo-col">
+					<a href="#" id="tokenmarket-logo"></a>
+					<a href="#" id="cyberfund-logo"></a>
+				</div>
+				<div class="logo-col">
+					<a href="#" id="golos-logo"></a>
+					<a href="#" id="icotracker-logo"></a>
+				</div>
+				<div class="logo-col">
+					<div class="logo-row">
+						<a href="#" id="icowatch-logo"></a>
+						<a href="#" id="smithcrown-logo"></a>
+					</div>
+					<div class="logo-row">
+						<a href="#" id="coinschedule-logo"></a>
+						<a href="#" id="icostats-logo"></a>
+					</div>
+				</div>
+				<div class="logo-col">
+					<a href="#" id="icobazaar-logo"></a>
+				</div>
+			</div>
+		</section>
+		<h2 class="section-h2" id="about-us-h2">Пресса о нас</h2>
+		<section class="about-us cards slider">
+			<ul class="slides">
+				<li class="card press slide js_slide">
+					<div class="press-logo"><img id="logo-hash" src="img/logo_hash_t.png" alt=""></div>
+					<h2 class="press-h2">Удобная платежная система доступна всем!</h2>
+					<p>Использование смарт-контрактов позволит обезопасить себя от неожиданностей при обмене и гарантировать выполнение всех оговоренных условий...</p>
+					<a href="#">
+						<span class="read-more">Читать далее</span>
+					</a> 
+				</li>
+				<li class="card press slide js_slide">
+					<div class="press-logo"><img id="logo-ituber" src="img/logo-ituber.png" alt=""></div>
+					<h2 class="press-h2">Удобная платежная система доступна всем!</h2>
+					<p>Использование смарт-контрактов позволит обезопасить себя от неожиданностей при обмене и гарантировать выполнение всех оговоренных условий...</p>
+					<a href="#">
+						<span class="read-more">Читать далее</span>
+					</a> 
+				</li>
+				<li class="card press slide js_slide">
+					<div class="press-logo"><img id="logo-fork" src="img/logo-fork.svg" alt=""></div>
+					<h2 class="press-h2">Удобная платежная система доступна всем!</h2>
+					<p>Использование смарт-контрактов позволит обезопасить себя от неожиданностей при обмене и гарантировать выполнение всех оговоренных условий...</p>
+					<a href="#">
+						<span class="read-more">Читать далее</span>
+					</a> 
+				</li>
+				<li class="card press slide js_slide">
+					<div class="press-logo"><img id="logo-fork" src="img/logo-fork.svg" alt=""></div>
+					<h2 class="press-h2">Удобная платежная система доступна всем!</h2>
+					<p>Использование смарт-контрактов позволит обезопасить себя от неожиданностей при обмене и гарантировать выполнение всех оговоренных условий...</p>
+					<a href="#">
+						<span class="read-more">Читать далее</span>
+					</a> 
+				</li>
+			</ul>
+		</section>
+		<h2 class="section-h2" id="videos-h2">Видео</h2>
+		<section class="videos cards slider">
+			<ul class="slides">
+				<li class="videocard" data-fancybox data-type="iframe" data-src="http://www.youtube.com/embed/kv9RXavURq8?enablejsapi=1&amp;origin=http://roomdao-io">
+					<img src="img/video-frame.png" alt="Video">
+					<!-- <iframe id="ytplayer" type="text/html" width="217" height="122.0625"
+					src="https://www.youtube.com/embed/M7lc1UVf-VE"
+					frameborder="0" allowfullscreen></iframe> -->
+					<h3>Bitcoin And Ethereum Can Make You Millionaire Fast - Coinomia 2017</h3>
+				</li>
+				<li class="videocard" data-fancybox data-type="iframe" data-src="http://www.youtube.com/embed/kv9RXavURq8?enablejsapi=1&amp;origin=http://roomdao-io">
+					<img src="img/video-frame.png" alt="Video">
+					<!-- <iframe id="ytplayer" type="text/html" width="217" height="122.0625"
+					src="https://www.youtube.com/embed/M7lc1UVf-VE"
+					frameborder="0" allowfullscreen></iframe> -->
+					<h3>Bitcoin And Ethereum Can Make You Millionaire Fast - Coinomia 2017</h3>
+				</li>
+				<li class="videocard" data-fancybox data-type="iframe" data-src="http://www.youtube.com/embed/kv9RXavURq8?enablejsapi=1&amp;origin=http://roomdao-io">
+					<img src="img/video-frame.png" alt="Video">
+					<!-- <iframe id="ytplayer" type="text/html" width="217" height="122.0625"
+					src="https://www.youtube.com/embed/M7lc1UVf-VE"
+					frameborder="0" allowfullscreen></iframe> -->
+					<h3>Bitcoin And Ethereum Can Make You Millionaire Fast - Coinomia 2017</h3>
+				</li>
+				<li class="videocard" data-fancybox data-type="iframe" data-src="http://www.youtube.com/embed/kv9RXavURq8?enablejsapi=1&amp;origin=http://roomdao-io">
+					<img src="img/video-frame.png" alt="Video">
+					<!-- <iframe id="ytplayer" type="text/html" width="217" height="122.0625"
+					src="https://www.youtube.com/embed/M7lc1UVf-VE"
+					frameborder="0" allowfullscreen></iframe> -->
+					<h3>Bitcoin And Ethereum Can Make You Millionaire Fast - Coinomia 2017</h3>
+				</li>
+				<li class="videocard" data-fancybox data-type="iframe" data-src="http://www.youtube.com/embed/kv9RXavURq8?enablejsapi=1&amp;origin=http://roomdao-io">
+					<img src="img/video-frame.png" alt="Video">
+					<!-- <iframe id="ytplayer" type="text/html" width="217" height="122.0625"
+					src="https://www.youtube.com/embed/M7lc1UVf-VE"
+					frameborder="0" allowfullscreen></iframe> -->
+					<h3>Bitcoin And Ethereum Can Make You Millionaire Fast - Coinomia 2017</h3>
+				</li>
+			</ul>
+		</section>
+		<section id="mobile-footer-top">
+			<div class="logo-footer">
+				<img src="img/roomdao-logo-center.svg" alt="Logo">
+			</div>
+			<h2>Благодарим за проявленный интерес к нашему проекту и будем рады видеть вас среди подписчиков</h2>
+		</section>
+		<section class="counter-box" id="footer-counter">
+				<h2>До окончания продажи ROMCOIN осталось:</h2>
+			<section id="counter-2" class="counter">
+					<div class="counter-col">
+						<h2><span class="days">30</span></h2>
+						<h3>дней</h3>
+					</div>
+					<span class="counter-divider">:</span>
+					<div class="counter-col">
+						<h2><span class="hours">11</span></h2>
+						<h3>часов</h3>
+					</div>
+					<span class="counter-divider">:</span>
+					<div class="counter-col">
+						<h2><span class="minutes">45</span></h2>
+						<h3>минут</h3>
+					</div>
+					<span class="counter-divider">:</span>
+					<div class="counter-col">
+						<h2><span class="seconds">07</span></h2>
+						<h3>секунд</h3>
+					</div>
+				</section>
+			<section class="icons">
+				<a href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+						<style type="text/css">
+							.st0{fill:#BBBDBD;}
+							.st0:hover{fill:#00d9a2;}
+						</style>
+						<path class="st0" d="M26 0C11.6 0 0 11.7 0 26s11.6 26 26 26 26-11.7 26-26S40.4 0 26 0zm12.2 31.2c-.1 1-.3 1.8-.7 2.5-.3.7-.8 1.3-1.3 1.8s-1.2.9-2 1.2c-.8.3-1.6.6-2.5.7s-1.8.3-3 .3V43h-3.1v-5.1h-2.5V43H20v-5.2h-6.3l.6-3.7h2.3c.7 0 1.1-.3 1.2-1V18.9c-.2-.9-.8-1.4-1.8-1.4h-2.3v-3.4H20V9h3.1v5h2.5V9h3.1v5.2c1.1.1 2 .3 2.9.5.8.2 1.6.5 2.3.9.7.4 1.3.9 1.7 1.6s.7 1.4.7 2.3c.3 2.5-.6 4.2-2.7 5.3 1.6.4 2.8 1.1 3.6 2.1.9 1 1.2 2.4 1 4.3zM23.9 24h2.9c.4 0 .8-.1 1.1-.1.3 0 .6-.1 1-.2s.7-.2 1-.4c.3-.2.5-.3.8-.6.3-.2.4-.5.6-.8.1-.3.2-.7.2-1 0-.4-.1-.9-.3-1.2l-.6-.9c-.3-.2-.6-.4-1-.6-.4-.2-.8-.3-1.1-.3s-.8-.1-1.2-.2c-.5 0-.9-.1-1.2 0h-1.9V24h.7zm7.1 4.3c-.3-.3-.7-.5-1.2-.6-.5-.2-.9-.3-1.3-.4-.4-.1-.9-.1-1.5-.2-.6 0-1.1-.1-1.4-.1h-2.3v7h2.9c.5 0 .9 0 1.2-.1.3 0 .7-.1 1.2-.2s.8-.2 1.1-.3c.3-.1.6-.3 1-.4.3-.2.6-.4.8-.6.2-.2.4-.5.5-.8.1-.3.2-.7.2-1 0-.5-.1-.9-.3-1.3-.4-.4-.6-.7-.9-1z" fill="#bbbdbd"/>
+					</svg>
+				</a>
+				<a href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+						<style type="text/css">
+							.st0{fill:#BBBDBD;}
+							.st0:hover{fill:#00d9a2;}
+						</style>
+						<g>
+							<g>
+								<path class="st0" d="M26,0C11.7,0,0,11.7,0,26c0,14.3,11.7,26,26,26c14.3,0,26-11.7,26-26C52,11.7,40.3,0,26,0z M32.5,26.9h-4.2
+									c0,6.8,0,15.1,0,15.1H22c0,0,0-8.2,0-15.1h-3v-5.3h3v-3.4c0-2.5,1.2-6.3,6.3-6.3l4.6,0V17c0,0-2.8,0-3.4,0c-0.5,0-1.3,0.3-1.3,1.5
+									v3.1H33L32.5,26.9z"/>
+							</g>
+						</g>
+				   </svg>
+				</a>
+				<a href="#">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 52 52" style="enable-background:new 0 0 52 52;" xml:space="preserve">
+						<style type="text/css">
+							.st0{fill:none;}
+							.st1{fill:#BBBDBD;}
+							.st1:hover{fill:#00d9a2;}
+						</style>
+						<path class="st0" d="M655.6,141c33.2-19.1,63.2-15.2,90.8,11.5c1.9-1.6,3.8-3.4,6-5c1.5-1.1,1.6-2,0.2-3.2c-3.8-3.3-7.3-7-11.4-10
+							c-11.9-9-25.4-14.1-40.2-15.4c-8.2-0.7-16.5-0.2-24.5,1.8c-8.9,2.2-17.3,5.7-25,10.8c-0.8,0.5-1.8,0.9-1,2.1
+							C652.2,136.1,653.9,138.6,655.6,141z"/>
+						<path class="st0" d="M982.4,439.8c-3.4-13.4-9.9-25-20.9-33.6c-13.2-10.4-28.7-14.4-45.2-15.2c-5.3-0.2-10.7-0.1-16,0.4
+							c-7.2,0.7-14.4,1.5-21.5,2.9c-16.1,3.3-31.7,8.3-46.7,14.9c-2.1,0.9-4.2,1.8-6.3,2.8c0.2-1.3,0.6-2.1,1.2-2.9
+							c15.6-23.3,26.8-48.6,35.2-75.2c5.1-16,9-32.3,11.1-48.9c1.3-10,2.6-20.1,3-30.2c0.5-11.1,0.2-22.2-0.4-33.2
+							c-0.5-9.4-1.7-18.8-3.2-28.1c-2.5-14.7-7.3-28.6-14.6-41.6c-7.4-13.2-17.7-23.9-28.9-33.6c0.7,9.3,1.8,18.5,1.9,27.8
+							c0.1,8.5-0.5,17.1-1.2,25.6c-0.6,7.5-1.5,15-2.9,22.4c-3.6,19.2-9.8,37.6-19.2,54.8c-15.4,28.3-37.3,50.1-65.9,65
+							c-27.1,14.1-56.2,19.9-86.4,20.5c-10.2,0.2-20.3-0.3-30.5-0.4c-14.4-0.1-28.6-1.2-42.8-3.7c-18-3.2-34.9-9.3-49.9-19.9
+							c-0.6-0.4-1.3-0.8-2.3-1.5c0.4,1.3,0.7,2.1,0.9,2.9c9.8,28.8,28.4,50.3,54.3,65.7c22.2,13.2,46,22.6,71,28.9
+							c7.5,1.9,15.2,3,22.9,4.2c3.6,0.6,4.2,0.6,3.9,4.3c-0.4,6-0.9,12-1.8,18c-3.1,21.5-10.2,41.7-20.7,60.7c-8.5,15.3-19,29-33.3,39.5
+							c-11.1,8.2-23.5,13.4-37.5,13.3c-6.4,0-12.9-0.8-19.3-1.8c-13.9-2.1-26.9-6.8-38.4-15c-0.3-0.2-0.8-0.4-1.6-0.8
+							c0.9,3.4,1.6,6.3,2.5,9.2c7.6,23.1,22.1,39.8,45.2,48.5c10.4,3.9,21.2,4.8,32.1,5.5c14,1,28,0.8,41.9-0.9c16.1-2,31.5-6.4,46.4-12.7
+							c21.6-9.1,41.8-20.8,61.6-33.2c27.2-16.9,54-34.4,81-51.5c16-10.1,32.2-19.7,50-26.3c12-4.5,24.2-7.4,37.1-5.7
+							c9.7,1.3,17.8,5.5,24.3,12.9c5.9,6.6,10.1,14.3,12.8,22.6c2.6,7.8,4.5,15.8,6.6,23.3c6.9-15.4,12.2-31.7,13.1-49.3
+							C985.5,460.6,985,450.1,982.4,439.8z"/>
+						<path class="st1" d="M26,0C11.6,0,0,11.6,0,26s11.6,26,26,26s26-11.6,26-26S40.4,0,26,0z M17.8,18.2c-0.7-0.9-1.1-1.9-1.2-3.1
+							c-0.3-2.4,0.4-4.6,2.1-6.3c1-1.1,2.3-1.7,3.8-2c0.2,0,0.4-0.1,0.6-0.1c0,0,0.1,0,0.1,0c0.3,0,0.7,0,1,0c0.2,0,0.4,0.1,0.7,0.1
+							c1,0.1,1.9,0.5,2.7,1c1.7,1.1,2.8,2.7,3.2,4.7c0.4,2.3-0.1,4.4-1.6,6.2c-0.7,0.8-1.6,1.4-2.6,1.9c-1.1,0.5-2.2,0.8-3.3,1
+							c-0.5,0.1-1.1,0.2-1.6,0.2c-1.4,0.2-2.8,0.2-4.2,0.2c-0.7,0-1.4-0.1-2.1-0.1c0,0,0,0,0,0c1.2-0.8,2.5-1.7,3.7-2.5
+							C18.5,19.1,18.1,18.7,17.8,18.2z M43.9,37.9c-0.2-0.6-0.3-1.1-0.5-1.7c-0.2-0.6-0.5-1.2-0.9-1.7c-0.5-0.5-1.1-0.9-1.8-0.9
+							c-0.9-0.1-1.9,0.1-2.7,0.4c-1.3,0.5-2.5,1.2-3.7,1.9c-2,1.3-4,2.5-6,3.8c-1.5,0.9-2.9,1.8-4.5,2.4c-1.1,0.5-2.2,0.8-3.4,0.9
+							c-1,0.1-2.1,0.1-3.1,0.1c-0.8-0.1-1.6-0.1-2.4-0.4c-1.7-0.6-2.8-1.9-3.3-3.6c-0.1-0.2-0.1-0.4-0.2-0.7c0.1,0,0.1,0,0.1,0.1
+							c0.9,0.6,1.8,0.9,2.8,1.1c0.5,0.1,0.9,0.1,1.4,0.1c1,0,1.9-0.4,2.8-1c1-0.8,1.8-1.8,2.4-2.9c0.8-1.4,1.3-2.9,1.5-4.5
+							c0.1-0.4,0.1-0.9,0.1-1.3c0-0.3,0-0.3-0.3-0.3c-0.6-0.1-1.1-0.2-1.7-0.3c-1.8-0.5-3.6-1.2-5.2-2.1c-1.9-1.1-3.3-2.7-4-4.8
+							c0-0.1,0-0.1-0.1-0.2c0.1,0.1,0.1,0.1,0.2,0.1c1.1,0.8,2.3,1.2,3.7,1.5c1,0.2,2.1,0.3,3.1,0.3c0.8,0,1.5,0,2.2,0
+							c2.2,0,4.4-0.5,6.4-1.5c2.1-1.1,3.7-2.7,4.8-4.8c0.7-1.3,1.1-2.6,1.4-4c0.1-0.5,0.2-1.1,0.2-1.6c0.1-0.6,0.1-1.3,0.1-1.9
+							c0-0.7-0.1-1.4-0.1-2c0.8,0.7,1.6,1.5,2.1,2.5c0.5,1,0.9,2,1.1,3.1c0.1,0.7,0.2,1.4,0.2,2.1c0,0.8,0.1,1.6,0,2.4
+							c0,0.7-0.1,1.5-0.2,2.2c-0.2,1.2-0.4,2.4-0.8,3.6c-0.6,2-1.4,3.8-2.6,5.5c0,0.1-0.1,0.1-0.1,0.2c0.2-0.1,0.3-0.1,0.5-0.2
+							c1.1-0.5,2.3-0.9,3.4-1.1c0.5-0.1,1.1-0.2,1.6-0.2c0.4,0,0.8-0.1,1.2,0c1.2,0.1,2.4,0.4,3.3,1.1c0.8,0.6,1.3,1.5,1.5,2.5
+							c0.2,0.8,0.2,1.5,0.2,2.3C44.8,35.5,44.4,36.7,43.9,37.9z"/>
+				   </svg>
+				</a>
+				<a href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+						<style type="text/css">
+							.st0{fill:#BBBDBD;}
+							.st0:hover{fill:#00d9a2;}
+						</style>
+						<path class="st0" d="M26,0C11.6,0,0,11.6,0,26s11.6,26,26,26s26-11.6,26-26C52,11.6,40.4,0,26,0z M19.5,38.6H13V15.8h6.5V38.6z
+						M16.5,14.4c-1.7,0-3-1.4-3-3s1.4-3,3-3c1.7,0,3,1.4,3,3C19.5,13.1,18.1,14.4,16.5,14.4z M42.2,38.6h-6.5V24.5
+					   c0-1.6-0.5-2.8-2.5-2.8c-3.4,0-4,2.8-4,2.8v14.1h-6.5V15.8h6.5V18c0.9-0.7,3.2-2.2,6.5-2.2c2.1,0,6.5,1.3,6.5,8.9L42.2,38.6
+					   L42.2,38.6z"/>
+					</svg>
+				</a>
+				<a href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+						<style type="text/css">
+							.st0{fill:#BBBDBD;}
+							.st0:hover{fill:#00d9a2;}
+						</style>
+						<path class="st0" d="M26 0C11.7 0 0 11.7 0 26s11.7 26 26 26 26-11.7 26-26S40.3 0 26 0zm11.6 20v.8c0 7.9-6 17-17 17-3.4 0-6.5-1-9.2-2.7.5.1.9.1 1.4.1 2.8 0 5.4-1 7.4-2.6-2.6 0-4.8-1.8-5.6-4.2.4.1.7.1 1.1.1.5 0 1.1-.1 1.6-.2-2.7-.5-4.8-3-4.8-5.9v-.1c.8.4 1.7.7 2.7.7-1.6-1.1-2.7-2.9-2.7-5 0-1.1.3-2.1.8-3 3 3.6 7.4 6 12.3 6.3-.1-.4-.2-.9-.2-1.4 0-3.3 2.7-6 6-6 1.7 0 3.3.7 4.4 1.9 1.4-.3 2.6-.8 3.8-1.5-.5 1.4-1.4 2.6-2.6 3.3 1.2-.1 2.4-.5 3.4-.9-.6 1.5-1.6 2.5-2.8 3.3z"/>
+					</svg>
+				</a>
+				<a href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+						<style type="text/css">
+							.st0{fill:#BBBDBD;}
+							.st0:hover{fill:#00d9a2;}
+						</style>
+						<path class="st0" d="M26 0C11.6 0 0 11.6 0 26s11.6 26 26 26 26-11.6 26-26S40.4 0 26 0zm15.4 15.6c-.5 2.3-5.3 22.6-6.2 24.4-.7 1.4-1.7 1.6-2.3 1.6-.7 0-1.2-.3-1.3-.4l-7.1-5-2.6 2.6c-.7.7-1.4 1.1-2.2 1.1-1.1 0-1.8-.8-2-1.3v-.1l-3-8.1c-1.5-.2-5.2-.9-6.8-2.4-.8-.7-1.1-1.5-1-2.3.1-1 .8-1.5.9-1.6.1 0 .1-.1.2-.1l28.8-11.2h.1c.5-.2 1-.2 1.5-.2 1.8 0 3 1.2 3 2.7v.3zm-4.8 1.1c.3.4.2.9-.1 1.2l-13.2 11-2.1 6.4c-.2.3-.5.5-.8.5h-.1c-.4 0-.7-.2-.8-.6L16.9 28c-.2-.4 0-.9.4-1.1l18.1-10.4c.5-.3 1-.2 1.2.2z" fill="#bbbdbd"/>
+					</svg>
+				</a>
+				<a href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+						<style type="text/css">
+							.st0{fill:#BBBDBD;}
+							.st0:hover{fill:#00d9a2;}
+						</style>
+						<path fill="#bbbdbd" d="M24.4 23.9l6.9 10.6-6.9-10.7z"/>
+						<path class="st0" d="M26 .3C11.6.3 0 11.9 0 26.3s11.6 26 26 26 26-11.6 26-26S40.4.3 26 .3zm-1 23.5l6.5-9.9 8.7 4.4-2.5 4.3-6.4 11-6.3-9.8zm4.9 9.4l-8.7-4.4v-9.2l8.7 13.6zm8.5-10l1.9-3.4v18.6L32 34.3l6.4-11.1zm-26.8-2.9V14l8.6 4.3v20.1l-8.6-4.3V20.3z"/>
+					</svg>
+				</a>
+			</section>
+			<div class="buttons">
+				<button type="button" class="btn ani-btn">
+					<span class="btn-text">
+						Скачать Whitepaper
+					</span>
+					<span class="whitepaper-logo">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486 486">
+							<g fill="#ffffff">
+								<path d="M452.5 285c15 0 27 12 27 27v147c0 15-12 27-27 27h-418c-15 0-28-12-28-27V312c0-15 13-27 28-27s27 12 27 27v119h364V312c0-15 12-27 27-27z"/>
+								<path d="M224.5 346l-110-110c-11-11-11-27 0-38s27-11 38 0l64 63V27c0-15 12-27 27-27s27 12 27 27v234l63-63c11-11 28-11 39 0s11 27 0 38l-110 110c-5 5-12 8-19 8s-14-3-19-8z"/>
+							</g>
+						</svg>
+					</span>
+				</button>
+				<button type="button" class="btn">Купить токены</button>
+				<button type="button" class="btn">Скачать презентацию</button>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<section class="subscribe">
+			<div class="logo-footer">
+				<img src="img/roomdao-logo-center.svg" alt="Logo">
+			</div>
+			<h2>Благодарим за проявленный интерес к нашему проекту и будем рады видеть вас среди подписчиков</h2>
+			
+			<form action="submit">
+				<input type="email" class="email" placeholder="Введите ваш e-mail">
+				<button class="btn btn-blue submit">
+					Подписаться
+				</button>
+			</form>
+		</section>
+		<section class="mobile-subscribe">
+			<form action="submit">
+				<h3>Подписаться на новости</h3>
+				<button class="btn btn-blue submit">Подписаться</button>
+			</form>
+		</section>
+		<section class="gray-line">
+			
+		</section>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
