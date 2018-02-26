@@ -60,6 +60,10 @@ header nav ul {
 .menu-list > li > a {
 	text-decoration: none;
 	color: #ffffff;
+	font-size: 16px;
+}
+.menu-list > li:hover > a {
+	text-decoration: underline;
 }
 header nav.mobile-menu {
 	display: none;

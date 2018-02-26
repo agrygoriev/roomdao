@@ -182,7 +182,7 @@ if (windowWidth <=1024) {
         variableWidth: true
     })
 } else {
-    console.log(windowWidth);
+    // console.log(windowWidth);
     $('.articles.slider .slides').slick({
         arrows: true,
         prevArrow: prevArrow,
@@ -203,7 +203,6 @@ if (windowWidth <=1024) {
         slidesToScroll: 1,
         // autoplay: true
     });
-    console.log($('.about-us.slider .slides'));
     $('.videos.cards.slider .slides').slick({
         arrows: true,
         prevArrow: prevArrow,
