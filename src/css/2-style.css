@@ -448,12 +448,13 @@ main .counter-box .counter .counter-col {
 }
 main .counter-box .counter .counter-divider {
   content: ":";
-  font-size: 5em;
+  font-size: 90px;
   font-weight: 400;
-  vertical-align: middle;
-  margin-top: 30px;
+  vertical-align: top;
+  margin-top: 0;
+  line-height: 0.9;
 }
-.counter-col h2 {
+.counter-col h2 span {
   font-weight: 400;
   font-size: 90px;
   color: #202020;
@@ -468,24 +469,34 @@ main .counter-box .counter .counter-divider {
   text-align: center;
 }
 .counter-col h2 .seconds {
-  width: 130px;
-  display: block;
+  width: 120px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  height: 75px;
+  margin-top: 0;
+  margin-left: 15px;
 }
 main .counter-box .subscribe {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   background: #88cdc8;
   width: 950px;
-  height: 156px;
+  height: 140px;
   box-sizing: border-box;
   border: none;
   position: relative;
-  padding: 33px 50px;
+  padding: 20px 50px;
   top: 50px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+main .counter-box .subscribe h2 {
+  font: 500 25px "Montserrat", sans-serif;
+  color: #ffffff;
+  margin-bottom: 15px;
 }
 main .counter-box .subscribe form {
   display: flex;
@@ -519,9 +530,6 @@ main .counter-box .subscribe form button {
   z-index: 46;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-}
-main .counter-box section.subscribe h2 {
-  color: #ffffff;
 }
 
 main .bubbles-divider .icons {
@@ -573,6 +581,11 @@ main .desc-columns {
   flex-direction: column;
   flex-basis: 49%;
 }
+main .desc-col h3 {
+  font: 600 20px "Montserrat", sans-serif;
+  color: #294670;
+  margin-bottom: 15px;
+}
 main .desc-col p {
   font: 400 16px "Fira Sans", sans-serif;
   line-height: 1.7;
@@ -619,7 +632,7 @@ main .desc-columns p.text-bold {
   justify-content: space-around;
   align-items: center;
   flex-grow: 3;
-  flex-basis: 70%;
+  flex-basis: 85%;
   display: flex;
   z-index: 99;
 }
