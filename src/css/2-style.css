@@ -57,6 +57,9 @@ header nav ul {
   font: 700 14px "Montserrat", sans-serif;
   text-transform: uppercase;
 }
+header nav ul li:hover a {
+  text-decoration: underline;
+}
 .menu-list > li > a {
   text-decoration: none;
   color: #ffffff;
@@ -77,7 +80,7 @@ nav .logo {
   padding: 10px 40px 18px;
 }
 nav .logo > #logo-img {
-  /* display: none; */
+  display: none;
   height: 30px;
   width: auto;
 }
@@ -285,7 +288,7 @@ main .main-desc .desc-heading {
   color: #fefefe;
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.5;
   text-align: center;
   hyphens: manual;
@@ -404,7 +407,7 @@ main .main-desc .buttons {
 	width: 12px;
 	height: 12px;
 } */
-/* main .desc-text {
+main .desc-text {
   width: 800px;
   margin: 36px auto 50px;
   color: #fff;
@@ -415,7 +418,7 @@ main .main-desc .buttons {
   text-align: center;
   hyphens: none;
   z-index: 0;
-} */
+}
 main .counter-box {
   width: 950px;
   height: auto;
