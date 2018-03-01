@@ -1,7 +1,7 @@
 const windowWidth = window.innerWidth;
 const header = document.getElementsByTagName("header")[0];
 const doc = document.documentElement;
-const logo = document.getElementById("logo-img");
+// const logo = document.querySelector("#logo-img > path.logo-fill0");
 const navMenu = document.getElementsByClassName("menu-list");
 const menuLinks = navMenu[0].getElementsByTagName("a");
 const langSwitch = document.getElementsByClassName("lang-switch")[0];
@@ -9,6 +9,7 @@ const langSwitchBorder = langSwitch.firstElementChild;
 const mobileMenu = document.querySelector(".mobile-menu");
 const colorWhite = "#ffffff";
 const colorBlack = "#202020";
+const colorGreen = "#00d9a2";
 const changeColor = (elementsList, elColor) => {
   const array = Array.from(elementsList);
   array.forEach(el => {
@@ -18,7 +19,7 @@ const changeColor = (elementsList, elColor) => {
 window.onscroll = () => {
   const scroll = (this.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
   if (scroll > 10) {
-    logo.style.display = "block";
+    $("#logo-img > path.logo-fill0").addClass("logo-fill-black");
     header.style.background = colorWhite;
     header.style.zIndex = "100";
     header.style["box-shadow"] = "0 0 14px 0 rgba(41, 70, 112, .25)";
@@ -28,11 +29,16 @@ window.onscroll = () => {
     $("nav .lang-switch select").css("border-color", colorBlack);
     $(".sandwich span").css("background-color", colorBlack);
     $("nav .logo > #logo-img path.st0").css("fill", colorBlack);
-    langSwitch.style.color = colorBlack;
     langSwitchBorder.style.borderColor = colorBlack;
+    changeColor(langSwitch, colorBlack);
     changeColor(navMenu, colorBlack);
-    changeColor(menuLinks, colorBlack);
+    // changeColor(menuLinks, colorBlack);
+    $(menuLinks).hover(
+      changeColor(menuLinks, colorGreen),
+      changeColor(menuLinks, colorBlack)
+    );
   } else {
+    $("#logo-img > path.logo-fill0").removeClass("logo-fill-black");
     header.style.background = "none";
     header.style["box-shadow"] = "none";
     mobileMenu.style.background = "none";
@@ -42,9 +48,13 @@ window.onscroll = () => {
     $(".sandwich span").css("background-color", colorWhite);
     $("nav .logo > #logo-img path.st0").css("fill", colorWhite);
     changeColor(navMenu, colorWhite);
-    changeColor(menuLinks, colorWhite);
-    langSwitch.style.color = colorWhite;
+    // changeColor(menuLinks, colorWhite);
+    changeColor(langSwitch, colorWhite);
     langSwitchBorder.style.borderColor = colorWhite;
+    $(menuLinks).hover(
+      changeColor(menuLinks, colorGreen),
+      changeColor(menuLinks, colorWhite)
+    );
   }
 };
 
@@ -70,7 +80,6 @@ window.onload = () => {
     const hoursSpan = clock.querySelector(".hours");
     const minutesSpan = clock.querySelector(".minutes");
     const secondsSpan = clock.querySelector(".seconds");
-    const t = getTimeRemaining(endtime);
     const updateClock = () => {
       const time = getTimeRemaining(endtime);
       const timeInterval = setInterval(updateClock, 1000);
@@ -79,7 +88,7 @@ window.onload = () => {
       minutesSpan.innerHTML = `0${time.minutes}`.slice(-2);
       secondsSpan.innerHTML = `0${time.seconds}`.slice(-2);
 
-      if (t.total <= 0) {
+      if (time.total <= 0) {
         clearInterval(timeInterval);
       }
     };
