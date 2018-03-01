@@ -6,7 +6,9 @@
     "quotes": "off",
     "arrow-parens": "off",
     "no-param-reassign": "off",
-    "comma-dangle": "off"
+    "comma-dangle": "off",
+    "linebreak-style": "off",
+    "newline-after-import": "off"
   },
   "env": {
     "browser": true,

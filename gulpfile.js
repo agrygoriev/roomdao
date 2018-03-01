@@ -1,18 +1,16 @@
-const gulp = require("gulp"),
-  postcss = require("gulp-postcss"),
-  cssnext = require("postcss-cssnext"),
-  cssnano = require("cssnano"),
-  concatCss = require("gulp-concat-css"),
-  imagemin = require("gulp-imagemin"),
-  svgmin = require("gulp-svgmin"),
-  htmlmin = require("gulp-htmlmin"),
-  browserSync = require("browser-sync").create(),
-  reload = browserSync.reload,
-  watch = require("gulp-watch"),
-  // pump = require('pump');
-  // minify = require('gulp-uglify'),
-  sourcemaps = require("gulp-sourcemaps");
+const gulp = require("gulp");
+const postcss = require("gulp-postcss");
+const cssnext = require("postcss-cssnext");
+const cssnano = require("cssnano");
+const concatCss = require("gulp-concat-css");
+const imagemin = require("gulp-imagemin");
+const svgmin = require("gulp-svgmin");
+const htmlmin = require("gulp-htmlmin");
+const browserSync = require("browser-sync").create();
+const reload = browserSync.reload;
 
+const watch = require("gulp-watch");
+const sourcemaps = require("gulp-sourcemaps");
 const modules = "./node_modules";
 
 gulp.task("browser-sync", ["css", "html", "js", "img"], () => {
@@ -44,7 +42,7 @@ gulp.task("html", () => {
     .pipe(gulp.dest("./dist"));
 });
 gulp.task("css", () => {
-  var plugins = [cssnext(), cssnano()];
+  const plugins = [cssnext(), cssnano()];
   return gulp
     .src("./src/css/**/*.css")
     .pipe(concatCss("./style.min.css"))
@@ -57,11 +55,11 @@ gulp.task("js", () => {
 // gulp.task('js:build', function(){
 //     return gulp.src(modules + '/jquery/dist/*.{js,map}')
 // })
-gulp.task("img", () => {
-  return gulp
+gulp.task("img", () =>
+  gulp
     .src("./src/img/**/*.{jpg,jpeg,png,gif,svg}")
-    .pipe(gulp.dest("./dist/img"));
-});
+    .pipe(gulp.dest("./dist/img"))
+);
 gulp.task("img:build", () => {
   return gulp
     .src("./src/img/**/*.{jpg,jpeg,png,gif}")

@@ -283,21 +283,19 @@ main .main-desc {
   flex: 1 1 100%;
 }
 main .main-desc .desc-heading {
-  width: 1080px;
-  margin: 150px 0 0;
+  width: 75vw;
+  margin: 8vw 0 0;
   color: #fefefe;
-  font-family: "Montserrat", sans-serif;
-  font-size: 30px;
-  font-weight: 500;
+  font: 500 1.9em "Montserrat", sans-serif;
   line-height: 1.5;
   text-align: center;
   hyphens: manual;
 }
 main .main-desc .desc-subheading {
-  width: 1080px;
+  width: 75vw;
   margin-bottom: 35px;
   color: #fefefe;
-  font: 500 30px "Montserrat", sans-serif;
+  font: 500 1.9em "Montserrat", sans-serif;
   line-height: 1.5;
   text-align: center;
 }
@@ -749,11 +747,11 @@ main .cards .card {
   align-items: center;
   background: #fff;
   width: 290px;
-  height: 440px;
+  height: 470px;
   box-shadow: 2px 2px 13px rgba(32, 32, 32, 0.25);
   border-radius: 10px;
   margin-bottom: 40px;
-  padding: 20px;
+  padding: 17px;
   box-sizing: border-box;
 }
 main .our-team.cards .card h2 {
@@ -854,18 +852,18 @@ main .our-team.cards > .team.card {
   font: 600 20px "Montserrat", sans-serif;
   color: #294670;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 .cards-text {
   font: 400 14px "Fira Sans", sans-serif;
   color: #525252;
   text-align: center;
-  line-height: 1.9;
+  line-height: 27px;
 }
 .cards-icon {
-  width: 90px;
-  height: 90px;
-  margin: 19px auto 37px;
+  width: 80px;
+  height: 80px;
+  margin: 15px auto 25px;
 }
 
 /* Dotted pagination */
@@ -1060,6 +1058,7 @@ main .our-team.cards > .team.card {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-bottom: 20px;
 }
 .col-features {
   display: flex;
@@ -1145,13 +1144,13 @@ main .our-team.cards > .team.card {
 }
 .previews {
   text-align: center;
-  line-height: 2;
-  margin-bottom: 100px;
+  line-height: 1;
+  margin-bottom: 80px;
 }
 .previews h2 {
   font: 600 30px "Montserrat", sans-serif;
   color: #202020;
-  line-height: 2.5;
+  line-height: 1.3;
 }
 .previews p {
   font: 400 20px "Fira Sans", sans-serif;
@@ -1165,18 +1164,26 @@ main .our-team.cards > .team.card {
   color: #88cdc8;
 }
 .tokens-emitted {
-  height: 540px;
+  height: 650px;
   width: 100%;
   background-image: linear-gradient(
     to right,
     rgb(95, 152, 164),
     rgb(41, 70, 112)
   );
+  box-sizing: border-box;
+  padding: 40px 130px;
+}
+.tokens-emitted h2 {
+  font: 600 35px "Montserrat", sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+.tokens-cols {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  box-sizing: border-box;
-  padding: 40px 130px;
 }
 .tokens-col {
   display: flex;
@@ -1197,14 +1204,14 @@ main .our-team.cards > .team.card {
   border-color: rgb(136, 205, 200);
   border-style: solid;
   border-radius: 50%;
-  width: 278px;
-  height: 51px;
-  z-index: 39;
+  width: 186px;
+  height: 57px;
+  z-index: 38;
   margin-bottom: -42px;
 }
 .circle-blue {
   border-color: #0072ff;
-  z-index: 38;
+  z-index: 39;
 }
 .tokens-col h2 {
   font: 600 35px "Montserrat", sans-serif;
