@@ -7,11 +7,11 @@ const imagemin = require("gulp-imagemin");
 const svgmin = require("gulp-svgmin");
 const htmlmin = require("gulp-htmlmin");
 const browserSync = require("browser-sync").create();
-const reload = browserSync.reload;
 
-const watch = require("gulp-watch");
-const sourcemaps = require("gulp-sourcemaps");
-const modules = "./node_modules";
+const reload = browserSync.reload();
+
+// const sourcemaps = require("gulp-sourcemaps");
+// const modules = "./node_modules";
 
 gulp.task("browser-sync", ["css", "html", "js", "img"], () => {
   browserSync.init({
@@ -35,23 +35,21 @@ gulp.task("browser-sync", ["css", "html", "js", "img"], () => {
   gulp.watch("./dist/img/**").on("change", reload);
 });
 
-gulp.task("html", () => {
-  return gulp
+gulp.task("html", () =>
+  gulp
     .src("./src/*.html")
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest("./dist"));
-});
+    .pipe(gulp.dest("./dist"))
+);
 gulp.task("css", () => {
   const plugins = [cssnext(), cssnano()];
-  return gulp
+  gulp
     .src("./src/css/**/*.css")
     .pipe(concatCss("./style.min.css"))
     .pipe(postcss(plugins))
     .pipe(gulp.dest("./dist/css"));
 });
-gulp.task("js", () => {
-  return gulp.src("./src/js/*.js").pipe(gulp.dest("./dist/js/"));
-});
+gulp.task("js", () => gulp.src("./src/js/*.js").pipe(gulp.dest("./dist/js/")));
 // gulp.task('js:build', function(){
 //     return gulp.src(modules + '/jquery/dist/*.{js,map}')
 // })
@@ -60,18 +58,18 @@ gulp.task("img", () =>
     .src("./src/img/**/*.{jpg,jpeg,png,gif,svg}")
     .pipe(gulp.dest("./dist/img"))
 );
-gulp.task("img:build", () => {
-  return gulp
+gulp.task("img:build", () =>
+  gulp
     .src("./src/img/**/*.{jpg,jpeg,png,gif}")
     .pipe(imagemin())
-    .pipe(gulp.dest("./dist/img"));
-});
-gulp.task("svg:build", () => {
-  return gulp
+    .pipe(gulp.dest("./dist/img"))
+);
+gulp.task("svg:build", () =>
+  gulp
     .src("./src/img/**/*.svg")
     .pipe(svgmin())
-    .pipe(gulp.dest("./dist/img"));
-});
+    .pipe(gulp.dest("./dist/img"))
+);
 gulp.task("build", ["img:build", "svg:build", "js", "css", "html"]);
 gulp.task("default", ["js", "css", "html"]);
 gulp.task("serve", ["browser-sync"]);

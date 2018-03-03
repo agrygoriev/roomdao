@@ -57,9 +57,6 @@ header nav ul {
   font: 700 14px "Montserrat", sans-serif;
   text-transform: uppercase;
 }
-header nav ul li:hover a {
-  text-decoration: underline;
-}
 .menu-list > li > a {
   text-decoration: none;
   color: #ffffff;
@@ -80,7 +77,6 @@ nav .logo {
   padding: 10px 40px 18px;
 }
 nav .logo > #logo-img {
-  display: none;
   height: 30px;
   width: auto;
 }
@@ -283,7 +279,7 @@ main .main-desc {
   flex: 1 1 100%;
 }
 main .main-desc .desc-heading {
-  width: 75vw;
+  width: 75%;
   margin: 8vw 0 0;
   color: #fefefe;
   font: 500 1.9em "Montserrat", sans-serif;
@@ -292,7 +288,7 @@ main .main-desc .desc-heading {
   hyphens: manual;
 }
 main .main-desc .desc-subheading {
-  width: 75vw;
+  width: 75%;
   margin-bottom: 35px;
   color: #fefefe;
   font: 500 1.9em "Montserrat", sans-serif;
@@ -1189,13 +1185,13 @@ main .our-team.cards > .team.card {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 270px;
+  height: 310px;
 }
 .circles {
   position: relative;
   display: flex;
   flex-direction: column;
-  flex-basis: 1146px;
+  flex-basis: 170px;
   justify-content: flex-end;
   /* margin: 60px auto; */
 }
@@ -1204,10 +1200,10 @@ main .our-team.cards > .team.card {
   border-color: rgb(136, 205, 200);
   border-style: solid;
   border-radius: 50%;
-  width: 186px;
+  width: 240px;
   height: 57px;
   z-index: 38;
-  margin-bottom: -42px;
+  margin-bottom: -40px;
 }
 .circle-blue {
   border-color: #0072ff;

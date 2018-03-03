@@ -8,7 +8,8 @@
     "no-param-reassign": "off",
     "comma-dangle": "off",
     "linebreak-style": "off",
-    "newline-after-import": "off"
+    "newline-after-import": "off",
+    "function-paren-newline": "off"
   },
   "env": {
     "browser": true,
