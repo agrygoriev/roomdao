@@ -8,7 +8,7 @@ const svgmin = require("gulp-svgmin");
 const htmlmin = require("gulp-htmlmin");
 const browserSync = require("browser-sync").create();
 
-const reload = browserSync.reload();
+const reload = browserSync.reload;
 
 // const sourcemaps = require("gulp-sourcemaps");
 // const modules = "./node_modules";
@@ -29,10 +29,10 @@ gulp.task("browser-sync", ["css", "html", "js", "img"], () => {
   gulp.watch("./src/js/*.js", ["js"]);
   gulp.watch("./src/img/*.{jpg,jpeg,png,gif,svg}", ["img"]);
   gulp.watch("./src/*.html", ["html"]);
-  gulp.watch("./dist/*.html").on("change", reload);
-  gulp.watch("./dist/js/*.js").on("change", reload);
-  gulp.watch("./dist/css/*.css").on("change", reload);
-  gulp.watch("./dist/img/**").on("change", reload);
+  gulp.watch("./dist/*.html", reload);
+  gulp.watch("./dist/js/*.js", reload);
+  gulp.watch("./dist/css/*.css", reload);
+  gulp.watch("./dist/img/**", reload);
 });
 
 gulp.task("html", () =>
@@ -42,7 +42,7 @@ gulp.task("html", () =>
     .pipe(gulp.dest("./dist"))
 );
 gulp.task("css", () => {
-  const plugins = [cssnext(), cssnano()];
+  const plugins = [cssnext(), cssnano({ preset: "advanced" })];
   gulp
     .src("./src/css/**/*.css")
     .pipe(concatCss("./style.min.css"))
@@ -50,9 +50,6 @@ gulp.task("css", () => {
     .pipe(gulp.dest("./dist/css"));
 });
 gulp.task("js", () => gulp.src("./src/js/*.js").pipe(gulp.dest("./dist/js/")));
-// gulp.task('js:build', function(){
-//     return gulp.src(modules + '/jquery/dist/*.{js,map}')
-// })
 gulp.task("img", () =>
   gulp
     .src("./src/img/**/*.{jpg,jpeg,png,gif,svg}")

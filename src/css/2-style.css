@@ -31,7 +31,9 @@ body {
 .white-color {
   color: #ffffff;
 }
-
+.blue {
+  color: #294670;
+}
 header {
   width: 100%;
   height: 60px;
@@ -62,10 +64,13 @@ header nav ul {
   color: #ffffff;
   font-size: 16px;
 }
-.menu-list > li:hover > a {
-  /* text-decoration: underline; */
-  color: #00d9a2;
-  border-bottom: 2px solid #00d9a2;
+.menu-list > li > a.white-color {
+  color: #ffffff;
+  border-bottom: none;
+}
+.menu-list > li > a.black-color {
+  color: #000000;
+  border-bottom: none;
 }
 header nav.mobile-menu {
   display: none;
@@ -220,7 +225,7 @@ header .close-btn span:last-child {
   transform: rotate(-45deg);
 }
 header .overlay-menu {
-  display: flex;
+  display: none;
   justify-content: center;
   width: 100vw;
   height: 0%;
@@ -536,20 +541,26 @@ main .bubbles-divider .icons {
   flex-basis: 50%;
   align-items: center;
 }
-main .icons > a {
+.icons > a {
   width: 52px;
   height: 52px;
 }
-main .icons > a:hover svg path.st0,
-main .icons > a:hover svg path.st1 {
+main .main-desc .icons a svg path.icon-st0 {
+  fill: #bdbdbd;
+}
+main .main-desc .icons a:hover svg path.icon-st0,
+main .main-desc .icons a:hover svg path.icon-st1 {
   fill: #00d9a2;
 }
 main .bubbles-divider a > svg {
   width: 72px;
   height: 72px;
 }
-main .bubbles-divider a svg path {
+main .bubbles-divider a svg path.st0 {
   fill: #ffffff;
+}
+main .bubbles-divider a:hover svg path.st0 {
+  fill: #00d9a2;
 }
 main .desc {
   padding: 0 160px;
@@ -743,7 +754,7 @@ main .cards .card {
   align-items: center;
   background: #fff;
   width: 290px;
-  height: 470px;
+  height: 430px;
   box-shadow: 2px 2px 13px rgba(32, 32, 32, 0.25);
   border-radius: 10px;
   margin-bottom: 40px;
@@ -754,15 +765,19 @@ main .our-team.cards .card h2 {
   color: #294670;
   font: 600 30px "Montserrat", sans-serif;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   margin-top: -30px;
+  line-height: 1.9;
 }
 main .cards .card h3 {
   color: #4a4a4a;
   font: 500 16px "Montserrat", sans-serif;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   line-height: 1.5;
+}
+main .our-team.cards .card h3 {
+  height: 40px;
 }
 main .card.press a {
   text-decoration: none;
@@ -801,7 +816,8 @@ main .our-team > .dots {
 }
 main .our-team.cards > .team.card {
   margin-top: 110px;
-  width: 260px;
+  width: 310px;
+  position: relative;
 }
 #our-team-h2 {
   margin-bottom: 80px;
@@ -818,6 +834,8 @@ main .our-team.cards > .team.card {
   position: relative;
   top: -130px;
   filter: grayscale(100%);
+  box-shadow: 3px 4px 20px rgba(32, 32, 32, 0.25);
+  border-radius: 50%;
 }
 .team.card > .photo > img:hover {
   filter: none;
@@ -827,21 +845,27 @@ main .our-team.cards > .team.card {
   padding: 10px 20px;
 }
 .team.card > .social-icons {
-  width: 53px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
   height: 53px;
   /* background: #88cdc8; */
-  display: block;
+  display: flex;
+  justify-content: flex-end;
+}
+.team.card .social-icons a {
   position: relative;
-  bottom: 0;
-  right: -70px;
+  right: 25px;
+  bottom: -25px;
+  width: 52px;
+  height: 52px;
+  margin-left: 20px;
 }
-.team.card > .social-icons > a {
-  right: 10px;
-}
-.team.card > .social-icons > a > svg path.st0 {
+.team.card .social-icons a svg path.st0 {
   fill: #88cdc8;
 }
-.team.card > .social-icons > a:hover > svg path.st0 {
+.team.card .social-icons a:hover svg path.st0 {
   fill: #00d9a2;
 }
 .cards-h2 {
@@ -905,9 +929,12 @@ main .our-team.cards > .team.card {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-items: flex-start;
-  height: 70px;
-  margin-bottom: 20px;
+  align-items: center;
+  /* height: 70px;
+  margin-bottom: 20px; */
+}
+.partners .logo-row-last a {
+  margin-bottom: 0;
 }
 .partners .logo-col {
   flex-flow: column wrap;
@@ -915,8 +942,11 @@ main .our-team.cards > .team.card {
 }
 .partners a {
   display: block;
-  /* margin-right: 50px; */
-  padding: 25px;
+  margin-bottom: 25px;
+  /* padding: 25px; */
+}
+.partners a:not(:last-child) {
+  margin-right: 50px;
 }
 #comsa-logo {
   width: 187px;
@@ -1185,7 +1215,7 @@ main .our-team.cards > .team.card {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 310px;
+  /* height: 310px; */
 }
 .circles {
   position: relative;
@@ -1221,8 +1251,10 @@ main .our-team.cards > .team.card {
   color: #ffffff;
 }
 .pre-ico {
+  position: relative;
   width: 950px;
-  height: 540px;
+  display: flex;
+  flex-flow: column nowrap;
   margin-top: -160px;
   box-sizing: border-box;
   background: #ffffff;
@@ -1235,31 +1267,37 @@ main .our-team.cards > .team.card {
   font-weight: 500;
   margin-left: 5px;
 }
+.pre-ico-cols {
+  display: flex;
+  flex-flow: row nowrap;
+}
 .pre-ico-col-1,
 .pre-ico-col-2 {
   display: flex;
   flex-direction: column;
+  margin-bottom: 100px;
 }
 .pre-ico-col-1 {
-  width: 70%;
+  width: 60%;
   flex-basis: 2;
 }
 .pre-ico-col-2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  right: -400px;
+  position: absolute;
+  right: -120px;
   box-sizing: border-box;
   border-radius: 50%;
   background: #6aaea9;
-  width: 368px;
-  height: 368px;
+  width: 552px;
+  height: 552px;
   text-align: center;
   margin: auto;
   box-shadow: 0 0 24px 0 rgba(31, 31, 31, 0.55);
-  top: -420px;
+  top: 165px;
 }
+
 .pre-ico-col-2 > .bubbles {
   border-radius: 50%;
 }
@@ -1267,34 +1305,36 @@ main .our-team.cards > .team.card {
   width: 70px;
   height: 70px;
   position: absolute;
-  top: -110px;
-  left: 300px;
+  top: 400px;
+  left: 560px;
   filter: blur(1px);
-  background: #7dc4bf;
 }
 .pre-ico-col-2 > .bubbles.bubble-2 {
   position: absolute;
   width: 160px;
   height: 160px;
-  left: 270px;
-  top: 0;
+  left: 420px;
+  top: 266px;
   box-shadow: 0 0 24px 0 rgba(31, 31, 31, 0.25);
 }
 .pre-ico-col-2 > .bubbles.bubble-3 {
   position: absolute;
   width: 100px;
   height: 100px;
-  top: 210px;
-  left: 380px;
+  top: -70px;
+  left: 400px;
   background: #6aaea9;
   filter: none;
 }
+.pre-ico h2,
 .pre-ico-col-1 h2 {
   font: 600 35px "Montserrat", sans-serif;
   color: #202020;
   line-height: unset;
   margin-bottom: 20px;
+  text-transform: uppercase;
 }
+.pre-ico h3,
 .pre-ico-col-1 h3 {
   font: 500 25px "Fira Sans", sans-serif;
   text-transform: uppercase;
@@ -1302,29 +1342,50 @@ main .our-team.cards > .team.card {
   color: #202020;
   text-align: left;
 }
+.pre-ico .bottom-heading {
+  font: 500 30px "Fira Sans", sans-serif;
+  text-align: center;
+  color: #294670;
+}
 .pre-ico-col-1 p {
   font: 400 20px "Fira Sans", sans-serif;
   text-transform: uppercase;
   margin-bottom: 18px;
   color: #202020;
 }
+.pre-ico-col-2 ul {
+  width: 340px;
+}
 .pre-ico-col-2 h2,
+.pre-ico-col-2 h3,
+.pre-ico-col-2 p,
 .pre-ico-col-2 > ul > li {
-  text-transform: uppercase;
   color: white;
 }
-.pre-ico-col-2 h2 {
-  font: 500 30px Fira Sans, sans-serif;
-  margin: -20px 0 30px;
-}
 .pre-ico-col-2 > ul > li {
+  margin-bottom: 15px;
+}
+.pre-ico-col-2 h2 {
+  margin: -20px 0 30px;
+  font: 500 35px "Montserrat", sans-serif;
+}
+.pre-ico-col-2 h3 {
+  font: 400 20px "Fira Sans", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+.pre-ico-col-2 p {
+  font: 300 20px "Fira Sans", sans-serif;
+  text-align: left;
+}
+/* .pre-ico-col-2 > ul > li {
   font: 400 16px "Fira Sans", sans-serif;
   line-height: 2;
   text-align: left;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
-}
+} */
 .pre-ico .icon-ether::before {
   content: url("../img/icon-ether.svg");
   width: 17px;
@@ -1819,6 +1880,15 @@ footer .subscribe {
   width: 940px;
   margin: 0 auto;
   margin-bottom: 50px;
+}
+footer .subscribe h2 {
+  line-height: 1.4;
+  padding: 30px 100px 50px;
+}
+footer .subscribe h3 {
+  font: 500 25px "Montserrat", sans-serif;
+  text-align: left;
+  margin-bottom: 15px;
 }
 footer .subscribe form {
   display: flex;

@@ -1,7 +1,6 @@
 const windowWidth = window.innerWidth;
 const header = document.getElementsByTagName("header")[0];
 const doc = document.documentElement;
-// const logo = document.querySelector("#logo-img > path.logo-fill0");
 const navMenu = document.getElementsByClassName("menu-list");
 const menuLinks = navMenu[0].getElementsByTagName("a");
 const langSwitch = document.getElementsByClassName("lang-switch")[0];
@@ -32,11 +31,7 @@ window.onscroll = () => {
     langSwitchBorder.style.borderColor = colorBlack;
     changeColor(langSwitch, colorBlack);
     changeColor(navMenu, colorBlack);
-    // changeColor(menuLinks, colorBlack);
-    $(menuLinks).hover(
-      changeColor(menuLinks, colorGreen),
-      changeColor(menuLinks, colorBlack)
-    );
+    $(menuLinks).addClass("black-color");
   } else {
     $("#logo-img > path.logo-fill0").removeClass("logo-fill-black");
     header.style.background = "none";
@@ -48,13 +43,9 @@ window.onscroll = () => {
     $(".sandwich span").css("background-color", colorWhite);
     $("nav .logo > #logo-img path.st0").css("fill", colorWhite);
     changeColor(navMenu, colorWhite);
-    // changeColor(menuLinks, colorWhite);
     changeColor(langSwitch, colorWhite);
     langSwitchBorder.style.borderColor = colorWhite;
-    $(menuLinks).hover(
-      changeColor(menuLinks, colorGreen),
-      changeColor(menuLinks, colorWhite)
-    );
+    $(menuLinks).removeClass("black-color");
   }
 };
 
@@ -104,6 +95,7 @@ $(".sandwich").click(() => {
   $(".overlay-menu").toggleClass("overlay-active");
   $("header .sandwich span").toggleClass("dark-background");
 });
+
 $(".overlay-menu ul li a, .desktop-menu ul li a").click(ev => {
   const hrefGoTo = $(this).attr("href");
   let position = $(hrefGoTo).offset().top - 90;
@@ -116,31 +108,12 @@ $(".overlay-menu ul li a, .desktop-menu ul li a").click(ev => {
   }
   $("html, body").animate({ scrollTop: position }, "slow");
 });
-$(".roadmap-slider").slick({
-  prevArrow: '<button type="button" class="slick-prev"></button>',
-  nextArrow: '<button type="button" class="slick-next"></button>',
-  dots: true,
-  infinite: true
-  // autoplay: true
-});
 const prevArrow =
   '<span class="slide-prev"><svg class="prev-button arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 40"><path d="M4.2 40L.1 34.9l14-14.5L0 5l4.4-5L23 20.5 4.2 40z"/></svg></span>';
 const nextArrow =
   '<span class="slide-next"><svg class="next-button arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 40"><path d="M4.2 40L.1 34.9l14-14.5L0 5l4.4-5L23 20.5 4.2 40z"/></svg></span>';
 
 if (windowWidth <= 1024) {
-  $(".articles.slider .slides").slick({
-    arrows: false,
-    dots: true,
-    // infinite: true,
-    // centerMode: true,
-    centerPadding: "40px",
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    // centerMode: true,
-    variableWidth: true
-    // autoplay: true
-  });
   if (windowWidth < 600) {
     $(".about-us.slider .slides").slick({
       arrows: false,
@@ -178,17 +151,6 @@ if (windowWidth <= 1024) {
     variableWidth: true
   });
 } else {
-  // console.log(windowWidth);
-  $(".articles.slider .slides").slick({
-    arrows: true,
-    prevArrow,
-    nextArrow,
-    dots: false,
-    infinite: true,
-    slidesToShow: 2,
-    slidesToScroll: 2
-    // autoplay: true
-  });
   $(".about-us.slider .slides").slick({
     arrows: true,
     prevArrow,
@@ -210,3 +172,13 @@ if (windowWidth <= 1024) {
     // autoplay: true
   });
 }
+Array.from(menuLinks).forEach(element => {
+  element.addEventListener("mouseenter", event => {
+    event.target.style.color = colorGreen;
+    event.target.style.borderBottom = "2px solid #00d9a2";
+  });
+  element.addEventListener("mouseleave", event => {
+    event.target.style.color = "inherit";
+    event.target.style.borderBottom = "none";
+  });
+});
