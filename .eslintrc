@@ -9,7 +9,9 @@
     "comma-dangle": "off",
     "linebreak-style": "off",
     "newline-after-import": "off",
-    "function-paren-newline": "off"
+    "function-paren-newline": "off",
+    "space-before-function-paren": "off",
+    "func-names": "off"
   },
   "env": {
     "browser": true,
