@@ -38,10 +38,13 @@
     "pump": "^2.0.0",
     "run-sequence": "^2.2.0"
   },
-  "browserslist": ["> 1%", "last 3 versions", "ie>10"],
+  "browserslist": [
+    "> 1%",
+    "last 3 versions",
+    "ie>10"
+  ],
   "dependencies": {
-    "jquery": "^3.2.1",
     "@fancyapps/fancybox": "^3.2.5",
-    "slick-carousel": "^1.8.1"
+    "jquery": "^3.2.1"
   }
 }

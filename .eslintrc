@@ -11,7 +11,7 @@
     "newline-after-import": "off",
     "function-paren-newline": "off",
     "space-before-function-paren": "off",
-    "func-names": "off"
+    "func-names": 0
   },
   "env": {
     "browser": true,
