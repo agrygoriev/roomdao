@@ -16,6 +16,10 @@ const changeColor = (elementsList, elColor) => {
   });
 };
 $(document).ready(function() {
+  $("header .side-button .close-btn").click(()=>{
+    $("header .side-button").toggleClass("closed");
+    $("header .side-button .close-btn").fadeToggle();
+  });
   window.onscroll = () => {
     const scroll = (this.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
     if (scroll > 10) {

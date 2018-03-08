@@ -64,6 +64,9 @@ header nav ul {
   color: #ffffff;
   font-size: 16px;
 }
+.menu-list > li > a:hover {
+  transition: all 200ms ease;
+}
 .menu-list > li > a.white-color {
   color: #ffffff;
   border-bottom: none;
@@ -279,6 +282,11 @@ header .side-button {
   right: 0;
   padding: 10px;
   box-sizing: border-box;
+  transition: width 1s;
+}
+header .side-button.closed {
+  width: 110px;
+  transition: width 1s;
 }
 header .side-button .pig {
   display: flex;
@@ -287,10 +295,12 @@ header .side-button .pig {
   width: 120px;
 }
 header .side-button .pig img {
-  width: 78px;
+  width: 80px;
   height: auto;
+  margin: 10px;
 }
 header .side-button .col {
+  width: 137px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -305,6 +315,7 @@ header .side-button .close-btn {
   height: 25px;
   background: #0072ff;
   border-radius: 13px;
+  cursor: pointer;
 }
 header .side-button .close-btn span {
   display: block;
@@ -1570,7 +1581,7 @@ main .our-team.cards > .team.card {
   width: 950px;
   display: flex;
   flex-flow: column nowrap;
-  margin-top: -160px;
+  margin-top: -140px;
   box-sizing: border-box;
   background: #ffffff;
   box-shadow: 0 0 14px 0 rgba(41, 70, 112, 0.25);
