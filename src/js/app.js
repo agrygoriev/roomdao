@@ -3,8 +3,8 @@ const header = document.getElementsByTagName("header")[0];
 const doc = document.documentElement;
 const navMenu = document.getElementsByClassName("menu-list");
 const menuLinks = navMenu[0].getElementsByTagName("a");
-const langSwitch = document.getElementsByClassName("lang-switch")[0];
-const langSwitchBorder = langSwitch.firstElementChild;
+// const langSwitch = document.getElementsByClassName("lang-switch")[0];
+// const langSwitchBorder = langSwitch.firstElementChild;
 const mobileMenu = document.querySelector(".mobile-menu");
 const colorWhite = "#ffffff";
 const colorBlack = "#202020";
@@ -25,12 +25,12 @@ $(document).ready(function() {
       header.style["box-shadow"] = "0 0 14px 0 rgba(41, 70, 112, .25)";
       mobileMenu.style.background = colorWhite;
       mobileMenu.style.boxShadow = "2px 2px 18px rgba(32, 32, 32, .25)";
-      $("nav .lang-switch").css("color", colorBlack);
-      $("nav .lang-switch select").css("border-color", colorBlack);
+      // $("nav .lang-switch").css("color", colorBlack);
+      // $("nav .lang-switch select").css("border-color", colorBlack);
       $(".sandwich span").css("background-color", colorBlack);
       $("nav .logo > #logo-img path.st0").css("fill", colorBlack);
-      langSwitchBorder.style.borderColor = colorBlack;
-      changeColor(langSwitch, colorBlack);
+      // langSwitchBorder.style.borderColor = colorBlack;
+      // changeColor(langSwitch, colorBlack);
       changeColor(navMenu, colorBlack);
       $(menuLinks).addClass("black-color");
     } else {
@@ -39,13 +39,13 @@ $(document).ready(function() {
       header.style["box-shadow"] = "none";
       mobileMenu.style.background = "none";
       mobileMenu.style.boxShadow = "none";
-      $("nav .lang-switch").css("color", colorWhite);
-      $("nav .lang-switch select").css("border-color", colorWhite);
+      // $("nav .lang-switch").css("color", colorWhite);
+      // $("nav .lang-switch select").css("border-color", colorWhite);
       $(".sandwich span").css("background-color", colorWhite);
       $("nav .logo > #logo-img path.st0").css("fill", colorWhite);
       changeColor(navMenu, colorWhite);
-      changeColor(langSwitch, colorWhite);
-      langSwitchBorder.style.borderColor = colorWhite;
+      // changeColor(langSwitch, colorWhite);
+      // langSwitchBorder.style.borderColor = colorWhite;
       $(menuLinks).removeClass("black-color");
     }
   };

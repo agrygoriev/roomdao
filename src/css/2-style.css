@@ -266,6 +266,79 @@ header .overlay-menu-list a {
   text-decoration: none;
   color: #202020;
 }
+header .side-button {
+  display: flex;
+  position: fixed;
+  width: 300px;
+  height: 125px;
+  background: #fff;
+  border-top-left-radius: 125px;
+  border-bottom-left-radius: 125px;
+  box-shadow: 0 0 18px 0 rgba(41, 70, 112, 0.25);
+  bottom: 30px;
+  right: 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+header .side-button .pig {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+}
+header .side-button .pig img {
+  width: 78px;
+  height: auto;
+}
+header .side-button .col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+header .side-button .close-btn {
+  position: absolute;
+  top: -30px;
+  left: -130px;
+  width: 25px;
+  height: 25px;
+  background: #0072ff;
+  border-radius: 13px;
+}
+header .side-button .close-btn span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 15px;
+  top: 11px;
+  left: 5px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+header .side-button .close-btn span:last-of-type {
+  transform: rotate(-45deg);
+}
+header .side-button h2 {
+  font: 500 14px 'Montserrat', sans-serif;
+  text-align: center;
+}
+header .side-button a.buy-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 125px;
+  height: 35px;
+  background: #00d9a2;
+  color: #fff;
+  box-sizing: border-box;
+  box-shadow: 0 0 18px 0 rgba(41, 70, 112, 0.25);
+  text-decoration: none;
+  border-radius: 5px;
+}
+header .side-button a.buy-btn:hover {
+  opacity: .9;
+}
 main {
   display: flex;
   flex-direction: column;
@@ -343,7 +416,7 @@ main .main-desc .buttons {
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
 }
 .btn:hover {
   opacity: 0.9;
@@ -418,7 +491,7 @@ main .desc-text {
   hyphens: none;
   z-index: 0;
 }
-main .counter-box {
+.counter-box {
   width: 950px;
   height: auto;
   background: #fff;
@@ -433,25 +506,25 @@ main .counter-box {
   margin: 0 auto 90px;
   padding: 50px;
 }
-main .counter-box .counter {
+.counter-box .counter {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-bottom: 40px;
 }
-main .counter-box > h2 {
+.counter-box > h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 25px;
   font-weight: 400;
   margin-bottom: 20px;
 }
-main .counter-box .counter .counter-col {
+.counter-box .counter .counter-col {
   flex-direction: column;
 }
-main .counter-box .counter-col > h2 {
+.counter-box .counter-col > h2 {
   letter-spacing: 10px;
 }
-main .counter-box .counter .counter-divider {
+.counter-box .counter .counter-divider {
   content: ":";
   font-size: 90px;
   font-weight: 400;
@@ -716,7 +789,7 @@ main .counter-box .counter .counter-divider {
 }
 
 /* Subscribe form */
-main .counter-box .subscribe {
+.counter-box .subscribe {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -732,12 +805,12 @@ main .counter-box .subscribe {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-main .counter-box .subscribe h2 {
+.counter-box .subscribe h2 {
   font: 500 25px "Montserrat", sans-serif;
   color: #ffffff;
   margin-bottom: 15px;
 }
-main .counter-box .subscribe form {
+.counter-box .subscribe form {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -748,10 +821,10 @@ main .counter-box .subscribe form {
   margin: 0 auto;
   border-radius: 0;
 }
-main .counter-box .subscribe form > * {
+.counter-box .subscribe form > * {
   border-radius: 0;
 }
-main .counter-box .subscribe form input {
+.counter-box .subscribe form input {
   border: none;
   flex: 4;
   border-top-left-radius: 5px;
@@ -759,11 +832,11 @@ main .counter-box .subscribe form input {
   padding: 13px 25px;
   height: 19px;
 }
-main .counter-box .subscribe form input::placeholder {
+.counter-box .subscribe form input::placeholder {
   color: #bbbdbd;
   font: 400 18px "Fira Sans", sans-serif;
 }
-main .counter-box .subscribe form button {
+.counter-box .subscribe form button {
   background-color: rgb(0, 114, 255);
   box-shadow: 0px 0px 18px 0px rgba(32, 32, 32, 0.24);
   z-index: 46;
@@ -1354,7 +1427,7 @@ main .our-team.cards > .team.card {
   font: 400 14px "Fira Sans", sans-serif;
   color: #525252;
   line-height: 1.7;
-  z-index: 100;
+  z-index: 80;
 }
 .feature.margin-left {
   margin-left: 100px;
@@ -1440,7 +1513,7 @@ main .our-team.cards > .team.card {
     rgb(41, 70, 112)
   );
   box-sizing: border-box;
-  padding: 40px 130px;
+  padding: 40px 8vw;
 }
 .tokens-emitted h2 {
   font: 600 35px "Montserrat", sans-serif;
@@ -1827,10 +1900,10 @@ main .our-team.cards > .team.card {
 
 /* New Roadmap (snake) section */
 #roadmap {
-  max-width: 1440px;
-  padding: 0 70px 100px;
-  margin: auto;
   position: relative;
+  max-width: 1440px;
+  padding: 0 70px 60px;
+  margin: 0 auto 90px;
   overflow: hidden;
 }
 .roadmap-pathway {
@@ -1902,7 +1975,7 @@ main .our-team.cards > .team.card {
 }
 .roadmap-point-description {
   font: 400 14px "Fira Sans", sans-serif;
-  line-height: 1.4rem;
+  line-height: 1.3rem;
 }
 /* Global Slider Styles*/
 
@@ -2163,6 +2236,10 @@ main .videos.cards .videocard {
 main .videos.cards .videocard:hover {
   cursor: pointer;
 }
+main .videos.cards .videocard img {
+  width: 100%;
+  height: auto;
+}
 .videocard h3 {
   font: 500 12px "Fira Sans", sans-serif;
   color: #294670;
@@ -2180,6 +2257,7 @@ footer {
   height: 100%;
   margin-top: -300px;
   padding-top: 300px;
+  z-index: 0;
 }
 #footer-counter .buttons {
   display: flex;

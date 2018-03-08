@@ -13,26 +13,27 @@ const reload = browserSync.reload;
 // const sourcemaps = require("gulp-sourcemaps");
 // const modules = "./node_modules";
 
-gulp.task("browser-sync", ["css", "html", "js", "img"], () => {
+gulp.task("default", ["css", "html", "js", "img"], () => {
   browserSync.init({
     server: {
       baseDir: "./dist"
-    }
+    },
+    browser: "firefox"
   });
+  gulp.watch("./src/css/*.css", ["css"]);
+  gulp.watch("./src/js/*.js", ["js"]);
+  gulp.watch("./src/img/**/*.{jpg,jpeg,png,gif,svg}", ["img"]);
+  gulp.watch("./src/*.html", ["html"]);
+  gulp.watch("./dist/*.html", reload);
+  gulp.watch("./dist/js/*.js", reload);
+  gulp.watch("./dist/css/*.css", reload);
+  gulp.watch("./dist/img/**", reload);
   // gulp.task('img:watch', function() {
   //     return watch('./src/img/**', function(){
   //         gulp.src('./src/img/**')
   //             .pipe(gulp.dest('./dist/img'));
   //     });
   // });
-  gulp.watch("./src/css/*.css", ["css"]);
-  gulp.watch("./src/js/*.js", ["js"]);
-  gulp.watch("./src/img/*.{jpg,jpeg,png,gif,svg}", ["img"]);
-  gulp.watch("./src/*.html", ["html"]);
-  gulp.watch("./dist/*.html", reload);
-  gulp.watch("./dist/js/*.js", reload);
-  gulp.watch("./dist/css/*.css", reload);
-  gulp.watch("./dist/img/**", reload);
 });
 
 gulp.task("html", () =>
@@ -68,5 +69,3 @@ gulp.task("svg:build", () =>
     .pipe(gulp.dest("./dist/img"))
 );
 gulp.task("build", ["img:build", "svg:build", "js", "css", "html"]);
-gulp.task("default", ["js", "css", "html"]);
-gulp.task("serve", ["browser-sync"]);
