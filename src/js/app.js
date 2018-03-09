@@ -91,7 +91,7 @@ $(document).ready(function() {
       updateClock();
     };
 
-    const deadline = new Date(2018, 1, 20);
+    const deadline = new Date(2018, 4, 20);
     initializeClock(".counter", deadline);
     initializeClock("#counter-2", deadline);
   };
@@ -101,9 +101,11 @@ $(document).ready(function() {
     $("header .sandwich span").toggleClass("dark-background");
   });
 
-  $(".overlay-menu ul li a, .desktop-menu ul li a").click(ev => {
-    const hrefGoTo = $(this).attr("href");
-    let position = $(hrefGoTo).offset().top - 90;
+  $(".overlay-menu ul li a, .desktop-menu ul.menu-list > li > a").click(ev => {
+    const offset = $(this).offset();
+    const hrefGoTo = $(".desktop-menu ul.menu-list > li > a").attr("href");
+    console.log(hrefGoTo.offset());
+    let position = hrefGoTo.offset.top - 90;
     ev.preventDefault();
     if (windowWidth <= 1024) {
       $(".overlay-menu").toggleClass("overlay-active");
@@ -113,10 +115,10 @@ $(document).ready(function() {
     }
     $("html, body").animate({ scrollTop: position }, "slow");
   });
-  const prevArrow =
-    '<span class="slide-prev"><svg class="prev-button arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 40"><path d="M4.2 40L.1 34.9l14-14.5L0 5l4.4-5L23 20.5 4.2 40z"/></svg></span>';
-  const nextArrow =
-    '<span class="slide-next"><svg class="next-button arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 40"><path d="M4.2 40L.1 34.9l14-14.5L0 5l4.4-5L23 20.5 4.2 40z"/></svg></span>';
+  // const prevArrow =
+  //   '<span class="slide-prev"><svg class="prev-button arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 40"><path d="M4.2 40L.1 34.9l14-14.5L0 5l4.4-5L23 20.5 4.2 40z"/></svg></span>';
+  // const nextArrow =
+  //   '<span class="slide-next"><svg class="next-button arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 40"><path d="M4.2 40L.1 34.9l14-14.5L0 5l4.4-5L23 20.5 4.2 40z"/></svg></span>';
 
   if (windowWidth <= 1024) {
     if (windowWidth < 600) {
@@ -138,15 +140,14 @@ $(document).ready(function() {
         // autoplay: true
       });
     }
-    $(".videos.cards.slider .slides").slick({
-      arrows: false,
-      dots: true,
-      infinite: true,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      variableWidth: true
-      // autoplay: true
-    });
+    // $(".videos.cards.slider .slides").slick({
+    //   arrows: false,
+    //   dots: true,
+    //   infinite: true,
+    //   slidesToShow: 4,
+    //   slidesToScroll: 1,
+    //   variableWidth: true
+    // });
     $(".our-team.cards").slick({
       arrows: false,
       dots: true,
@@ -156,26 +157,26 @@ $(document).ready(function() {
       variableWidth: true
     });
   } else {
-    $(".about-us.slider .slides").slick({
-      arrows: true,
-      prevArrow,
-      nextArrow,
-      dots: false,
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 1
-      // autoplay: true
-    });
-    $(".videos.cards.slider .slides").slick({
-      arrows: true,
-      prevArrow,
-      nextArrow,
-      dots: false,
-      infinite: true,
-      slidesToShow: 4,
-      slidesToScroll: 1
-      // autoplay: true
-    });
+    // $(".about-us.slider .slides").slick({
+    //   arrows: true,
+    //   prevArrow,
+    //   nextArrow,
+    //   dots: false,
+    //   infinite: true,
+    //   slidesToShow: 3,
+    //   slidesToScroll: 1
+    //   autoplay: true
+    // });
+    // $(".videos.cards.slider .slides").slick({
+    //   arrows: true,
+    //   prevArrow,
+    //   nextArrow,
+    //   dots: false,
+    //   infinite: true,
+    //   slidesToShow: 4,
+    //   slidesToScroll: 1
+    //   // autoplay: true
+    // });
   }
   Array.from(menuLinks).forEach(element => {
     element.addEventListener("mouseenter", event => {
