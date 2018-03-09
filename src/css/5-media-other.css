@@ -9,6 +9,9 @@
     opacity: 1;
     transition: opacity .2s;
   }
+  header .side-button.closed {
+    width: 90px;
+  }
 	header .side-button .pig {
     width: 75px;
     cursor: pointer;
@@ -18,6 +21,9 @@
   }
   .progress {
     width: 100%;
+  }
+  .progress .largest-proTech {
+    display: none;
   }
   /* main .our-team, */
   main .counter-box {
@@ -54,6 +60,9 @@
     align-items: flex-start;
     height: auto;
     margin-top: 0;
+  }
+  .roadmap-pathway:nth-child(odd) {
+    flex-direction: column-reverse;
   }
   .roadmap-track {
     display: none;

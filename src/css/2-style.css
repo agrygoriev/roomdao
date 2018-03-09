@@ -1608,7 +1608,6 @@ main .our-team.cards > .team.card {
 .pre-ico-col-2 {
   display: flex;
   flex-direction: column;
-  margin-bottom: 100px;
 }
 .pre-ico-col-1 {
   width: 60%;

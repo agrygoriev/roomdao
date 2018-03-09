@@ -16,7 +16,7 @@ const changeColor = (elementsList, elColor) => {
   });
 };
 $(document).ready(function() {
-  $("header .side-button .close-btn").click(()=>{
+  $("header .side-button .close-btn").click(() => {
     $("header .side-button").toggleClass("closed");
     $("header .side-button .close-btn").fadeToggle();
   });
