@@ -91,7 +91,7 @@ $(document).ready(function() {
       updateClock();
     };
 
-    const deadline = new Date(2018, 5, 31);
+    const deadline = new Date(2018, 1, 20);
     initializeClock(".counter", deadline);
     initializeClock("#counter-2", deadline);
   };

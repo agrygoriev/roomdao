@@ -648,7 +648,7 @@ main .desc-text {
   border-radius: 50%;
   /* -webkit-box-sizing: border-box; */
   /* box-sizing: border-box; */
-  z-index: 1;
+  z-index: 0;
 }
 .progress .bonuses-progress-bar:before {
   content: "";
@@ -1537,12 +1537,13 @@ main .our-team.cards > .team.card {
   font: 600 35px "Montserrat", sans-serif;
   color: #ffffff;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 40px;
 }
 .tokens-cols {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-start;
 }
 .tokens-col {
   display: flex;
