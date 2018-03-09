@@ -1,5 +1,87 @@
 @media screen and (min-width: 320px) and (max-width: 1024px) {
+  header .side-button {
+		width: 90px;
+		height: 90px;
+		border-radius: 90px;
+		opacity: .6;
+  }
+  header .side-button:hover {
+    opacity: 1;
+    transition: opacity .2s;
+  }
+	header .side-button .pig {
+    width: 75px;
+    cursor: pointer;
+	}
+	header .side-button .col {
+		display: none;
+  }
+  .progress {
+    width: 100%;
+  }
   /* main .our-team, */
+  main .counter-box {
+    height: 100%;
+  }
+  .progress .raised-logo {
+    display: none;
+  }
+  .tokens-col {
+    max-width: 160px;
+  }
+  .circles {
+    flex-basis: 150px
+  }
+  .circle {
+    width: 150px;
+    height: 40px;
+  }
+  #roadmap {
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  .pre-ico-col-1, .pre-ico-col-2 {
+    margin-bottom: 20px;
+  }
+  .roadmap-pathway {
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: auto;
+    margin-top: 0;
+  }
+  .roadmap-track {
+    display: none;
+  }
+  .roadmap-point {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 120px;
+  }
+  .roadmap-point-content {
+    padding: 5px 25px 0;
+  }
+  .roadmap-mobile-separator {
+    display: block;
+    width: 2px;
+    height: 140px;
+    background: #bcbebe;
+    position: absolute;
+    left: 45px;
+  }
+  .roadmap-point-title,
+  .roadmap-point-description {
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  
   main .videos,
   main .about-us {
     margin: 0 0 50px;
@@ -86,6 +168,11 @@
     flex-direction: row;
     justify-content: flex-start;
     text-align: left;
+  }
+  .previews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   #roadmap-h2 {
     margin-bottom: 20px;

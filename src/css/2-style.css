@@ -272,7 +272,7 @@ header .overlay-menu-list a {
 header .side-button {
   display: flex;
   position: fixed;
-  width: 300px;
+  width: 260px;
   height: 125px;
   background: #fff;
   border-top-left-radius: 125px;
@@ -283,6 +283,7 @@ header .side-button {
   padding: 10px;
   box-sizing: border-box;
   transition: width 1s;
+  z-index: 2;
 }
 header .side-button.closed {
   width: 110px;
@@ -292,7 +293,7 @@ header .side-button .pig {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 120px;
+  width: 110px;
 }
 header .side-button .pig img {
   width: 80px;
@@ -346,9 +347,11 @@ header .side-button a.buy-btn {
   box-shadow: 0 0 18px 0 rgba(41, 70, 112, 0.25);
   text-decoration: none;
   border-radius: 5px;
+  transition: opacity .3s;
 }
 header .side-button a.buy-btn:hover {
   opacity: .9;
+  transition: opacity .3s;
 }
 main {
   display: flex;
@@ -359,6 +362,10 @@ main {
 }
 main > section {
   margin: 0 auto;
+}
+main > h2,
+main > section > h2 {
+  text-transform: uppercase;
 }
 main .main-desc {
   display: flex;
@@ -741,7 +748,7 @@ main .desc-text {
     rgba(255, 255, 255, 0.7) 0,
     #fff 100%
   ); */
-  width: calc((100% / 30000000) * 10000000);
+  width: calc((100% / 30000000) * 21880000);
   padding-right: 10px;
   transition: 0.6s ease-out;
   opacity: 1;
