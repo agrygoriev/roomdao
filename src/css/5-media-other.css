@@ -29,6 +29,9 @@
   main .counter-box {
     height: 100%;
   }
+  .counter-col h2 .seconds {
+    height: auto;
+  }
   .progress .raised-logo {
     display: none;
   }

@@ -16,9 +16,23 @@ const changeColor = (elementsList, elColor) => {
   });
 };
 $(document).ready(function() {
-  $("header .side-button .close-btn").click(() => {
+  // $("header .close-btn").on("click", () => {
+  //   $("header .side-button").addClass("closed");
+  //   $("header .side-button .close-btn").hide();
+  // });
+  $(".close-btn").on("click", () => {
+    console.log("Closed side-button clicked!");
     $("header .side-button").toggleClass("closed");
-    $("header .side-button .close-btn").fadeToggle();
+    $("header .side-button .close-btn").toggle();
+  });
+  $("header .side-button").click(() => {
+    $("header .side-button").toggleClass("closed");
+    $("header .side-button .close-btn").toggle();
+  });
+  $(".sandwich").click(() => {
+    $(this).toggleClass("close-btn");
+    $(".overlay-menu").toggleClass("overlay-active");
+    $("header .sandwich span").toggleClass("dark-background");
   });
   window.onscroll = () => {
     const scroll = (this.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
@@ -95,14 +109,9 @@ $(document).ready(function() {
     initializeClock(".counter", deadline);
     initializeClock("#counter-2", deadline);
   };
-  $(".sandwich").click(() => {
-    $(this).toggleClass("close-btn");
-    $(".overlay-menu").toggleClass("overlay-active");
-    $("header .sandwich span").toggleClass("dark-background");
-  });
 
   $(".overlay-menu ul li a, .desktop-menu ul.menu-list > li > a").click(ev => {
-    const offset = $(this).offset();
+    // const offset = $(this).offset();
     const hrefGoTo = $(".desktop-menu ul.menu-list > li > a").attr("href");
     console.log(hrefGoTo.offset());
     let position = hrefGoTo.offset.top - 90;
@@ -115,6 +124,7 @@ $(document).ready(function() {
     }
     $("html, body").animate({ scrollTop: position }, "slow");
   });
+
   // const prevArrow =
   //   '<span class="slide-prev"><svg class="prev-button arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 40"><path d="M4.2 40L.1 34.9l14-14.5L0 5l4.4-5L23 20.5 4.2 40z"/></svg></span>';
   // const nextArrow =
