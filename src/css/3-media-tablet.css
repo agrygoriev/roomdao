@@ -161,7 +161,7 @@
 		border-bottom-right-radius: 5px;
 	}
 	.progress .raised-container {
-		margin-bottom: 20px;
+		margin-bottom: 0;
 	}
 	.progress .raised-container .raised-sum h3 {
 		font-size: 20px;
@@ -289,7 +289,7 @@
 	}
 	.tokens-emitted {
 		padding: 30px 30px;
-		height: 540px;
+		height: 600px;
 	}
 	.tokens-col {
 		justify-content: flex-start;
@@ -759,11 +759,15 @@
 		font-size: 25px;
 	}
 	footer .subscribe {
-		width: 100%;
+		width: 85vw;
 		margin: 0 auto;
-		padding: 0 20px;
+		padding: 0;
 		box-sizing: border-box;
 		height: 370px;
+	}
+	footer .subscribe h3 {
+		font: 300 20px 'Montserrat', sans-serif;
+		letter-spacing: 1px;
 	}
 	footer .subscribe form {
 		width: 85vw;

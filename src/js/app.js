@@ -16,18 +16,14 @@ const changeColor = (elementsList, elColor) => {
   });
 };
 $(document).ready(function() {
-  // $("header .close-btn").on("click", () => {
-  //   $("header .side-button").addClass("closed");
-  //   $("header .side-button .close-btn").hide();
-  // });
-  $(".close-btn").on("click", () => {
+  $(".close-side-btn").on("click", () => {
     console.log("Closed side-button clicked!");
-    $("header .side-button").toggleClass("closed");
-    $("header .side-button .close-btn").toggle();
+    $("header .side-button").addClass("closed");
+    $("header .side-button .close-side-btn").toggle(200);
   });
-  $("header .side-button").click(() => {
+  $("header .side-button img").click(() => {
     $("header .side-button").toggleClass("closed");
-    $("header .side-button .close-btn").toggle();
+    $("header .side-button .close-side-btn").toggle(200);
   });
   $(".sandwich").click(() => {
     $(this).toggleClass("close-btn");

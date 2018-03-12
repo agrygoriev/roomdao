@@ -35,8 +35,31 @@
   .progress .raised-logo {
     display: none;
   }
+  main .desc-columns {
+    flex-direction: column;
+  }
+  .col.desc-col:last-child {
+    padding-left: 0;
+  }
+  .col {
+    margin-bottom: 20px;
+  }
+  .desc-col ul > li {
+    padding-left: 15px;
+  }
+  .desc-col ul > li:before {
+    left: -15px;
+    margin-right: -10px;
+  }
   .tokens-col {
     max-width: 160px;
+  }
+  .feature {
+    height: 120px;
+  }
+  .previews h2 {
+    font: 400 18px 'Montserrat';
+    line-height: 1.8;
   }
   .circles {
     flex-basis: 150px
@@ -188,6 +211,9 @@
   }
   #roadmap-h2 {
     margin-bottom: 20px;
+  }
+  footer .subscribe h2 {
+    padding: 30px 160px 50px;
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1280px) {
