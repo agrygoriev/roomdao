@@ -34,7 +34,7 @@
 		flex-direction: row;
 		justify-content: space-between;
 		margin-right: 0;
-		padding: 15px 30px;
+		padding: 5px 30px;
 	}
 	.dropdown {
 		width: 20px;
@@ -65,10 +65,18 @@
 		width: 7px;
 		height: 7px;
 	} */
-	main .desc-h2 {
+	main .main-desc .desc-heading,
+	main .main-desc .desc-subheading {
+		font-size: 20px;
+		font-weight: 400;
+	}
+	main .main-desc .desc-heading {
+		margin-top: 13vw;
+	}
+	/* main .desc-h2 {
 		margin-bottom: 30px;
 		font-weight: 500;
-	}
+	} */
 	main .main-desc {
 		flex: 1 1 auto;
 		justify-content: flex-start;
@@ -98,6 +106,12 @@
 		flex-flow: row wrap;
 		justify-content: center;
 		margin-bottom: 10px;
+	}
+	main .main-desc .icons {
+		margin-bottom: 55px;
+	}
+	main .main-desc .icons > a {
+		width: 43px;
 	}
 	.ani-btn {
 		margin-right: 30px;
@@ -135,16 +149,23 @@
 	.counter-col h2 .seconds {
 		width: 100px;
 		display: block;
+		margin-bottom: 0;
 	}
 	.counter-col h3 {
-		font-size: 16px;
+		font-size: 14px;
+		font-weight: 400;
 	}
+	
 	main .counter-box .subscribe {
 		width: 100%;
 		height: 140px;
 		position: initial;
 		align-items: center;
-		padding: 25px 30px 30px;
+		padding: 22px 30px 30px;
+	}
+	main .counter-box .subscribe h2 {
+		font: 300 20px Montserrat, sans-serif;
+		margin-bottom: 17px;
 	}
 	main .counter-box .subscribe form input {
 		border-top-right-radius: 0;
@@ -165,6 +186,12 @@
 	}
 	.progress .raised-container .raised-sum h3 {
 		font-size: 20px;
+	}
+	.progress .raised-container .raised-col {
+		flex: 1 1 auto;
+		justify-content: center;
+		align-items: center;
+		width: 25%;
 	}
 	.col.desc-col:last-child {
 		padding-left: 30px;
@@ -237,7 +264,7 @@
 	}
 	.bubbles-divider-h2, .bubbles-text h2 {
 		font-size: 25px;
-		line-height: 1.4;
+		line-height: 1.6;
 		margin-bottom: 25px;
 		font-weight: 500;
 	}
@@ -291,13 +318,16 @@
 		padding: 30px 30px;
 		height: 600px;
 	}
+	.tokens-emitted h2 {
+		font: 400 35px 'Fira Sans', sans-serif;
+		margin-bottom: 30px;
+	}
 	.tokens-col {
 		justify-content: flex-start;
 	}
 	.tokens-col h2 {
-		font-size: 25px;
-		font-weight: 500;
-		margin-top: 50px;
+		font: 400 30px 'Montserrat', sans-serif;
+		margin: 50px 0 10px;
 	}
 	.tokens-col > p {
 		font-weight: 300;
@@ -324,7 +354,7 @@
 		display: flex;
 		margin: 0 auto 90px;
 		flex-direction: column;
-		border-radius: 0;
+		border-radius: 10px;
 	}
 	.pre-ico-cols {
 		flex-direction: column;
@@ -336,11 +366,16 @@
 	}
 	.pre-ico-col-1 h2 {
 		font-size: 30px;
+		margin-top: 20px;
 	}
 	.pre-ico-col-1 h3 {
 		margin: 6px 0;
 		line-height: 1.5;
+		font-weight: 400;
 	}
+	/* .pre-ico-col-1 h3:nth-child(3) {
+		margin-bottom: 30px;
+	} */
 	.pre-ico-col-1 p {
 		margin-bottom: 13px;
 	}
@@ -394,7 +429,7 @@
 		height: 100%;
 		flex: 1 1 auto;
 	}
-	.roadmap-slider {
+	/* .roadmap-slider {
 		width: 100%;
 		margin-bottom: 90px;
 	}
@@ -402,7 +437,6 @@
 		height: 190px;
 	}
 	.roadmap.slider .slides {
-		/* padding-left: 60px; */
 		display: inline-block;
 		width: 100%;
 		margin: 0 auto;
@@ -432,7 +466,7 @@
 	}
 	.roadmap-slider .slick-dots li button {
 		margin-right: 0;
-	}
+	} */
 	.slick-dots li button:active {
 		outline: none;
 	}

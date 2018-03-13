@@ -39,7 +39,17 @@ gulp.task("default", ["css", "html", "js", "img"], () => {
 gulp.task("html", () =>
   gulp
     .src("./src/*.html")
-    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(
+      htmlmin({
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true,
+        removeAttributeQuotes: true
+      })
+    )
     .pipe(gulp.dest("./dist"))
 );
 gulp.task("css", () => {

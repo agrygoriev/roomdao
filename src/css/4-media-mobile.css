@@ -1,18 +1,27 @@
 @media screen and (min-width: 320px) and (max-width: 599px) {
   header .side-button {
-		width: 90px;
-		height: 90px;
-		border-radius: 90px;
+		width: 70px;
+		height: 70px;
+		border-radius: 70px;
 		opacity: .6;
-		top: 320px;
+    top: 320px;
+    padding: 0;
   }
-  header .side-button:hover {
+  /* header .side-button:hover {
     opacity: 1;
     transition: opacity .2s;
-  }
+  } */
 	header .side-button .pig {
-		width: 75px;
-	}
+    width: 70px;
+    cursor: pointer;
+    padding: 0;
+    margin: auto;
+  }
+  header .side-button .pig img {
+    width: 50px;
+    height: auto;
+    margin: auto;
+  }
 	header .side-button .col {
 		display: none;
 	}
@@ -58,13 +67,13 @@
   .tokens-col h2,
   .pre-ico .bold,
   .pre-ico-col-1 h2,
-  .pre-ico-col-2 h2,
   .pre-ico-col-1 h3,
   .articles .article h2,
   main .cards .card h2,
   footer h2 {
     font-weight: 500;
   }
+  
   main .desc-col h2 {
     font-size: 18px;
   }
@@ -110,6 +119,7 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     width: 90%;
+    height: auto;
     padding: 0;
     margin-bottom: 30px;
   }
@@ -261,12 +271,12 @@
     margin-right: auto;
     /* padding-left: 20px; */
   }
-  nav .logo > #logo-img {
+  nav .logo svg {
     display: block;
-    width: 118px;
+    /* width: 118px; */
     height: 21px;
   }
-  nav .logo > #logo-img path.st0 {
+  nav .logo svg path.st0 {
     fill: #ffffff;
   }
   /* nav .lang-switch {
@@ -329,7 +339,7 @@
   .bubbles-text h2 {
     font-size: 20px;
     line-height: 1.4;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 15px;
   }
   .bubbles-text p {
@@ -403,13 +413,14 @@
     height: auto;
   }
   .tokens-emitted h2 {
-    font: 500 30px "Fira Sans", sans-serif;
+    font: 400 30px "Fira Sans", sans-serif;
     margin-bottom: 25px;
   }
   .tokens-cols {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    margin-bottom: 50px;
   }
   .tokens-col {
     display: flex;
@@ -440,120 +451,109 @@
     border-width: 2px;
     display: block;
   }
+
+  /*  Pre-ICO section */
   .pre-ico {
     margin-top: 0;
     width: 100%;
-    height: 800px;
-    padding: 0 20px 20px;
+    height: 100%;
+    padding: 0 20px 45px;
     border-radius: 0;
     margin-bottom: 50px;
     /* display: flex; */
     /* flex-direction: column-reverse; */
   }
+  .pre-ico-cols {
+    flex-direction: column;
+  }
   .pre-ico-col-1 {
     width: 100%;
-    padding-top: 290px;
-    top: 0;
+    order: 2;
+    margin-bottom: 25px;
   }
   .pre-ico-col-2 {
-    right: 0;
-    top: 0;
     width: 328px;
     height: 328px;
-    margin: 0 auto;
+    order: 1;
+    position: relative;
+    margin-top: -80px;
+    right: 0;
+    top: 0;
+    margin-bottom: 40px;
   }
-  .pre-ico-col-2 > .bubbles.bubble-1 {
-    top: -10px;
-    left: 240px;
-    width: 60px;
-    height: 60px;
+  .pre-ico-col-2 h2 {
+    font: 400 30px 'Fira Sans', sans-serif;
+    margin-bottom: 0;
   }
-  .pre-ico-col-2 > .bubbles.bubble-2 {
-    left: 220px;
-    top: 70px;
-    width: 130px;
-    height: 130px;
+  .pre-ico-col-2 ul {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 15% 0 20%;
   }
-  .pre-ico-col-2 > .bubbles.bubble-3 {
-    top: 250px;
-    left: 210px;
+  .pre-ico-col-2 ul li {
+    margin-bottom: 0;
+  }
+  .pre-ico-col-2 ul li h3 {
+    font: 400 14px 'Fira Sans', sans-serif;
+  }
+  .pre-ico-col-2 ul li p {
+    font: 300 14px 'Fira Sans', sans-serif;
   }
   .pre-ico-col-1 h2 {
-    font-size: 30px;
+    font-size: 25px;
   }
   .pre-ico-col-1 h3 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
   }
   .pre-ico-col-1 p {
     font-size: 16px;
     margin-bottom: 20px;
   }
-  .pre-ico-col-2 > ul > li {
-    font-weight: 300;
-  }
-  .pre-ico-col-2 > ul > li > .bold {
+  .pre-ico-col-2  ul li  .bold {
     font-weight: 400;
   }
+  .pre-ico-col-2 > .bubbles.bubble-1 {
+    top: 5px;
+    left: 247px;
+    width: 50px;
+    height: 50px;
+    background: #9eccc7;
+  }
+  .pre-ico-col-2 > .bubbles.bubble-2 {
+    left: 250px;
+    top: 130px;
+    width: 130px;
+    height: 130px;
+  }
+  .pre-ico-col-2 > .bubbles.bubble-3 {
+    top: 270px;
+    left: 220px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .pre-ico .bottom-heading {
+    font: 400 20px 'Fira Sans', sans-serif;
+    margin: 0;
+  }
+
+  /* End of Pre-ICO section */
+
+  /* Begin of Roadmap section */
+  #roadmap {
+    padding: 0 15px 60px;
+  }
+  .roadmap-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* End of Roadmap section */
+  
   .section-h2 {
     font-size: 25px;
     /* margin-bottom: 0; */
-  }
-  .roadmap-slider {
-    width: 100vw;
-    max-width: 100vw;
-    padding: 10px 20px;
-    box-sizing: border-box;
-    padding: 0;
-    justify-content: space-between;
-    margin-bottom: 40px;
-  }
-  .roadmap-slider .slick-list {
-    width: 70vw;
-    display: flex;
-    margin: 0 auto;
-  }
-  .roadmap-slider .slick-track {
-    display: flex;
-  }
-  .roadmap-slider .slick-slide {
-    height: 140px;
-  }
-  #roadmap-h2 {
-    margin-bottom: 0;
-  }
-  .roadmap-slider .slide .slide-h2,
-  .slider .slide-h2 {
-    font-size: 20px;
-  }
-  .slider .slide-text,
-  .roadmap-slider .slide .slide-text {
-    font-weight: 300;
-    font-size: 18px;
-  }
-  .roadmap-slider .slick-next,
-  .roadmap-slider .slick-prev {
-    width: 42px;
-    height: 42px;
-    left: 15px;
-    top: 0;
-  }
-  .roadmap-slider .slick-next {
-    left: unset;
-    right: 15px;
-  }
-  .roadmap-slider .slick-dots {
-    width: 90%;
-    display: flex;
-    bottom: 0;
-    left: 17px;
-    background: url(../img/dots-line.svg) 50% 100%/100% 100% no-repeat;
-  }
-  .roadmap-slider .slick-dots li button {
-    width: 13px;
-    height: 13px;
-    border-width: 3px;
-    margin-right: 0;
   }
   .articles {
     width: 100%;
@@ -957,9 +957,6 @@
   main .bubbles-divider .icons {
     padding: 0;
   }
-  .pre-ico-col-2 {
-    left: -20px;
-  }
   .partners-mobile {
     height: 370px;
   }
@@ -981,5 +978,8 @@
   footer .subscribe form button {
     border-radius: 5px;
     width: 100%;
+  }
+  footer .gray-line {
+    display: none;
   }
 }

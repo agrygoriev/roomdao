@@ -24,6 +24,7 @@ $(document).ready(function() {
   $("header .side-button img").click(() => {
     $("header .side-button").toggleClass("closed");
     $("header .side-button .close-side-btn").toggle(200);
+    $("header .side-button .col").show();
   });
   $(".sandwich").click(() => {
     $(this).toggleClass("close-btn");
@@ -33,7 +34,7 @@ $(document).ready(function() {
   window.onscroll = () => {
     const scroll = (this.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
     if (scroll > 10) {
-      $("#logo-img > path.logo-fill0").addClass("logo-fill-black");
+      $("nav .logo svg > path.logo-fill0").addClass("logo-fill-black");
       header.style.background = colorWhite;
       header.style.zIndex = "100";
       header.style["box-shadow"] = "0 0 14px 0 rgba(41, 70, 112, .25)";
@@ -42,13 +43,13 @@ $(document).ready(function() {
       // $("nav .lang-switch").css("color", colorBlack);
       // $("nav .lang-switch select").css("border-color", colorBlack);
       $(".sandwich span").css("background-color", colorBlack);
-      $("nav .logo > #logo-img path.st0").css("fill", colorBlack);
+      $("nav .logo > svg path.st0").css("fill", colorBlack);
       // langSwitchBorder.style.borderColor = colorBlack;
       // changeColor(langSwitch, colorBlack);
       changeColor(navMenu, colorBlack);
       $(menuLinks).addClass("black-color");
     } else {
-      $("#logo-img > path.logo-fill0").removeClass("logo-fill-black");
+      $("nav .logo svg > path.logo-fill0").removeClass("logo-fill-black");
       header.style.background = "none";
       header.style["box-shadow"] = "none";
       mobileMenu.style.background = "none";
@@ -56,7 +57,7 @@ $(document).ready(function() {
       // $("nav .lang-switch").css("color", colorWhite);
       // $("nav .lang-switch select").css("border-color", colorWhite);
       $(".sandwich span").css("background-color", colorWhite);
-      $("nav .logo > #logo-img path.st0").css("fill", colorWhite);
+      $("nav .logo > svg path.st0").css("fill", colorWhite);
       changeColor(navMenu, colorWhite);
       // changeColor(langSwitch, colorWhite);
       // langSwitchBorder.style.borderColor = colorWhite;
@@ -101,7 +102,7 @@ $(document).ready(function() {
       updateClock();
     };
 
-    const deadline = new Date(2018, 4, 20);
+    const deadline = new Date(2018, 3, 20);
     initializeClock(".counter", deadline);
     initializeClock("#counter-2", deadline);
   };
