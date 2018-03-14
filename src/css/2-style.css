@@ -185,58 +185,7 @@ nav .lang-switch::after {
   top: 50%;
   margin-top: -0.5em;
 }
-header .sandwich {
-  margin: auto 0;
-  position: relative;
-  width: 20px;
-  min-width: 20px;
-  height: 16px;
-  cursor: pointer;
-  z-index: 150;
-}
-header .sandwich span.dark-background {
-  background-color: #202020;
-}
 
-header .sandwich span {
-  width: 20px;
-  height: 2px;
-  background-color: #ffffff;
-  position: absolute;
-  left: 0;
-}
-
-header .sandwich span:first-child {
-  top: 0;
-}
-
-header .sandwich span:nth-child(2) {
-  top: 7px;
-}
-
-header .sandwich span:last-child {
-  bottom: 0;
-}
-
-header .close-btn span {
-  transition: all ease-in-out 0.2s;
-}
-
-header .close-btn span:nth-child(2) {
-  display: none;
-}
-
-header .close-btn span:first-child {
-  top: 7px;
-  bottom: auto;
-  transform: rotate(45deg);
-}
-
-header .close-btn span:last-child {
-  top: 7px;
-  bottom: auto;
-  transform: rotate(-45deg);
-}
 header .overlay-menu {
   display: none;
   justify-content: center;
@@ -247,14 +196,15 @@ header .overlay-menu {
   position: relative;
   transition: 0.5s;
   opacity: 0;
+  transition: 1s;
 }
-header .overlay-menu.overlay-active {
+.overlay-active {
   display: flex;
   height: 100vh;
   position: absolute;
   top: 0;
-  transition: 0.5s;
   opacity: 1;
+  transition: 1s;
 }
 header .overlay-menu-list {
   display: flex;

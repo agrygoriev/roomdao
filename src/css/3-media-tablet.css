@@ -51,9 +51,6 @@
 	nav .lang-switch select {
 		border: 1px solid #ffffff;
 	}
-	header .side-button {
-		top: 540px;
-	}
 
 	main > section {
 		margin: 0;
@@ -690,6 +687,12 @@
 	.our-team, .our-consults {
 		margin: 60px auto;
 	}
+
+	/* Begin of Owl Carousel */
+	.owl-stage {
+	    padding: 0 30px;
+	}
+	/* End of Owl Carousel */
 	main .bubbles-divider a > svg {
 		width: 52px;
 		height: 52px;
@@ -702,7 +705,8 @@
 		padding: 0 30px;
 	}
 	main .our-team.cards .card {
-		width: 263px;
+		position: relative;
+		width: 270px;
 		height: 430px;
 		margin-right: 30px;
 	}
