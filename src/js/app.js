@@ -1,4 +1,4 @@
-var windowWidth = window.innerWidth;
+var windowWidth = $(window).width();
 var header = document.getElementsByTagName("header")[0];
 var doc = document.documentElement;
 var navMenu = document.getElementsByClassName("menu-list");
@@ -27,7 +27,7 @@ function windowScrolled() {
   $("nav .logo > svg path.st0").css("fill", colorBlack);
   changeColor(navMenu, colorBlack);
   $(menuLinks).addClass("black-color");
-};
+}
 function windowUnscrolled() {
   $("nav .logo svg > path.logo-fill0").removeClass("logo-fill-black");
   header.style.background = "none";
@@ -47,10 +47,10 @@ function getTimeRemaining(endtime) {
   var days = Math.floor(remainingTimeInMs / (1000 * 60 * 60 * 24));
   return {
     total: remainingTimeInMs,
-    days,
-    hours,
-    minutes,
-    seconds
+    days: days,
+    hours: hours,
+    minutes: minutes,
+    seconds: seconds
   };
 }
 function initializeClock(id, endtime) {
@@ -62,22 +62,22 @@ function initializeClock(id, endtime) {
   function updateClock() {
     var time = getTimeRemaining(endtime);
     var timeInterval = setInterval(updateClock, 1000);
-    daysSpan.innerHTML = `${time.days}`;
-    hoursSpan.innerHTML = `0${time.hours}`.slice(-2);
-    minutesSpan.innerHTML = `0${time.minutes}`.slice(-2);
-    secondsSpan.innerHTML = `0${time.seconds}`.slice(-2);
+    daysSpan.innerHTML = time.days;
+    hoursSpan.innerHTML = ('0' + time.hours).slice(-2);
+    minutesSpan.innerHTML = ('0' + time.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + time.seconds).slice(-2);
 
     if (time.total <= 0) {
       clearInterval(timeInterval);
     }
-  };
+  }
   updateClock();
-};
+}
 $(document).ready(function() {
   initializeClock(".counter", deadline);
   initializeClock("#counter-2", deadline);
 
-  $(".close-side-btn").click(function() {
+  $(closeSideButton).click(function() {
     sideButton.addClass("closed");
     closeSideButton.toggle(200);
   });
@@ -106,9 +106,13 @@ $(document).ready(function() {
       ev.preventDefault();
       var hrefGoTo = $(this).attr("href");
       var position = $(hrefGoTo).offset().top - 80;
-      console.log('Menu clicked');
+      // console.log('Menu clicked');
+      window.setTimeout(function() {
+        $("html, body")
+          .animate({ scrollTop: position }, 500);
+      }, 0);
     }
-  )
+  );
   $(".overlay-menu ul li a").click(
     function(ev) {
       ev.preventDefault();
@@ -116,9 +120,8 @@ $(document).ready(function() {
       var position = $(hrefGoTo).offset().top - 60;
       $(".sandwich").click();
       $(".overlay-menu").removeClass("overlay-active");
-      window.setTimeout(() => {
+      window.setTimeout(function() {
         $("html, body")
-          .stop()
           .animate({ scrollTop: position }, 500);
       }, 0);
     }
