@@ -270,7 +270,7 @@
 						/>
 					</svg>
 				</a>
-				<a href="https://www.youtube.com/watch?v=kv9RXavURq8">
+				<a href="https://www.youtube.com/watch?v=kv9RXavURq8" target="_blank">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path class="icon-st0" d="M21.7 29.9l8.6-4.9-8.6-4.9z"/><path class="icon-st0" d="M25 0C11.2 0 0 11.2 0 25s11.2 25 25 25 25-11.2 25-25S38.8 0 25 0zm16.5 25s0 5.4-.7 7.9c-.4 1.4-1.5 2.5-2.9 2.9-2.6.8-12.9.8-12.9.8s-10.3 0-12.9-.7c-1.4-.4-2.5-1.5-2.9-2.9-.7-2.6-.7-8-.7-8s0-5.4.7-7.9c.4-1.4 1.5-2.6 2.9-2.9 2.6-.7 12.9-.7 12.9-.7s10.3 0 12.9.7c1.4.4 2.5 1.5 2.9 2.9.7 2.5.7 7.9.7 7.9z"/></svg>
 				</a>
 				<a href="https://medium.com/@roomdao" target="_blank">
@@ -460,7 +460,7 @@
 				<h2 class="bubbles-divider-h2">
 					ROOMDAO – the best offers of a touristic market just in 1 minute and up to 30% economy!
 				</h2>
-				<a href="https://docs.google.com/forms/d/e/1FAIpQLSeBgIkvB4SX8M61av21hdit8-JUkemnNP1Glr9Nlfykd6fVsg/viewform" class="btn join-btn">Join now</a>
+				<a href="https://docs.google.com/forms/d/e/1FAIpQLSeBgIkvB4SX8M61av21hdit8-JUkemnNP1Glr9Nlfykd6fVsg/viewform" class="btn join-btn" target="_blank">Join now</a>
 			</div>
 			<div class="bubbles-right">
 				<div class="bubble bubble-5"></div>
@@ -536,7 +536,7 @@
 			</div>
 		</section> -->
 		<section class="video">
-			<iframe id="player" type="text/html" src="http://www.youtube.com/embed/kv9RXavURq8?enablejsapi=1&amp;origin=http://roomdao-io"
+			<iframe id="player" type="text/html" src="https://www.youtube.com/embed/kv9RXavURq8?enablejsapi=1&amp;origin=https://roomdao-io"
 			 frameborder="0"></iframe>
 		</section>
 		<section class="bubbles-divider" id="first-world">
@@ -551,7 +551,7 @@
 					ROOMDAO is a universal helper for travellers
 					<br>that fixing most of issues
 				</h2>
-				<a href="https://docs.google.com/forms/d/e/1FAIpQLSeBgIkvB4SX8M61av21hdit8-JUkemnNP1Glr9Nlfykd6fVsg/viewform" class="btn join-btn">JOIN NOW</a>
+				<a href="https://docs.google.com/forms/d/e/1FAIpQLSeBgIkvB4SX8M61av21hdit8-JUkemnNP1Glr9Nlfykd6fVsg/viewform" class="btn join-btn" target="_blank">JOIN NOW</a>
 			</div>
 			<div class="bubbles-right">
 				<div class="bubble bubble-5"></div>
@@ -1569,22 +1569,35 @@
 	</main>
 	<footer>
 		<section class="subscribe">
+			<div class="subscribe-form ml-block-success" style="display:none">
+				<div class="form-section">
+					<p>Thank you! You have successfully subscribed to our newsletter.</p>
+				</div>
+			</div>
 			<div class="logo-footer">
 				<img src="img/roomdao-logo-center.svg" alt="Logo">
 			</div>
 			<h2>Join tokensale and gain up to 30% reward</h2>
 			<h3 class="white-color">Subscribe for news and get 5 roomcoins</h3>
-			<form action="submit">
+			<form action="https://app.mailerlite.com/webforms/submit/g9i9c4" data-id="798060" data-code="g9i9c4" method="POST">
 				<input type="email" class="email" placeholder="Enter your e-mail address">
-				<button class="btn btn-blue submit">
+				<button class="btn btn-blue submit primary" type="submit">
 					Subscribe
 				</button>
 			</form>
+			<script>
+				function ml_webform_success_8090812() {
+					var $ = ml_jQuery || jQuery;
+	
+					$('.ml-subscribe-form-8090812 .ml-block-success').show();
+					$('.ml-subscribe-form-8090812 .ml-block-form').hide();
+				};
+			</script>
 		</section>
 		<section class="mobile-subscribe">
-			<form action="submit">
+			<form  action="https://app.mailerlite.com/webforms/submit/g9i9c4" data-id="798060" data-code="g9i9c4" method="POST">
 				<h3>Subscribe for news</h3>
-				<button class="btn btn-blue submit">Subscribe</button>
+				<button class="btn btn-blue submit primary" type="submit">Subscribe</button>
 			</form>
 		</section>
 		<section class="gray-line">
@@ -1596,6 +1609,7 @@
 	<!-- <script src="js/slick.min.js"></script> -->
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/app.js"></script>
+	<script src="https://static.mailerlite.com/js/w/webforms.min.js?v3772b61f1ec61c541c401d4eadfdd02f"></script>
 </body>
 
 </html>

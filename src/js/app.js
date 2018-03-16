@@ -8,7 +8,7 @@ var colorWhite = "#ffffff";
 var colorBlack = "#202020";
 var colorGreen = "#00d9a2";
 var sideButton = $("header .side-button");
-var closeSideButton = $("header .side-button .close-side-button");
+var closeSideButton = $("header .side-button .close-side-btn");
 function changeColor(elementsList, elColor) {
   var array = Array.from(elementsList);
   array.forEach(function(el)  {
