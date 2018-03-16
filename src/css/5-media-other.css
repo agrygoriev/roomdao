@@ -160,9 +160,9 @@
     display: none;
   }
   /* main .our-team, */
-  main .counter-box {
+  /* main .counter-box {
     height: 100%;
-  }
+  } */
   .counter-col h2 .seconds {
     height: auto;
   }
@@ -175,15 +175,7 @@
 		align-items: center;
 		width: 25%;
 	}
-  main .desc-columns {
-    flex-direction: column;
-  }
-  .col.desc-col:last-child {
-    padding-left: 0;
-  }
-  .col {
-    margin-bottom: 20px;
-  }
+  
   .desc-col ul > li {
     padding-left: 15px;
   }
@@ -361,7 +353,7 @@
   }
   .col-features {
     justify-content: space-between;
-    flex: 0 1 48%;
+    /* flex: 0 1 48%; */
   }
   .col-features.col-left {
     margin-left: 0;
