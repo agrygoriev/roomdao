@@ -1109,7 +1109,7 @@ main .our-team > .dots {
 }
 main .our-team.cards > .team.card {
   margin-top: 110px;
-  width: 310px;
+  width: 250px;
   position: relative;
 }
 #our-team-h2 {
@@ -1134,8 +1134,8 @@ main .our-team.cards > .team.card {
   filter: none;
 }
 .team.card > .cards-text {
-  line-height: 2;
-  padding: 10px 20px;
+  line-height: 1.8;
+  padding: 0;
 }
 .team.card > .social-icons {
   position: absolute;

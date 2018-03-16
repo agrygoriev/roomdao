@@ -126,7 +126,7 @@ $(document).ready(function() {
       }, 0);
     }
   );
-  console.log('Window width is '+ windowWidth + ' px');
+  // console.log('Window width is '+ windowWidth + ' px');
   if (windowWidth < 1025) {
     if (windowWidth < 601) {
       $(".our-team.cards").owlCarousel({
