@@ -133,8 +133,8 @@ $(document).ready(function() {
         stagePadding: 15,
         autoWidth: true,
         loop: false,
-        center: true,
-        items: 2,
+        center: false,
+        items: 1,
         margin: 0,
         dots: true,
         dotsEach: true
