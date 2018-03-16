@@ -2289,12 +2289,27 @@ footer .subscribe form {
 footer .subscribe form > * {
   border-radius: 0;
 }
+footer .subscribe form .subscribe-form.horizontal {
+  display: flex;
+  flex: 1;
+}
+footer .subscribe form .subscribe-form.horizontal .form-section.horizontal:first-child {
+  flex: 4;
+}
+/* footer .subscribe form .subscribe-form.horizontal .form-section.horizontal.ml-button-position {
+
+} */
+footer .subscribe form .form-group {
+  width: 100%;
+}
 footer .subscribe form input {
   border: none;
-  flex: 4;
+  /* flex: 4; */
+  width: 100%;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   padding: 13px 25px;
+  box-sizing: border-box;
 }
 footer .subscribe form input::placeholder {
   color: #bbbdbd;
@@ -2306,6 +2321,9 @@ footer .subscribe form button {
   z-index: 46;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  height: 43px;
 }
 footer h2 {
   color: white;

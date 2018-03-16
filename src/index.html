@@ -1568,7 +1568,7 @@
 		</section>
 	</main>
 	<footer>
-		<section class="subscribe">
+		<section class="subscribe ml-subscribe-form ml-subscribe-form-8090812" id="mlb2-8090812">
 			<div class="subscribe-form ml-block-success" style="display:none">
 				<div class="form-section">
 					<p>Thank you! You have successfully subscribed to our newsletter.</p>
@@ -1579,11 +1579,25 @@
 			</div>
 			<h2>Join tokensale and gain up to 30% reward</h2>
 			<h3 class="white-color">Subscribe for news and get 5 roomcoins</h3>
-			<form action="https://app.mailerlite.com/webforms/submit/g9i9c4" data-id="798060" data-code="g9i9c4" method="POST">
-				<input type="email" class="email" placeholder="Enter your e-mail address">
-				<button class="btn btn-blue submit primary" type="submit">
-					Subscribe
-				</button>
+			<form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/g9i9c4" data-id="798060" data-code="g9i9c4" method="POST">
+				<div class="subscribe-form horizontal">
+					<div class="form-section horizontal">
+						<div class="form-group ml-field-email ml-validate-required ml-validate-email">
+							<input type="email" class="form-control" placeholder="Enter your e-mail address" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
+						</div>
+					</div>
+					<div class="form-section horizontal ml-button-position">
+						<button class="btn btn-blue submit primary" type="submit">
+							Subscribe
+						</button>
+						<button disabled="disabled" style="display: none;" type="button" class="loading">
+							<img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+						</button>
+					</div>
+					<div class="clearfix" style="clear: both;"></div>
+					<input type="hidden" name="ml-submit" value="1" />
+
+				</div>
 			</form>
 			<script>
 				function ml_webform_success_8090812() {
