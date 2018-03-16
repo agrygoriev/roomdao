@@ -149,10 +149,14 @@
   }
   #footer-counter {
     margin-bottom: 0;
+    flex-direction: column;
+    flex: 1 1 500px;
   }
   #footer-counter .buttons {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 40px;
+    flex-direction: column;
+    flex: 1 1 300px;
   }
   #footer-counter > .icons {
     display: none;
@@ -170,6 +174,7 @@
   .counter-box > h2 {
     font-size: 18px;
     text-align: center;
+    margin-bottom: 0;
   }
   .counter-box .counter-col > h2 {
     letter-spacing: unset;
@@ -189,6 +194,7 @@
     font-size: 8px;
   }
   .counter-box .counter {
+    height: 100px;
     margin-bottom: 20px;
   }
   .counter-box .counter .counter-divider {
@@ -212,6 +218,9 @@
   }
   .progress {
     width: 100%;
+  }
+  .progress .progress-container {
+    margin-bottom: 20px;
   }
   .progress .bonuses-progress-bar {
     margin: 20px 0;
@@ -407,6 +416,9 @@
   .bubbles-text {
     /* padding: 10px 20px; */
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   .bubbles-text h2 {
     font-size: 20px;
@@ -571,12 +583,14 @@
     border-radius: 0;
     margin-bottom: 50px;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     flex: 1;
   }
   .pre-ico-cols {
     display: flex;
     flex-direction: column;
+    order: 1;
+    margin-bottom: 25px;
   }
   .pre-ico-col-1 {
     width: 100%;
@@ -651,7 +665,12 @@
   .pre-ico .bottom-heading {
     font: 400 20px 'Fira Sans', sans-serif;
     margin: 0;
-    order: 3;
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 
   /* End of Pre-ICO section */
@@ -659,6 +678,7 @@
   /* Begin of Roadmap section */
   #roadmap {
     padding: 0 15px 60px;
+    flex: 1 1 2320px;
   }
   .roadmap-icon {
     width: 80px;
@@ -1041,6 +1061,13 @@
   footer .mobile-subscribe form button {
     margin: 0 auto;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .mobile-subscribe form button span {
+    margin: auto;
   }
   footer .gray-line {
     display: none;
