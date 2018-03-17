@@ -428,14 +428,42 @@
 					</div>
 				</div>
 			</section>
-			<section class="subscribe">
+			<section id="mlb2-8117224" class="ml-subscribe-form ml-subscribe-form-8117224 subscribe">
 				<h2>Subscribe for news and get 5 roomcoins</h2>
-				<form action="submit">
-					<input type="email" class="email" placeholder="Enter your e-mail address">
-					<button class="btn btn-blue submit" type="submit">
-						<span>Subscribe</span>
-					</button>
+				<form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/b9g4v3" data-id="801274" data-code="b9g4v3" method="POST">
+					<div class="subscribe-form horizontal">
+						<div class="form-section horizontal">
+							<div class="form-group ml-field-email ml-validate-required ml-validate-email">
+								<!-- <input type="email" class="form-control" placeholder="Enter your e-mail address" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off"> -->
+								<input type="email" name="fields[email]" class="form-control" placeholder="Enter your e-mail address" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
+							</div>
+						</div>
+						<div class="form-section horizontal ml-button-position">
+							<button class="btn btn-blue submit primary" type="submit">
+								<span>Subscribe</span>
+							</button>
+							<button disabled="disabled" style="display: none;" type="button" class="loading">
+								<img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+							</button>
+						</div>
+						<div class="clearfix" style="clear: both;"></div>
+						<input type="hidden" name="ml-submit" value="1" />
+	
+					</div>
 				</form>
+				<div class="subscribe-form ml-block-success" style="display:none">
+					<div class="form-section">
+						<p>Thank you! You have successfully subscribed to our newsletter.</p>
+					</div>
+				</div>
+				<script>
+					function ml_webform_success_8117224() {
+						var $ = ml_jQuery || jQuery;
+		
+						$('.ml-subscribe-form-8117224 .ml-block-success').show();
+						$('.ml-subscribe-form-8117224 .ml-block-form').hide();
+					};
+				</script>
 			</section>
 		</section>
 		<section class="desc" id="mission">
@@ -1580,11 +1608,7 @@
 	</main>
 	<footer>
 		<section class="subscribe ml-subscribe-form ml-subscribe-form-8090812" id="mlb2-8090812">
-			<div class="subscribe-form ml-block-success" style="display:none">
-				<div class="form-section">
-					<p>Thank you! You have successfully subscribed to our newsletter.</p>
-				</div>
-			</div>
+			
 			<div class="logo-footer">
 				<img src="img/roomdao-logo-center.svg" alt="Logo">
 			</div>
@@ -1611,10 +1635,14 @@
 
 				</div>
 			</form>
+			<div class="subscribe-form ml-block-success" style="display:none">
+				<div class="form-section">
+					<p>Thank you! You have successfully subscribed to our newsletter.</p>
+				</div>
+			</div>
 			<script>
 				function ml_webform_success_8090812() {
 					var $ = ml_jQuery || jQuery;
-	
 					$('.ml-subscribe-form-8090812 .ml-block-success').show();
 					$('.ml-subscribe-form-8090812 .ml-block-form').hide();
 				};

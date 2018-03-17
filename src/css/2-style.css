@@ -809,7 +809,7 @@ main .desc-text {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   padding: 13px 25px;
-  height: 19px;
+  height: 45px;
 }
 .counter-box .subscribe form input::placeholder {
   color: #bbbdbd;
@@ -1940,8 +1940,8 @@ main .our-team.cards > .team.card {
   border: 3px solid #bcbebe;
 }
 .roadmap-icon img {
-  max-width: 60px;
-  max-height: 60px;
+  max-width: 50px;
+  max-height: 50px;
   margin: auto;
 }
 .roadmap-mobile-separator {
@@ -2286,23 +2286,28 @@ footer .subscribe form {
   margin: 0 auto;
   border-radius: 0;
 }
-footer .subscribe form > * {
+.subscribe form > * {
   border-radius: 0;
 }
-footer .subscribe form .subscribe-form.horizontal {
+.subscribe form .subscribe-form.horizontal {
   display: flex;
   flex: 1;
 }
-footer .subscribe form .subscribe-form.horizontal .form-section.horizontal:first-child {
+.subscribe form .subscribe-form.horizontal .form-section.horizontal:first-child {
   flex: 4;
 }
 /* footer .subscribe form .subscribe-form.horizontal .form-section.horizontal.ml-button-position {
 
 } */
-footer .subscribe form .form-group {
+.subscribe-form.ml-block-success p {
+  font: 500 25px 'Montserrat',sans-serif;
+  text-align: left;
+  color: #fff;
+}
+.subscribe form .form-group {
   width: 100%;
 }
-footer .subscribe form input {
+.subscribe form input {
   border: none;
   /* flex: 4; */
   width: 100%;
@@ -2312,11 +2317,11 @@ footer .subscribe form input {
   padding: 13px 25px;
   box-sizing: border-box;
 }
-footer .subscribe form input::placeholder {
+.subscribe form input::placeholder {
   color: #bbbdbd;
   font: 400 18px "Fira Sans", sans-serif;
 }
-footer .subscribe form button {
+.subscribe form button {
   background-color: rgb(0, 114, 255);
   box-shadow: 0px 0px 18px 0px rgba(32, 32, 32, 0.24);
   z-index: 46;
