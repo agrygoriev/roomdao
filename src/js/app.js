@@ -130,14 +130,15 @@ $(document).ready(function() {
   if (windowWidth < 1025) {
     if (windowWidth < 601) {
       $(".our-team.cards").owlCarousel({
-        stagePadding: 15,
-        autoWidth: true,
-        loop: false,
+        startPosition: "#owl-start",
+        // stagePadding: 5,
+        // autoWidth: true,
+        // loop: true,
         center: false,
         items: 1,
-        margin: 0,
+        // margin: 300,
         dots: true,
-        dotsEach: true
+        // dotsEach: true
       });
     } else {
       $(".our-team.cards").owlCarousel({

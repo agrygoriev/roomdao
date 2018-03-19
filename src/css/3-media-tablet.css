@@ -579,109 +579,109 @@
 		margin-right: 10px;
 		align-items: center;
 	}
-	#comsa-logo {
+	.comsa-logo {
 		width: 164px;
 		/* height: 100%; */
 		background: url(../img/partners/comsa-logo-gray.png) top/164px auto no-repeat;
 	}
-	#comsa-logo:hover {
+	.comsa-logo:hover {
 		background: url(../img/partners/comsa-logo-hover.png) top/164px auto no-repeat;
 	}
-	#icoalert-logo {
+	.icoalert-logo {
 		width: 197px;
 		/* height: 100%; */
 		background: url(../img/partners/icoalert-logo-gray.png) top center / 197px auto no-repeat;
 	}
-	#icoalert-logo:hover {
+	.icoalert-logo:hover {
 		background: url(../img/partners/icoalert-logo-hover.png) top center / 197px auto no-repeat;
 	}
-	#icostats-logo {
+	.icostats-logo {
 		width: 148px;
 		/* height: 100%; */
 		background: url(../img/partners/icostats-logo-gray.png) top center / 148px auto no-repeat;
 	}
-	#icostats-logo:hover {
+	.icostats-logo:hover {
 		background: url(../img/partners/icostats-logo-hover.png) top center / 148px auto no-repeat;
 	}
-	#kickico-logo {
+	.kickico-logo {
 		width: 57px;
 		/* height: 100%; */
 		background: url(../img/partners/kickico-logo-gray.png) top center / 57px auto no-repeat;
 	}
-	#kickico-logo:hover {
+	.kickico-logo:hover {
 		background: url(../img/partners/kickico-logo-hover.png) top center / 57px auto no-repeat;
 	}
-	#icorating-logo {
+	.icorating-logo {
 		width: 95px;
 		height: 95px;
 		background: url(../img/partners/icorating-logo-gray.png) top center / 95px auto no-repeat;
 	}
-	#icorating-logo:hover {
+	.icorating-logo:hover {
 		background: url(../img/partners/icorating-logo-hover.png) top center / 95px auto no-repeat;
 	}
-	#tokenmarket-logo {
+	.tokenmarket-logo {
 		width: 188px;
 		height: 25px;
 		background: url(../img/partners/tokenmarket-logo-gray.png) top center / 188px auto no-repeat;
 		margin-bottom: 15px;
 	}
-	#tokenmarket-logo:hover {
+	.tokenmarket-logo:hover {
 		background: url(../img/partners/tokenmarket-logo-hover.png) top center / 188px auto no-repeat;
 	}
-	#cyberfund-logo {
+	.cyberfund-logo {
 		width: 154px;
 		height: 47px;
 		background: url(../img/partners/cyberfund-logo-gray.png) top center / 154px auto no-repeat;
 	}
-	#cyberfund-logo:hover {
+	.cyberfund-logo:hover {
 		background: url(../img/partners/cyberfund-logo-hover.png) top center / 154px auto no-repeat;
 	}
-	#golos-logo {
+	.golos-logo {
 		width: 162px;
 		height: 55px;
 		background: url(../img/partners/golos-logo-gray.png) top center / 162px auto no-repeat;
 	}
-	#golos-logo:hover {
+	.golos-logo:hover {
 		background: url(../img/partners/golos-logo-hover.png) top center / 162px auto no-repeat;
 	}
-	#icobazaar-logo {
+	.icobazaar-logo {
 		width: 74px;
 		height: 101px;
 		background: url(../img/partners/icobazaar-logo-gray.png) top center / auto 101px no-repeat;
 	}
-	#icobazaar-logo:hover {
+	.icobazaar-logo:hover {
 		background: url(../img/partners/icobazaar-logo-hover.png) top center / auto 101px no-repeat;
 	}
-	#icowatch-logo {
+	.icowatch-logo {
 		width: 97px;
 		height: 60px;
 		background: url(../img/partners/icowatchlist-logo-gray.png) top center / 97px auto no-repeat;
 	}
-	#icowatch-logo:hover {
+	.icowatch-logo:hover {
 		background: url(../img/partners/icowatchlist-logo-hover.png) top center / 97px auto no-repeat;
 	}
-	#icotracker-logo {
+	.icotracker-logo {
 		width: 208px;
 		height: 30px;
 		background: url(../img/partners/icotracker-logo-gray.png) top center / 208px auto no-repeat;
 	}
-	#icotracker-logo:hover {
+	.icotracker-logo:hover {
 		background: url(../img/partners/icotracker-logo-hover.png) top center / 208px auto no-repeat;
 	}
-	#smithcrown-logo {
+	.smithcrown-logo {
 		width: 209px;
 		height: 53px;
 		background: url(../img/partners/smithcrown-logo-gray.png) top center / 209px auto no-repeat;
 	}
-	#smithcrown-logo:hover {
+	.smithcrown-logo:hover {
 		background: url(../img/partners/smithcrown-logo-hover.png) top center / 209px auto no-repeat;
 	}
-	#coinschedule-logo {
+	.coinschedule-logo {
 		width: 210px;
 		/* height: 100%; */
 		background: url(../img/partners/coinschedule-logo-gray.png) center center / 210px auto no-repeat;
 	}
-	#coinschedule-logo:hover {
+	.coinschedule-logo:hover {
 		background: url(../img/partners/coinschedule-logo-hover.png) center center / 210px auto no-repeat;
 	}
 	.our-team, .our-consults {

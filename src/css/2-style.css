@@ -697,7 +697,7 @@ main .desc-text {
   border-radius: 100px 0 0 100px;
   float: left;
   height: 100%;
-  display: inline-block;
+  /* display: inline-block; */
   text-align: right;
   font-size: 16px;
   line-height: 26px;
@@ -1227,6 +1227,9 @@ main .our-team.cards > .team.card {
   /* height: 70px;
   margin-bottom: 20px; */
 }
+.partners .logo-row-last {
+  justify-content: space-around;
+}
 .partners .logo-row-last a {
   margin-bottom: 0;
 }
@@ -1242,135 +1245,151 @@ main .our-team.cards > .team.card {
 .partners a:not(:last-child) {
   margin-right: 50px;
 }
-#comsa-logo {
+.comsa-logo {
   width: 187px;
   height: 45px;
   background: url(../img/partners/comsa-logo-gray.png) top center / 187px 45px
     no-repeat;
 }
-#comsa-logo:hover {
+.comsa-logo:hover {
   background: url(../img/partners/comsa-logo-hover.png) top center / 187px 45px
     no-repeat;
 }
-#kickico-logo {
+.kickico-logo {
   width: 65px;
   height: 65px;
   background: url(../img/partners/kickico-logo-gray.png) top center / 65px 65px
     no-repeat;
 }
-#kickico-logo:hover {
+.kickico-logo:hover {
   background: url(../img/partners/kickico-logo-hover.png) top center / 65px 65px
     no-repeat;
 }
-#icoalert-logo {
+.icoalert-logo {
   width: 226px;
   height: 34px;
   background: url(../img/partners/icoalert-logo-gray.png) top center / 226px
     34px no-repeat;
 }
-#icoalert-logo:hover {
+.icoalert-logo:hover {
   background: url(../img/partners/icoalert-logo-hover.png) top center / 226px
     34px no-repeat;
 }
-#icostats-logo {
+.icostats-logo {
   width: 169px;
   height: 47px;
   background: url(../img/partners/icostats-logo-gray.png) top center / 169px
     47px no-repeat;
 }
-#icostats-logo:hover {
+.icostats-logo:hover {
   background: url(../img/partners/icostats-logo-hover.png) top center / 169px
     47px no-repeat;
 }
-#icotracker-logo {
+.icotracker-logo {
   width: 240px;
   height: 36px;
   background: url(../img/partners/icotracker-logo-gray.png) top center / 240px
     36px no-repeat;
 }
-#icotracker-logo:hover {
+.icotracker-logo:hover {
   background: url(../img/partners/icotracker-logo-hover.png) top center / 240px
     36px no-repeat;
 }
-#icorating-logo {
+.icorating-logo {
   width: 109px;
   height: 106px;
   background: url(../img/partners/icorating-logo-gray.png) top center / 109px
     106px no-repeat;
 }
-#icorating-logo:hover {
+.icorating-logo:hover {
   background: url(../img/partners/icorating-logo-hover.png) top center / 109px
     106px no-repeat;
 }
-#tokenmarket-logo {
+.tokenmarket-logo {
   width: 214px;
   height: 29px;
   background: url(../img/partners/tokenmarket-logo-gray.png) top center / 214px
     29px no-repeat;
 }
-#tokenmarket-logo:hover {
+.tokenmarket-logo:hover {
   background: url(../img/partners/tokenmarket-logo-hover.png) top center / 214px
     29px no-repeat;
 }
-#smithcrown-logo {
+.smithcrown-logo {
   width: 238px;
   height: 59px;
   background: url(../img/partners/smithcrown-logo-gray.png) top center / 238px
     59px no-repeat;
 }
-#smithcrown-logo:hover {
+.smithcrown-logo:hover {
   background: url(../img/partners/smithcrown-logo-hover.png) top center / 238px
     59px no-repeat;
 }
-#golos-logo {
+.golos-logo {
   width: 185px;
   height: 61px;
   background: url(../img/partners/golos-logo-gray.png) top center / 185px 61px
     no-repeat;
 }
-#golos-logo:hover {
+.golos-logo:hover {
   background: url(../img/partners/golos-logo-hover.png) top center / 185px 61px
     no-repeat;
 }
-#icobazaar-logo {
+.icobazaar-logo {
   width: 79px;
   height: 115px;
   background: url(../img/partners/icobazaar-logo-gray.png) top center / 79px
     115px no-repeat;
 }
-#icobazaar-logo:hover {
+.icobazaar-logo:hover {
   background: url(../img/partners/icobazaar-logo-hover.png) top center / 79px
     115px no-repeat;
 }
-#cyberfund-logo {
+.cyberfund-logo {
   width: 176px;
   height: 47px;
   background: url(../img/partners/cyberfund-logo-gray.png) top center / 176px
     47px no-repeat;
 }
-#cyberfund-logo:hover {
+.cyberfund-logo:hover {
   background: url(../img/partners/cyberfund-logo-hover.png) top center / 176px
     47px no-repeat;
 }
-#coinschedule-logo {
+.coinschedule-logo {
   width: 243px;
   height: 38px;
   background: url(../img/partners/coinschedule-logo-gray.png) top center / 243px
     38px no-repeat;
 }
-#coinschedule-logo:hover {
+.coinschedule-logo:hover {
   background: url(../img/partners/coinschedule-logo-hover.png) top center /
     243px 38px no-repeat;
 }
-#icowatch-logo {
+.icowatch-logo {
   width: 113px;
   height: 69px;
   background: url(../img/partners/icowatchlist-logo-gray.png) top center / 113px
     69px no-repeat;
 }
-#icowatch-logo:hover {
+.icowatch-logo:hover {
   background: url(../img/partners/icowatchlist-logo-hover.png) top center /
     113px 69px no-repeat;
+}
+.smartfactor-logo {
+  width: 146px;
+  height: 76px;
+  background: url(../img/partners/smartfactor-logo-gray.png) top center / 146px 76px no-repeat;
+}
+.smartfactor-logo:hover {
+  background: url(../img/partners/smartfactor-logo-hover.png) top center / 146px 76px no-repeat;
+}
+.vipole-logo {
+  width: 155px;
+  height: 49px;
+  background: url(../img/partners/vipole-logo-gray.png) top center / 155px 49px no-repeat;
+}
+.vipole-logo:hover {
+  background: url(../img/partners/vipole-logo-hover.png) top center / 155px 49px no-repeat;
 }
 /* Features section */
 
@@ -2258,7 +2277,7 @@ footer .logo-footer {
   height: 92px;
   margin: 0 auto;
 }
-footer .mobile-subscribe {
+.mobile-subscribe {
   display: none;
 }
 footer .subscribe {
