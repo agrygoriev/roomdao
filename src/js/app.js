@@ -3,6 +3,7 @@ var header = document.getElementsByTagName("header")[0];
 var doc = document.documentElement;
 var navMenu = document.getElementsByClassName("menu-list");
 var menuLinks = navMenu[0].getElementsByTagName("a");
+var navLogoPath = document.querySelectorAll(".logo > svg > path.logo-fill0");
 var mobileMenu = document.querySelector(".mobile-menu");
 var colorWhite = "#ffffff";
 var colorBlack = "#202020";
@@ -15,9 +16,16 @@ function changeColor(elementsList, elColor) {
     el.style.color = elColor;
   });
 }
+function changeSvgFill(elementsList, elColor) {
+  var array = Array.from(elementsList);
+  array.forEach(function(el)  {
+    el.style.fill = elColor;
+  });
+}
 var deadline = new Date(2018, 3, 20);
 function windowScrolled() {
-  $("nav .logo svg > path.logo-fill0").addClass("logo-fill-black");
+  // $("nav .logo svg > path.logo-fill0").addClass("logo-fill-black");
+  changeSvgFill(navLogoPath, colorBlack);
   header.style.background = colorWhite;
   header.style.zIndex = "100";
   header.style["box-shadow"] = "0 0 14px 0 rgba(41, 70, 112, .25)";
@@ -29,7 +37,8 @@ function windowScrolled() {
   $(menuLinks).addClass("black-color");
 }
 function windowUnscrolled() {
-  $("nav .logo svg > path.logo-fill0").removeClass("logo-fill-black");
+  // $("nav .logo svg > path.logo-fill0").removeClass("logo-fill-black");
+  changeSvgFill(navLogoPath, colorWhite);
   header.style.background = "none";
   header.style["box-shadow"] = "none";
   mobileMenu.style.background = "none";
@@ -39,44 +48,48 @@ function windowUnscrolled() {
   changeColor(navMenu, colorWhite);
   $(menuLinks).removeClass("black-color");
 }
-function getTimeRemaining(endtime) {
+function getTimeRemaining() {
+  var endtime = new Date(2018, 3, 20);
+  // console.log("Endtime = " + endtime);
   var remainingTimeInMs = Date.parse(endtime) - Date.parse(new Date());
   var seconds = Math.floor((remainingTimeInMs / 1000) % 60);
   var minutes = Math.floor((remainingTimeInMs / 1000 / 60) % 60);
   var hours = Math.floor((remainingTimeInMs / (1000 * 60 * 60)) % 24);
   var days = Math.floor(remainingTimeInMs / (1000 * 60 * 60 * 24));
   return {
-    total: remainingTimeInMs,
+    // total: remainingTimeInMs,
     days: days,
     hours: hours,
     minutes: minutes,
     seconds: seconds
   };
 }
-function initializeClock(id, endtime) {
-  var clock = document.querySelector(id);
-  var daysSpan = clock.querySelector(".days");
-  var hoursSpan = clock.querySelector(".hours");
-  var minutesSpan = clock.querySelector(".minutes");
-  var secondsSpan = clock.querySelector(".seconds");
-  function updateClock() {
-    var time = getTimeRemaining(endtime);
-    var timeInterval = setInterval(updateClock, 1000);
-    daysSpan.innerHTML = time.days;
-    hoursSpan.innerHTML = ('0' + time.hours).slice(-2);
-    minutesSpan.innerHTML = ('0' + time.minutes).slice(-2);
-    secondsSpan.innerHTML = ('0' + time.seconds).slice(-2);
-
-    if (time.total <= 0) {
-      clearInterval(timeInterval);
-    }
+function updateClock() {
+  var daysSpan = document.querySelectorAll(".days");
+  var hoursSpan = document.querySelectorAll(".hours");
+  var minutesSpan = document.querySelectorAll(".minutes");
+  var secondsSpan = document.querySelectorAll(".seconds");
+  var time = getTimeRemaining();
+  console.log(time);
+  Array.from(daysSpan).forEach(function(element) {
+    element.innerHTML = prefixZero(parseInt(time.days));
+  });
+  Array.from(hoursSpan).forEach(function(element) {
+    element.innerHTML = prefixZero(parseInt(time.hours));
+  });
+  Array.from(minutesSpan).forEach(function(element) {
+    element.innerHTML = prefixZero(parseInt(time.minutes));
+  });
+  Array.from(secondsSpan).forEach(function(element) {
+    element.innerHTML = prefixZero(parseInt(time.seconds));
+  });
+  function prefixZero(n) {
+    return (n < 10 ? '0' : '') + n;
   }
-  updateClock();
 }
 $(document).ready(function() {
-  initializeClock(".counter", deadline);
-  initializeClock("#counter-2", deadline);
-
+  setInterval(function () { updateClock(); }, 1000);
+  // initializeClock("#counter-2", deadline);
   $(closeSideButton).click(function() {
     sideButton.addClass("closed");
     closeSideButton.toggle(200);
@@ -126,19 +139,18 @@ $(document).ready(function() {
       }, 0);
     }
   );
-  // console.log('Window width is '+ windowWidth + ' px');
   if (windowWidth < 1025) {
     if (windowWidth < 601) {
       $(".our-team.cards").owlCarousel({
         startPosition: "#owl-start",
-        // stagePadding: 5,
-        // autoWidth: true,
+        stagePadding: 100,
+        autoWidth: true,
         // loop: true,
         center: false,
         items: 1,
-        // margin: 300,
+        // margin: 30,
         dots: true,
-        // dotsEach: true
+        dotsEach: true
       });
     } else {
       $(".our-team.cards").owlCarousel({

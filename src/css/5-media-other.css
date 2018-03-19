@@ -206,7 +206,8 @@
     align-items: flex-start;
     flex-direction: column;
     box-sizing: border-box;
-    margin: 0 auto;
+    margin: 0 auto 20px;
+    padding-bottom: 0;
   }
   .roadmap-pathway {
     position: relative;
@@ -259,8 +260,9 @@
     margin: 0 auto 20px;
     width: 100%;
     padding: 0;
-    height: 500px;
+    height: 100%;
     flex-direction: column;
+    max-width: 90vw;
   }
   /* Begin of Owl Carousel */
   .owl-stage {
@@ -270,10 +272,14 @@
     /* padding: 0 30px; */
   }
   .owl-dots {
+    max-width: 95vw;
     text-align: center;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
+    flex: 1 1 50px;
+    margin: 0 auto;
   }
   .owl-dots button {
     border: none;
@@ -281,6 +287,7 @@
   }
   .owl-dots .owl-dot {
     display: inline-block;
+    padding: 5px;
   }
   .owl-dots .owl-dot span {
     width: 10px;

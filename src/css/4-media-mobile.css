@@ -36,7 +36,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex: 1;
-    margin-top: 65px;
+    margin-top: 60px;
   }
   .dot {
     width: 6px;
@@ -137,8 +137,9 @@
   main .bubbles-divider .icons {
     width: 100%;
     padding: 0 25px;
-    justify-content: space-evenly;
+    justify-content: space-around;
     margin: 0;
+    flex-basis: auto;
   }
   main .bubbles-divider .bubbles-text > .btn {
     margin-bottom: 5px;
@@ -194,8 +195,8 @@
     font-size: 8px;
   }
   .counter-box .counter {
-    height: 100px;
-    margin-bottom: 20px;
+    height: 40px;
+    margin-bottom: 30px;
   }
   .counter-box .counter .counter-divider {
     font-size: 38px;
@@ -257,23 +258,23 @@
   main .bubbles-divider a > svg {
     margin: 0;
   }
-  main .counter-box .subscribe {
+  /* main .counter-box .subscribe {
     display: none;
-  }
-  main .counter-box .mobile-subscribe {
+  } */
+  main .counter-box .subscribe {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 140px;
-    padding: 30px 30px;
+    height: 150px;
+    padding: 10px 15px;
     top: 0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     background: #88cdc8;
   }
-  main .counter-box .mobile-subscribe h2 {
+  main .counter-box .subscribe h2 {
     margin-bottom: 10px;
     font-weight: 400;
     font-size: 18px;
@@ -282,24 +283,68 @@
     padding: 0 30px;
     line-height: 1.6;
   }
-  main .counter-box .mobile-subscribe form {
+  main .counter-box .subscribe form {
     flex-direction: column;
-    width: 250px;
+    height: 40px;
+    width: 100%;
     margin-bottom: 10px;
   }
-  main .counter-box .mobile-subscribe form input {
+  /* main .counter-box .subscribe form input {
     display: none;
-  }
-  main .counter-box .mobile-subscribe form button {
+  } */
+  main .counter-box .subscribe form button {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
     z-index: 0;
     text-align: center;
   }
-  main .counter-box .mobile-subscribe form button span {
+  .counter-box .subscribe form input {
+    padding: 5px 8px;
+    height: 40px;
+  }
+  .counter-box .subscribe form input[type="email"]::placeholder,
+  .counter-box .subscribe form input[type="email"]::-webkit-input-placeholder,
+  .counter-box .subscribe form input[type="email"]::-moz-placeholder,
+  .counter-box .subscribe form input[type="email"]:-ms-input-placeholder,
+  .counter-box .subscribe form input[type="email"]:-moz-placeholder {
+    font-size: 10px;
+  }
+  main .counter-box .subscribe form button span {
     margin: auto;
+  }
+  .subscribe form .form-group {
+    height: 40px;
+  }
+  .subscribe form input {
+    height: 40px;
+    box-sizing: border-box;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    padding: 6px 12px;
+  }
+  .subscribe .form-section.horizontal.ml-button-position {
+    flex: 2;
+    height: 40px;
+  }
+  .subscribe form button {
+    text-align: center;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 40px;
+  }
+  .subscribe-form.ml-block-success p {
+    font: 500 14px 'Montserrat',sans-serif;
+    text-align: center;
+    color: #fff;
+  }
+  .loading {
+    padding: 0;
+    border: none;
+    background: none;
   }
   nav .logo {
     width: 118px;
@@ -405,8 +450,8 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    height: 230px;
-    flex-basis: 230px;
+    /* height: 230px;
+    flex-basis: 230px; */
     justify-content: flex-start;
     align-items: center;
     padding: 30px 30px;
@@ -427,7 +472,9 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
   }
   .bubbles-text h2 {
     font-size: 20px;
@@ -687,7 +734,10 @@
   /* Begin of Roadmap section */
   #roadmap {
     padding: 0 15px 60px;
-    flex: 1 1 2320px;
+    flex: 1 1 2250px;
+  }
+  .roadmap-point {
+    flex: 1 1 130px;
   }
   .roadmap-icon {
     width: 80px;
@@ -768,6 +818,9 @@
   #our-consults-h2 {
     margin-bottom: 90px;
   }
+  /* #our-team-h2 {
+    margin-top: 40px;
+  } */
   .our-team {
     margin-bottom: 30px;
   }
@@ -778,6 +831,10 @@
     width: 100%;
     padding: 0;
     height: 470px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
   main .our-team.cards .card {
     width: 270px;
@@ -794,8 +851,7 @@
     display: flex;
   }
   main .our-team.cards > .team.card {
-    margin-right: 30px;
-    margin-top: 110px;
+    margin: 50px auto;
   }
   .team.card > .social-icons {
     position: absolute;
@@ -815,6 +871,13 @@
     line-height: 1.9;
     padding: 5px 15px 10px;
   }
+  .owl-stage-outer {
+    padding-left: 13%;
+  }
+  .owl-dots {
+    max-width: 95vw;
+    margin: 0 15px;
+  }
   .partners,
   .partners-tablet {
     display: none;
@@ -826,7 +889,7 @@
     display: block;
     margin-bottom: 30px;
     width: 90vw;
-    height: 220px;
+    height: 280px;
   }
   .partners-mobile .logo-row {
     display: flex;
@@ -982,8 +1045,24 @@
     background: url(../img/partners/icobazaar-logo-hover.png) top center / 49px
       auto no-repeat;
   }
+  .smartfactor-logo {
+    width: 75px;
+    height: 39px;
+    background: url(../img/partners/smartfactor-logo-gray.png) top center / 75px auto no-repeat;
+  }
+  .smartfactor-logo:hover {
+    background: url(../img/partners/smartfactor-logo-hover.png) top center / 75px auto no-repeat;
+  }
+  .vipole-logo {
+    width: 123px;
+    height: 39px;
+    background: url(../img/partners/vipole-logo-gray.png) top center / 123px auto no-repeat;
+  }
+  .vipole-logo:hover {
+    background: url(../img/partners/vipole-logo-hover.png) top center / 123px auto no-repeat;
+  }
   #join-us {
-    height: 200px;
+    /* height: 200px; */
     padding: 20px;
     margin-bottom: 50px;
   }
@@ -1053,21 +1132,42 @@
   footer {
     height: 100%;
     margin-top: 0;
-    padding: 30px 60px;
+    padding: 10px 15px;
   }
-  footer .subscribe {
+  /* footer .subscribe {
+    display: none;
+  } */
+  .mobile-subscribe {
     display: none;
   }
-  .mobile-subscribe {
+  footer .subscribe {
     display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 10px;
   }
-  .mobile-subscribe form h3 {
+  footer .subscribe form {
+    height: 40px;
+  }
+  
+  footer .logo-footer {
+    display: none;
+  }
+  footer .subscribe h2 {
+    display: none;
+  }
+  footer .subscribe h3 {
+    font: 400 18px 'Montserrat', sans-serif;
+    line-height: 1.6;
+    text-align: center;
+  }
+  .subscribe form h3 {
     color: #ffffff;
     font: 400 18px "Montserrat", sans-serif;
     text-align: center;
     margin-bottom: 15px;
   }
-  .mobile-subscribe form button {
+  .subscribe form button {
     margin: 0 auto;
     width: 100%;
     display: flex;
@@ -1075,10 +1175,10 @@
     justify-content: center;
     align-items: center;
   }
-  .mobile-subscribe form button span {
+  .subscribe form button span {
     margin: auto;
   }
-  .gray-line {
+  footer .gray-line {
     display: none;
   }
 }
@@ -1113,14 +1213,17 @@
     width: 145px;
   }
   .bubbles-divider {
+    width: 100%;
     height: 100%;
-    padding: 15px;
+    margin-bottom: 30px;
+    padding: 10px 20px;
   }
   .bubbles-text > .btn {
     margin-bottom: 0;
   }
   main .bubbles-divider .icons {
     padding: 0;
+    flex: 1 1 auto;
   }
   .partners-mobile {
     height: 370px;
