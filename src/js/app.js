@@ -70,7 +70,7 @@ function updateClock() {
   var minutesSpan = document.querySelectorAll(".minutes");
   var secondsSpan = document.querySelectorAll(".seconds");
   var time = getTimeRemaining();
-  console.log(time);
+  // console.log(time);
   Array.from(daysSpan).forEach(function(element) {
     element.innerHTML = prefixZero(parseInt(time.days));
   });
