@@ -281,10 +281,7 @@
   .spider-features .phone-with-logo {
     display: none;
   }
-  .col-features {
-    justify-content: space-between;
-    /* flex: 0 1 48%; */
-  }
+  
   .col-features.col-left {
     margin-left: 0;
   }

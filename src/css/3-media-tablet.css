@@ -277,6 +277,10 @@
 	.spider-features > .feature-divider {
 		display: none;
 	}
+	.col-features {
+		width: 50%;
+  		margin: 0 10px;
+	}
 	.feature {
 		margin-bottom: 40px;
 	}
