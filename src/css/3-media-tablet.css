@@ -20,14 +20,17 @@
 		width: 100%;
 		height: 100%;
 	}
-	nav .logo > #logo-img {
+	/* nav .logo > #logo-img {
 		display: block;
 		height: 21px;
 		width: auto;
-		/* background: url('img/roomdao-logo-white.svg'); */
 	}
 	nav .logo > #logo-img path.st0 {
 		fill: #ffffff;
+	} */
+	nav .logo svg {
+		width: 120px;
+		margin-top: 10px;
 	}
 	header nav.mobile-menu {
 		display: flex;
@@ -48,9 +51,6 @@
 		width: 20px;
 		/* padding: 5px; */
 	}
-	nav .lang-switch select {
-		border: 1px solid #ffffff;
-	}
 
 	main > section {
 		margin: 0;
@@ -62,39 +62,27 @@
 		width: 7px;
 		height: 7px;
 	} */
-	main .main-desc .desc-heading,
+	/* main .main-desc .desc-heading,
 	main .main-desc .desc-subheading {
 		font-size: 20px;
 		font-weight: 400;
 	}
 	main .main-desc .desc-heading {
 		margin-top: 13vw;
-	}
+	} */
 	/* main .desc-h2 {
 		margin-bottom: 30px;
 		font-weight: 500;
 	} */
-	main .main-desc {
+	/* main .main-desc {
 		flex: 1 1 auto;
 		justify-content: flex-start;
+	} */
+	main {
+		margin: 90px auto 0;
 	}
-	main .main-desc .logo-main {
-		margin-top: 90px;
-	}
-	main .main-desc .logo-main > img {
-		width: 278px;
-		height: 95px;
-		margin: 0 auto;
-	}
-	main .desc-col h2 {
-		font-weight: 500;
-	}
-	main .main-desc .desc-text {
-		font: 400 25px 'Montserrat', sans-serif;
-		line-height: 1.3;
-		/* flex: 1 1 600px; */
-		width: 550px;
-		margin-bottom: 60px;
+	.main-desc .info {
+		margin-right: 0;
 	}
 	main .main-desc .buttons {
 		display: flex;
@@ -104,20 +92,41 @@
 		justify-content: center;
 		margin-bottom: 10px;
 	}
-	main .main-desc .icons {
-		margin-bottom: 55px;
+	.main-desc .icons {
+		margin-bottom: 25px;
+		justify-content: space-between;
+		width: 100%;
+		height: 45px;
 	}
-	main .main-desc .icons > a {
-		width: 43px;
+	.main-desc .icons > a {
+		width: 45px;
+		height: 45px;
+	}
+	.info .youtube-video {
+		margin-top: 25px;
+	}
+	.main-desc .info .heading {
+		text-align: center;
+	}
+	.main-desc .info .buttons {
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 0;
+	}
+	.info .buttons .subheading {
+		flex: 0 1 560px;
+		margin-bottom: 15px;
+		text-align: center;
 	}
 	.ani-btn {
 		margin-right: 30px;
 	}
 	.btn {
-		margin-bottom: 25px;
+		margin-bottom: 15px;
 		font-weight: 500;
 	}
-	main .counter-box {
+	/* main .counter-box {
 		width: 630px;
 		height: 460px;
 		padding: 35px 0 0;
@@ -177,7 +186,7 @@
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 5px;
-	}
+	} */
 	.progress .raised-container {
 		margin-bottom: 0;
 	}
@@ -265,20 +274,6 @@
 		margin-bottom: 25px;
 		font-weight: 500;
 	}
-	main .video {
-		display: block;
-		background: none;
-		/* flex: 1 1 90%; */
-		width: 650px;
-		height: 430px;
-		margin: 0 auto 100px;
-		box-shadow: rgba(41, 70, 112, 0.25) 0px 0px 14px 0px;
-		padding: 0;
-	}
-	.video iframe {
-		width: 650px;
-		height: 430px;
-	}
 	.spider-features > .feature-divider {
 		display: none;
 	}
@@ -305,10 +300,6 @@
 	}
 	.previews h2 {
 		font-size: 18px;
-		color: #ffffff;
-	}
-	.previews p {
-		font-size: 16px;
 		color: #ffffff;
 	}
 	.tokens-emitted {
@@ -390,12 +381,6 @@
 	.pre-ico-col-2 > ul > li {
 		font-weight: 300;
 	}
-	.pre-ico .bold {
-		font-weight: 400;
-	}
-	#ico-h2 {
-		margin-top: 15px;
-	}
 	.pre-ico-col-2 .bubbles {
 		border-radius: 50%;
 	}
@@ -417,14 +402,6 @@
 		left: 390px;
 		width: 95px;
 		height: 95px;
-	}
-	.roadmap {
-		max-width: 100vw;
-		margin: 0 30px 100px;
-		display: flex;
-		flex-flow: column nowrap;
-		height: 100%;
-		flex: 1 1 auto;
 	}
 	/* .roadmap-slider {
 		width: 100%;
@@ -464,84 +441,6 @@
 	.roadmap-slider .slick-dots li button {
 		margin-right: 0;
 	} */
-	.slick-dots li button:active {
-		outline: none;
-	}
-	.slider .slides {
-		position: relative;
-		display: flex;
-		height: 100%;
-		width: 100%;
-		padding: 0;
-		margin: 0;
-		flex: 1 1 80%;
-	}
-	.articles.slider {
-		height: 420px;
-		width: 100vw;
-		margin-bottom: 70px;
-	}
-	.articles.slider .slides {
-		width: 90%;
-		margin: 0 auto;
-	}
-	.articles.slider .slick-list,
-	.videos.slider .slick-list {
-		flex-flow: row nowrap;
-		width: 90vw;
-	}
-	.videos.slider .slick-list {
-		height: 230px;
-	}
-	.articles.slider .slick-track {
-		display: flex;
-		justify-content: space-around;
-	}
-	.articles.slider .slides .wrap-slide.slick-slide {
-		float: left;
-		width: 470px;
-		height: 100%;
-		-ms-flex-flow: column nowrap;
-		flex-flow: column nowrap;
-		flex: 1 1 400px;
-		margin-right: 0;
-		left: 10px;
-	}
-	.articles.slider .slick-dots {
-		justify-content: center;
-		bottom: 0;
-	}
-	.slider .slick-dots li {
-		margin-right: 20px;
-	}
-	.slider .slick-dots li.slick-active button {
-		background: #0ed991;
-		border-color: #0ed991 !important;
-	}
-	.slider .slick-dots li .button {
-		width: 12px;
-		height: 12px;
-		background: none;
-		border: 3px solid #80cac4;
-		border-radius: 50%;
-		font-size: 0;
-		line-height: 0;
-		color: #fefefe;
-		padding: 0;
-		cursor: pointer;
-	}
-	.articles .article {
-		padding: 0 20px;
-	}
-	.articles .article img {
-		margin-bottom: 35px;
-	}
-	.articles .article h2 {
-		font-weight: 500;
-	}
-	.articles .article p {
-		color: #4b4b4b;
-	}
 /* 
 	.articles .dots {
 		margin-bottom: 60px;
@@ -718,72 +617,18 @@
 		padding: 0;
 		height: 500px;
 	}
-	main .our-team .slick-list {
-		width: 90vw;
-		margin: 0 auto;
-	}
-	main .our-team .slick-dots {
-		bottom: -30px;
-	}
-	main .our-team.cards .slick-track,
-	main .videos.cards .slick-track {
-		display: flex;
-	}
-	main .our-team.cards > .team.card {
-		margin-right: 30px;
-		margin-top: 110px;
-	}
 	.team.card > .social-icons {
 		bottom: 10px;
 	}
 	/* main .our-team > .dots {
 		margin-bottom: 10px;
 	} */
-	main .about-us.cards {
-		display: flex;
-		flex-direction: column;
-		width: 100vw;
-		height: 520px;
-		margin-bottom: 60px;
-	}
-	.about-us.cards.slider,
-	.videos.cards.slider {
-		width: 100%;
-	}
-	main .about-us.cards.slider .slides {
-		flex-direction: row;
-		justify-content: center;
-		width: 90vw;
-	}
-	.slick-track {
-		display: flex;
-	}
-	.about-us.cards .card.press {
-		width: 300px !important;
-	}
-	.about-us.cards .slick-list {
-		width: 638px;
-	}
-	main .videos.cards .videocard {
-		padding: 0;
-	}
 	#join-us {
 		margin-bottom: 65px;
 	}
 	#footer-counter {
-		height: 620px;
-	}
-	#footer-counter .buttons {
-		display: flex;
-		align-items: center;
-		width: 550px;
-		flex-flow: row wrap;
-		justify-content: center;
-		margin-bottom: 10px;
-		margin-top: 10px;
-	}
-	#footer-counter .buttons .btn {
-		box-shadow: 0px 0px 5px rgba(0, 0, 0, .3);
+		width: 630px;
+		flex: 0 0 100%;
 	}
 	footer {
 		height: 100%;

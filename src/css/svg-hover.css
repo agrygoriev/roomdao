@@ -1,0 +1,31 @@
+main .main-desc .icons a svg path.icon-st0 {
+    fill: #bdbdbd;
+}
+main .main-desc .icons a:hover svg path.icon-st0,
+main .main-desc .icons a:hover svg path.icon-st1 {
+fill: #00d9a2;
+}
+main .bubbles-divider a > svg {
+width: 72px;
+height: 72px;
+}
+main .bubbles-divider a svg path.st0 {
+fill: #ffffff;
+}
+main .bubbles-divider a:hover svg path.st0 {
+fill: #00d9a2;
+}
+
+.team.card .social-icons a svg path.st0 {
+fill: #88cdc8;
+}
+.team.card .social-icons a:hover svg path.st0 {
+fill: #00d9a2;
+}
+
+@media (min-width: 320px) and (max-width:599px) {
+    main .bubbles-divider a > svg {
+        width: 35px;
+        height: 35px;
+    }
+}

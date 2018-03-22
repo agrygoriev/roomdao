@@ -1,0 +1,191 @@
+.progress .progress-container {
+  display: none;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.progress .hard-cap,
+.progress .soft-cap {
+  color: #000000;
+  text-align: center;
+}
+.progress .soft-cap {
+  margin-left: 10%;
+  display: inline-block;
+  transform: translateX(-50%);
+  position: relative;
+  left: 15px;
+}
+.progress .hard-cap {
+  float: right;
+}
+.progress .hard-cap .mobile-only {
+  display: none;
+}
+.progress .hard-cap .number,
+.progress .soft-cap .number {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.progress .hard-cap .title,
+.progress .soft-cap .title {
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.progress .largest-proTech,
+.progress .reached-bar {
+  color: #000000;
+  text-align: center;
+}
+
+.progress .largest-proTech .number,
+.progress .reached-bar .number {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.progress .largest-proTech .title,
+.progress .reached-bar .title {
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.progress .reached-bar {
+  /* margin-top: 10px; */
+  margin-left: 10%;
+  transform: translateX(-50%);
+  display: inline-block;
+  position: relative;
+  left: 15px;
+}
+
+.progress .bonuses-progress-bar {
+  position: relative;
+  border: 3px solid #fff;
+  height: 30px;
+  margin: 20px;
+  border-radius: 50%;
+  /* -webkit-box-sizing: border-box; */
+  /* box-sizing: border-box; */
+  z-index: 0;
+}
+.progress .bonuses-progress-bar:before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: linear-gradient(90deg, #88cdc8 39%, #294670);
+  border-radius: 100px;
+  z-index: -1;
+}
+.progress .bonuses-progress-bar:hover .exchange-currency > * {
+  opacity: 1;
+}
+
+.progress .bonuses-progress-bar .largest-proTech {
+  min-width: 120px;
+  pointer-events: none;
+  top: 55px;
+  text-align: center;
+  left: calc((100% / 30000000) * 10000000);
+  position: absolute;
+  transition: 0.6s ease-out;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  opacity: 1;
+}
+
+.progress .bonuses-progress-bar .exchange-currency {
+  transition: 0.3s ease-out;
+  opacity: 1;
+  position: absolute;
+  bottom: calc(100% + 25px);
+  width: 100%;
+  text-align: center;
+}
+
+.progress .bonuses-progress-bar .exchange-currency > * {
+  transition: 0.3s ease-out;
+}
+
+.progress .bonuses-progress-bar .exchange-currency ul li {
+  font-size: 12px;
+  display: inline-block;
+}
+
+.progress .bonuses-progress-bar .exchange-currency ul li:not(:last-of-type) {
+  margin-right: 15px;
+}
+
+.progress .bonuses-progress-bar .bonuses-list {
+  width: 100%;
+  color: hsla(0, 0%, 100%, 0.5);
+  background: #fff;
+  border-radius: 100px;
+  position: relative;
+  overflow: hidden;
+  vertical-align: top;
+  border: 3px solid #fff;
+  box-sizing: border-box;
+  height: 30px;
+}
+
+.progress .bonuses-progress-bar .bonuses-list:after {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 20px;
+  background: #fff;
+  display: block;
+  border-radius: 100px;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  box-shadow: rgba(97, 71, 151, 0.44) 0 2px 6px;
+  display: none;
+}
+
+.progress .bonuses-progress-bar .bonuses-list li {
+  display: inline-block;
+}
+
+.progress .bonuses-progress-bar .bonuses-list li:not(.line-money-container) {
+  border-radius: 100px 0 0 100px;
+  float: left;
+  height: 100%;
+  /* display: inline-block; */
+  text-align: right;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 700;
+  color: #294670;
+  background: #00d9a2;
+  /* background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.7) 0,
+    #fff 100%
+  ); */
+  width: calc((100% / 3600000) * 120000);
+  padding-right: 10px;
+  transition: 0.6s ease-out;
+  opacity: 1;
+  vertical-align: top;
+}
+
+.progress .bonuses-progress-bar .bonuses-list li.line-money-container {
+  height: 100%;
+}
+
+.progress .bonuses-progress-bar .bonuses-list li .line-money {
+  width: 4px;
+  display: block;
+  height: 100%;
+  opacity: 0;
+  background: #ffca7d;
+}

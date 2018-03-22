@@ -4,7 +4,7 @@ var doc = document.documentElement;
 var navMenu = document.getElementsByClassName("menu-list");
 var menuLinks = navMenu[0].getElementsByTagName("a");
 var navLogoPath = document.querySelectorAll(".logo > svg > path.logo-fill0");
-var mobileMenu = document.querySelector(".mobile-menu");
+var mobileMenu = document.querySelector(".mobile-menu")
 var colorWhite = "#ffffff";
 var colorBlack = "#202020";
 var colorGreen = "#00d9a2";
@@ -24,29 +24,46 @@ function changeSvgFill(elementsList, elColor) {
 }
 var deadline = new Date(2018, 3, 20);
 function windowScrolled() {
-  // $("nav .logo svg > path.logo-fill0").addClass("logo-fill-black");
-  changeSvgFill(navLogoPath, colorBlack);
+  // $("nav.mobile-menu .logo svg > path.logo-fill0").addClass("logo-fill-black");
+  // changeSvgFill(navLogoPath, colorBlack);
   header.style.background = colorWhite;
   header.style.zIndex = "100";
   header.style["box-shadow"] = "0 0 14px 0 rgba(41, 70, 112, .25)";
   mobileMenu.style.background = colorWhite;
   mobileMenu.style.boxShadow = "2px 2px 18px rgba(32, 32, 32, .25)";
-  $(".sandwich span").css("background-color", colorBlack);
-  $("nav .logo > svg path.st0").css("fill", colorBlack);
+  $("header .sandwich span").addClass("dark-background");
+  $("nav .logo > svg path.logo-fill0").css("fill", colorBlack);
   changeColor(navMenu, colorBlack);
   $(menuLinks).addClass("black-color");
+  $("nav .logo").addClass("logo-scrolled");
+  $("header nav ul.menu-list").addClass("ul-scrolled");
+}
+function overlayLogoColor () {
+  if ($(".sandwich").hasClass("sandwich-open")) {
+    $("nav .logo > svg path.logo-fill0").css("fill", colorBlack);
+  } else {
+    $("nav .logo > svg path.logo-fill0").css("fill", colorWhite);
+  }
 }
 function windowUnscrolled() {
-  // $("nav .logo svg > path.logo-fill0").removeClass("logo-fill-black");
-  changeSvgFill(navLogoPath, colorWhite);
+  // $("nav.mobile-menu .logo svg > path.logo-fill0").removeClass("logo-fill-black");
+  // changeSvgFill(navLogoPath, colorWhite);
   header.style.background = "none";
   header.style["box-shadow"] = "none";
   mobileMenu.style.background = "none";
   mobileMenu.style.boxShadow = "none";
-  $(".sandwich span").css("background-color", colorWhite);
-  $("nav .logo > svg path.st0").css("fill", colorWhite);
+  // $("header .sandwich span").removeClass("dark-background")
+  $("nav .logo > svg path.logo-fill0").css("fill", colorWhite);
   changeColor(navMenu, colorWhite);
   $(menuLinks).removeClass("black-color");
+  $("nav .logo").removeClass("logo-scrolled");
+  $("header nav ul.menu-list").removeClass("ul-scrolled");
+  if ($(".overlay-menu").hasClass("overlay-active")) {
+    $("nav .logo > svg path.logo-fill0").css("fill", colorBlack);
+    $("header .sandwich span").addClass("dark-background");
+  } else {
+    $("header .sandwich span").removeClass("dark-background");
+  }
 }
 function getTimeRemaining() {
   var endtime = new Date(2018, 3, 20);
@@ -104,6 +121,7 @@ $(document).ready(function() {
     $("nav .logo").css("z-index", "150");
     $(".overlay-menu").toggleClass("overlay-active");
     $("header .sandwich span").toggleClass("dark-background");
+    overlayLogoColor();
   });
   $(window).scroll(function (ev) {
     var scroll = $(window).scrollTop();

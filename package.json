@@ -29,9 +29,11 @@
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^11.0.0",
     "postcss-reporter": "^5.0.0",
+    "postcss-uncss": "^0.16.1",
     "postcss-url": "^7.3.0",
     "pump": "^2.0.0",
-    "run-sequence": "^2.2.0"
+    "run-sequence": "^2.2.0",
+    "uncss": "^0.16.2"
   },
   "browserslist": [
     "> 1%",

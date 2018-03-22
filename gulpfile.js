@@ -1,5 +1,6 @@
 const gulp = require("gulp");
 const postcss = require("gulp-postcss");
+const uncss = require('postcss-uncss');
 const cssnext = require("postcss-cssnext");
 const cssnano = require("cssnano");
 const concatCss = require("gulp-concat-css");
@@ -53,13 +54,35 @@ gulp.task("html", () =>
     .pipe(gulp.dest("./dist"))
 );
 gulp.task("css", () => {
-  const plugins = [cssnext(), cssnano({ preset: "advanced" })];
+  const plugins = [
+    cssnext(), 
+    cssnano({
+      preset: ['advanced', {
+        autoprefixer: false,
+      }],
+    })
+  ];
   gulp
     .src("./src/css/**/*.css")
     .pipe(concatCss("./style.min.css"))
     .pipe(postcss(plugins))
     .pipe(gulp.dest("./dist/css"));
 });
+gulp.task("css:build", () => {
+  const plugins = [
+    // uncss({ html: './src/index.html', ignore: ['*/**/jquery.min.js']}),
+    cssnext(),
+    cssnano({preset: ['advanced', {
+        autoprefixer: false,
+      }],
+    }) 
+  ];
+  gulp
+    .src("./src/css/**/*.css")
+    .pipe(concatCss("./style.min.css"))
+    .pipe(postcss(plugins))
+    .pipe(gulp.dest("./dist/css"));
+})
 gulp.task("js", () => gulp.src("./src/js/*.js").pipe(gulp.dest("./dist/js/")));
 gulp.task("img", () =>
   gulp
@@ -78,4 +101,4 @@ gulp.task("svg:build", () =>
     .pipe(svgmin())
     .pipe(gulp.dest("./dist/img"))
 );
-gulp.task("build", ["img:build", "svg:build", "js", "css", "html"]);
+gulp.task("build", ["img:build", "svg:build", "js", "css:build", "html"]);
