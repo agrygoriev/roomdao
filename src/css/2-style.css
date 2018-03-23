@@ -53,13 +53,17 @@ header nav ul {
   text-decoration: none;
   color: #ffffff;
 }
-.menu-list > li > a:hover {
+.menu-list > li > a:hover,
+.menu-list > li > a.black-color:hover {
+  color: rgb(0, 217, 162);
+  border-bottom: 2px solid rgb(0, 217, 162);
   transition: all 200ms ease;
 }
 .menu-list > li > a.black-color {
   color: #000;
   border-bottom: none;
 }
+
 header nav.mobile-menu {
   display: none;
 }
@@ -138,7 +142,7 @@ header .overlay-menu-list a {
 header .side-button {
   display: flex;
   position: fixed;
-  width: 260px;
+  width: auto;
   height: 125px;
   background: #fff;
   border-top-left-radius: 125px;
@@ -152,9 +156,10 @@ header .side-button {
   z-index: 2;
 }
 header .side-button.closed {
-  width: 110px;
+  width: auto;
   transition: width 1s;
 }
+
 header .side-button .pig {
   display: flex;
   justify-content: center;
@@ -173,6 +178,9 @@ header .side-button .col {
   justify-content: space-around;
   align-items: center;
   position: relative;
+}
+header .side-button .col.col-closed {
+  display: none;
 }
 header .side-button .close-side-btn {
   position: absolute;
@@ -247,11 +255,21 @@ main > section > h2 {
   max-width: 100%;
   height: 100%;
   z-index: 999;
+  transition: background 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+/* .video-modal-open {
+  display: flex;
+  background: rgba(0, 0, 0, 0.8);
+  transition: background 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+} */
 .video-modal-wrap {
   width: 100%;
   height: 100%;
   position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .video-modal-close-btn {
   position: fixed;
@@ -264,6 +282,24 @@ main > section > h2 {
   cursor: pointer;
   transition: .2s ease-out;
   z-index: 1000000;
+}
+.video-modal-close-btn svg {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 10px);
+}
+.video-modal-close-btn:hover {
+  background: #7dc4bf;
+}
+.video-modal-close-btn:hover svg > path {
+  fill: #fff;
+}
+.video-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 /* End of video modal window */
 
@@ -989,11 +1025,11 @@ main .cards .card {
 }
 main .our-team.cards .card h2 {
   color: #294670;
-  font: 600 30px "Montserrat", sans-serif;
+  font: 600 24px "Montserrat", sans-serif;
   text-align: center;
-  margin-bottom: 10px;
-  margin-top: -30px;
-  line-height: 1.9;
+  margin-bottom: 5px;
+  margin-top: -20px;
+  line-height: 2;
 }
 main .cards .card h3 {
   color: #4a4a4a;
@@ -1004,6 +1040,10 @@ main .cards .card h3 {
 }
 main .our-team.cards .card h3 {
   height: 40px;
+  font: 500 14px 'Montserrat', sans-serif;
+  text-align: center;
+  margin-bottom: 25px;
+  line-height: 1.5;
 }
 main .our-team.cards {
   max-width: 1140px;
@@ -1028,6 +1068,7 @@ main .our-team.cards {
 }
 main .our-team .cards .team.card {
  margin-top: 110px;
+ margin-bottom: 80px;
  width: 250px;
 }
 .team.card > .photo {
@@ -1522,7 +1563,7 @@ main .our-team .cards .team.card {
 }
 .pre-ico h2,
 .pre-ico-col-1 h2 {
-  font: 500 35px "Montserrat", sans-serif;
+  font: 500 30px "Montserrat", sans-serif;
   color: #202020;
   line-height: unset;
   margin-bottom: 20px;
@@ -1531,7 +1572,7 @@ main .our-team .cards .team.card {
 }
 .pre-ico h3,
 .pre-ico-col-1 h3 {
-  font: 400 25px "Fira Sans", sans-serif;
+  font: 400 22px "Fira Sans", sans-serif;
   text-transform: uppercase;
   margin: 8px 0;
   color: #202020;

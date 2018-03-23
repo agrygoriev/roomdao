@@ -4,12 +4,42 @@ var doc = document.documentElement;
 var navMenu = document.getElementsByClassName("menu-list");
 var menuLinks = navMenu[0].getElementsByTagName("a");
 var navLogoPath = document.querySelectorAll(".logo > svg > path.logo-fill0");
-var mobileMenu = document.querySelector(".mobile-menu")
+var mobileMenu = document.querySelector(".mobile-menu");
 var colorWhite = "#ffffff";
 var colorBlack = "#202020";
 var colorGreen = "#00d9a2";
 var sideButton = $("header .side-button");
+var colorInitial = "#ffffff";
+var done = false;
+var player;
 var closeSideButton = $("header .side-button .close-side-btn");
+// function loadYT() {
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('ytvideo', {
+    height: '390',
+    width: '640',
+    videoId: 'kv9RXavURq8',
+    events: {
+      'onReady': onPlayerReady,
+    }
+  });
+};
+function onPlayerReady(event) {
+  player.addEventListener('onStateChange', function(e) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+      setTimeout(stopVideo, 6000);
+      done = true;
+    }
+  });
+};
+function stopVideo() {
+  player.stopVideo();
+};
 function changeColor(elementsList, elColor) {
   var array = Array.from(elementsList);
   array.forEach(function(el)  {
@@ -24,6 +54,7 @@ function changeSvgFill(elementsList, elColor) {
 }
 var deadline = new Date(2018, 3, 20);
 function windowScrolled() {
+  colorInitial = colorBlack;
   // $("nav.mobile-menu .logo svg > path.logo-fill0").addClass("logo-fill-black");
   // changeSvgFill(navLogoPath, colorBlack);
   header.style.background = colorWhite;
@@ -37,6 +68,7 @@ function windowScrolled() {
   $(menuLinks).addClass("black-color");
   $("nav .logo").addClass("logo-scrolled");
   $("header nav ul.menu-list").addClass("ul-scrolled");
+  
 }
 function overlayLogoColor () {
   if ($(".sandwich").hasClass("sandwich-open")) {
@@ -48,6 +80,7 @@ function overlayLogoColor () {
 function windowUnscrolled() {
   // $("nav.mobile-menu .logo svg > path.logo-fill0").removeClass("logo-fill-black");
   // changeSvgFill(navLogoPath, colorWhite);
+  // colorInitial = colorWhite;
   header.style.background = "none";
   header.style["box-shadow"] = "none";
   mobileMenu.style.background = "none";
@@ -64,6 +97,7 @@ function windowUnscrolled() {
   } else {
     $("header .sandwich span").removeClass("dark-background");
   }
+  ;
 }
 function getTimeRemaining() {
   var endtime = new Date(2018, 3, 20);
@@ -105,15 +139,28 @@ function updateClock() {
   }
 }
 $(document).ready(function() {
+  // loadYT();
   setInterval(function () { updateClock(); }, 1000);
   // initializeClock("#counter-2", deadline);
+  $(".info .youtube-video").click(
+    function() {
+      $(".video-modal").fadeIn(300);
+    }
+  );
+
+  $(".video-modal-wrap, .video-modal-close-btn").click(function() {
+    stopVideo();
+    $(".video-modal").fadeOut(300);
+  });
   $(closeSideButton).click(function() {
-    sideButton.addClass("closed");
+    sideButton.toggleClass("closed");
+    $("header .side-button .col").hide(200);
     closeSideButton.toggle(200);
   });
   $("header .side-button img").click(function() {
     sideButton.toggleClass("closed");
-    closeSideButton.toggle(200);
+    $("header .side-button .col").toggleClass("col-closed");  
+    closeSideButton.toggle("slow");
   });
   $(".sandwich").click(function() {
     $(".sandwich").toggleClass("sandwich-open");
@@ -183,14 +230,14 @@ $(document).ready(function() {
       });
     }
   }
-  Array.from(menuLinks).forEach(function(element) {
-    element.addEventListener("mouseenter", function(event) {
-      event.target.style.color = colorGreen;
-      event.target.style.borderBottom = "2px solid #00d9a2";
-    });
-    element.addEventListener("mouseleave", function(event) {
-      event.target.style.color = "inherit";
-      event.target.style.borderBottom = "none";
-    });
-  });
+//   Array.from(menuLinks).forEach(function(element) {
+//     element.addEventListener("mouseenter", function(event) {
+//       event.target.style.color = colorGreen;
+//       event.target.style.borderBottom = "2px solid #00d9a2";
+//     });
+//     element.addEventListener("mouseleave", function(event) {
+//       event.target.style.color = colorInitial;
+//       event.target.style.borderBottom = "none";
+//     });
+//   });
 });
