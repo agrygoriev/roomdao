@@ -28,7 +28,7 @@ function onYouTubeIframeAPIReady() {
       'onReady': onPlayerReady,
     }
   });
-};
+}
 function onPlayerReady(event) {
   player.addEventListener('onStateChange', function(e) {
     if (event.data == YT.PlayerState.PLAYING && !done) {
@@ -36,10 +36,10 @@ function onPlayerReady(event) {
       done = true;
     }
   });
-};
+}
 function stopVideo() {
   player.stopVideo();
-};
+}
 function changeColor(elementsList, elColor) {
   var array = Array.from(elementsList);
   array.forEach(function(el)  {
@@ -97,7 +97,6 @@ function windowUnscrolled() {
   } else {
     $("header .sandwich span").removeClass("dark-background");
   }
-  ;
 }
 function getTimeRemaining() {
   var endtime = new Date(2018, 3, 20);
@@ -153,14 +152,12 @@ $(document).ready(function() {
     $(".video-modal").fadeOut(300);
   });
   $(closeSideButton).click(function() {
-    sideButton.toggleClass("closed");
-    $("header .side-button .col").hide(200);
+    sideButton.addClass("closed");
     closeSideButton.toggle(200);
   });
   $("header .side-button img").click(function() {
     sideButton.toggleClass("closed");
-    $("header .side-button .col").toggleClass("col-closed");  
-    closeSideButton.toggle("slow");
+    closeSideButton.toggle(200);
   });
   $(".sandwich").click(function() {
     $(".sandwich").toggleClass("sandwich-open");

@@ -25,6 +25,7 @@ header {
   position: fixed;
   max-width: 1440px;
   z-index: 1;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 header nav {
   display: flex;
@@ -142,7 +143,7 @@ header .overlay-menu-list a {
 header .side-button {
   display: flex;
   position: fixed;
-  width: auto;
+  width: 260px;
   height: 125px;
   background: #fff;
   border-top-left-radius: 125px;
@@ -152,11 +153,11 @@ header .side-button {
   right: 0;
   padding: 10px;
   box-sizing: border-box;
-  transition: width 1s;
   z-index: 2;
+  transition: width 1s;
 }
 header .side-button.closed {
-  width: auto;
+  width: 110px;
   transition: width 1s;
 }
 
@@ -165,23 +166,43 @@ header .side-button .pig {
   justify-content: center;
   align-items: center;
   width: 110px;
+  transition: all 1s;
 }
 header .side-button .pig img {
   width: 70px;
   height: auto;
   margin: 20px;
+  transition: all 1s;
 }
 header .side-button .col {
   width: 137px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   position: relative;
+  transition: all 1s;
 }
-header .side-button .col.col-closed {
+/* header .side-button.closed .col {
   display: none;
-}
+  width: 0;
+  height: 0;
+  margin: auto;
+  transition: all 1s; 
+} */
+/* header .side-button .col h2 {
+  font: 500 14px 'Montserrat', sans-serif;
+  text-align: center;
+  opacity: 1;
+  transition: all 1s;
+} */
+
+/* header .side-button .col.col-closed h2 {
+  font-size: 0;
+  opacity: 0;
+  transition: all 1s;
+} */
 header .side-button .close-side-btn {
   position: absolute;
   top: -30px;
@@ -191,6 +212,8 @@ header .side-button .close-side-btn {
   background: #0072ff;
   border-radius: 13px;
   cursor: pointer;
+  box-shadow: 0 0 10px 2px rgba(41, 70, 112, 0.25);
+  /* transition: all 1s; */
 }
 header .side-button .close-side-btn span {
   display: block;
@@ -201,15 +224,17 @@ header .side-button .close-side-btn span {
   left: 5px;
   background: #fff;
   transform: rotate(45deg);
+  /* transition: all 1s; */
 }
 header .side-button .close-side-btn span:last-of-type {
   transform: rotate(-45deg);
+  /* transition: all 1s; */
 }
-header .side-button h2 {
-  font: 500 14px 'Montserrat', sans-serif;
-  text-align: center;
+header .side-button .col.col-closed .close-side-btn {
+  opacity: 0;
+  transition: all 1s;
 }
-header .side-button a.buy-btn {
+header .side-button .col a.buy-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -221,12 +246,22 @@ header .side-button a.buy-btn {
   box-shadow: 0 0 18px 0 rgba(41, 70, 112, 0.25);
   text-decoration: none;
   border-radius: 5px;
+  /* padding: 10px 42px; */
   transition: opacity .3s;
 }
-header .side-button a.buy-btn:hover {
+header .side-button .col a.buy-btn:hover {
   opacity: .9;
-  transition: opacity .3s;
+  transition: all .3s;
 }
+header .side-button .col.col-closed a.buy-btn {
+  width: 1px;
+  height: 35px;
+  border-radius: 20px;
+  /* opacity: 0; */
+  margin: auto;
+  transition: all 1s;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -416,6 +451,7 @@ main .main-desc {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 13px;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .btn:hover {
   opacity: 0.9;
@@ -432,24 +468,34 @@ main .main-desc {
   align-items: center;
   padding: 2px;
   box-sizing: border-box;
-  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+  transition: all .5s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
 .ani-btn:hover {
   opacity: 0.9;
-  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+  transition: all .5s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
 .ani-btn:hover .btn-text,
 .ani-btn:hover .btn-text::after {
-  left: -50px;
   opacity: 0;
-  font-size: 2px;
+  background-color: #00d9a2;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4)
 }
+.ani-btn:hover .btn-text {
+  left: 20px;
+  font-size: 2px;
+  transition: all .5s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+/* .ani-btn:hover .btn-text::after {
+  opacity: 0;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4)
+} */
 .ani-btn:hover .whitepaper-logo {
-  position: absolute;
-  right: 112px;
+  /* position: absolute; */
+  /* right: 112px; */
   width: 25px;
   height: 25px;
-  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+  transform: translateX(-100px);
+  transition: all .5s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
 .ani-btn .btn-text,
 .ani-btn .whitepaper-logo {
@@ -459,22 +505,13 @@ main .main-desc {
   /* position: relative; */
   /* top: 37%; */
   /* left: -10px; */
-  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+  transition: all 0.5s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
 .ani-btn .btn-text {
   width: 193px;
   font-weight: 300;
   font-size: 12px;
-}
-.ani-btn .whitepaper-logo {
-  width: 23px;
-  height: 23px;
-  display: block;
-}
-.ani-btn .whitepaper-logo svg {
-  width: 19px;
-  height: 19px;
-  margin: auto;
+  transition: all 0.5s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
 .ani-btn .btn-text::after {
   content: "";
@@ -484,12 +521,27 @@ main .main-desc {
   position: absolute;
   top: 8px;
   right: 40px;
+  opacity: 1;
+  transition: all 0.5s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+.ani-btn .whitepaper-logo {
+  width: 23px;
+  height: 23px;
+  display: block;
+  transition: all 0.5s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+.ani-btn .whitepaper-logo svg {
+  width: 19px;
+  height: 19px;
+  margin: auto;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4)
 }
 .btn-blue {
   background: #0072ff;
 }
 
 /* End of Buttons */
+
 .counter-box {
   flex: 0 0 560px;
   height: 376px;
@@ -857,9 +909,11 @@ main .bubbles-divider a > svg {
 }
 main .bubbles-divider a svg path.st0 {
   fill: #ffffff;
+  transition: all 1s;
 }
 main .bubbles-divider a:hover svg path.st0 {
   fill: #00d9a2;
+  transition: all .25s;
 }
 main .desc {
   padding: 0 160px;
@@ -1164,7 +1218,7 @@ main .our-team .cards .team.card {
   justify-content: space-around;
 }
 .partners .logo-row-last a {
-  margin-bottom: 0;
+  margin-bottom: 30px;
 }
 .partners .logo-col {
   flex-flow: column wrap;
@@ -1178,152 +1232,224 @@ main .our-team .cards .team.card {
 .partners a:not(:last-child) {
   margin-right: 50px;
 }
+/* Partners' logos */
 .comsa-logo {
   width: 187px;
   height: 45px;
   background: url(../img/partners/comsa-logo-gray.png) top center / 187px 45px
     no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .comsa-logo:hover {
   background: url(../img/partners/comsa-logo-hover.png) top center / 187px 45px
     no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .kickico-logo {
   width: 65px;
   height: 65px;
   background: url(../img/partners/kickico-logo-gray.png) top center / 65px 65px
     no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .kickico-logo:hover {
   background: url(../img/partners/kickico-logo-hover.png) top center / 65px 65px
     no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .icoalert-logo {
   width: 226px;
   height: 34px;
   background: url(../img/partners/icoalert-logo-gray.png) top center / 226px
     34px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .icoalert-logo:hover {
   background: url(../img/partners/icoalert-logo-hover.png) top center / 226px
     34px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .icostats-logo {
   width: 169px;
   height: 47px;
   background: url(../img/partners/icostats-logo-gray.png) top center / 169px
     47px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .icostats-logo:hover {
   background: url(../img/partners/icostats-logo-hover.png) top center / 169px
     47px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .icotracker-logo {
   width: 240px;
   height: 36px;
   background: url(../img/partners/icotracker-logo-gray.png) top center / 240px
     36px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .icotracker-logo:hover {
   background: url(../img/partners/icotracker-logo-hover.png) top center / 240px
     36px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .icorating-logo {
   width: 109px;
   height: 106px;
   background: url(../img/partners/icorating-logo-gray.png) top center / 109px
     106px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .icorating-logo:hover {
   background: url(../img/partners/icorating-logo-hover.png) top center / 109px
     106px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .tokenmarket-logo {
   width: 214px;
   height: 29px;
   background: url(../img/partners/tokenmarket-logo-gray.png) top center / 214px
     29px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .tokenmarket-logo:hover {
   background: url(../img/partners/tokenmarket-logo-hover.png) top center / 214px
     29px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .smithcrown-logo {
   width: 238px;
   height: 59px;
   background: url(../img/partners/smithcrown-logo-gray.png) top center / 238px
     59px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .smithcrown-logo:hover {
   background: url(../img/partners/smithcrown-logo-hover.png) top center / 238px
     59px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .golos-logo {
   width: 185px;
   height: 61px;
   background: url(../img/partners/golos-logo-gray.png) top center / 185px 61px
     no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .golos-logo:hover {
   background: url(../img/partners/golos-logo-hover.png) top center / 185px 61px
     no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .icobazaar-logo {
   width: 79px;
   height: 115px;
   background: url(../img/partners/icobazaar-logo-gray.png) top center / 79px
     115px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .icobazaar-logo:hover {
   background: url(../img/partners/icobazaar-logo-hover.png) top center / 79px
     115px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .cyberfund-logo {
   width: 176px;
   height: 47px;
   background: url(../img/partners/cyberfund-logo-gray.png) top center / 176px
     47px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .cyberfund-logo:hover {
   background: url(../img/partners/cyberfund-logo-hover.png) top center / 176px
     47px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .coinschedule-logo {
   width: 243px;
   height: 38px;
   background: url(../img/partners/coinschedule-logo-gray.png) top center / 243px
     38px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .coinschedule-logo:hover {
   background: url(../img/partners/coinschedule-logo-hover.png) top center /
     243px 38px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .icowatch-logo {
   width: 113px;
   height: 69px;
   background: url(../img/partners/icowatchlist-logo-gray.png) top center / 113px
     69px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .icowatch-logo:hover {
   background: url(../img/partners/icowatchlist-logo-hover.png) top center /
     113px 69px no-repeat;
-}
-.smartfactor-logo {
-  width: 146px;
-  height: 76px;
-  background: url(../img/partners/smartfactor-logo-gray.png) top center / 146px 76px no-repeat;
-}
-.smartfactor-logo:hover {
-  background: url(../img/partners/smartfactor-logo-hover.png) top center / 146px 76px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .vipole-logo {
   width: 155px;
   height: 49px;
   background: url(../img/partners/vipole-logo-gray.png) top center / 155px 49px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .vipole-logo:hover {
   background: url(../img/partners/vipole-logo-hover.png) top center / 155px 49px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
+.smartfactor-logo {
+  width: 106px;
+  height: 55px;
+  background: url(../img/partners/smartfactor-logo-gray.png) top center / 106px 55px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+}
+.smartfactor-logo:hover {
+  background: url(../img/partners/smartfactor-logo-hover.png) top center / 106px 55px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+}
+.page-logo {
+  width: 146px;
+  height: 55px;
+  background: url(../img/partners/page-logo-gray.png) top center / 146px 55px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+}
+.page-logo:hover {
+  background: url(../img/partners/page-logo-hover.png) top center / 146px 55px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+}
+.myicopool-logo {
+  width: 266px;
+  height: 55px;
+  background: url(../img/partners/myicopool-logo-gray.png) top center / 266px 55px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+}
+.myicopool-logo:hover {
+  background: url(../img/partners/myicopool-logo-hover.png) top center / 266px 55px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+}
+.pumapay-logo {
+  width: 250px;
+  height: 49px;
+  background: url(../img/partners/pumapay-logo-gray.png) top center / 250px 49px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+}
+.pumapay-logo:hover {
+  background: url(../img/partners/pumapay-logo-hover.png) top center / 250px 49px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+}
+.cryptopost-logo {
+  width: 258px;
+  height: 55px;
+  background: url(../img/partners/cryptopost-logo-gray.png) top center / 258px 55px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+}
+.cryptopost-logo:hover {
+  background: url(../img/partners/cryptopost-logo-hover.png) top center / 258px 55px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+}
+
 /* Features section */
 
 .spider-features {
@@ -1860,11 +1986,26 @@ main .our-team .cards .team.card {
   height: 84px;
   border-radius: 50%;
   border: 3px solid #bcbebe;
+  transition: all .25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+.roadmap-icon:hover {
+  width: 94px;
+  height: 94px;
+  transition: all .25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+  transform: translateY(-5px);
 }
 .roadmap-icon img {
   max-width: 50px;
   max-height: 50px;
   margin: auto;
+  transition: all .25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+.roadmap-icon:hover img {
+  max-width: 60px;
+  max-height: 60px;
+  width: 60px;
+  height: 60px;
+  transition: all .25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
 .roadmap-mobile-separator {
   display: none;
@@ -1883,7 +2024,7 @@ main .our-team .cards .team.card {
 }
 .roadmap-point-description {
   font: 400 14px "Fira Sans", sans-serif;
-  line-height: 1.3rem;
+  line-height: 1.2rem;
 }
 
 /* Begin of footer */

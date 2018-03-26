@@ -798,7 +798,7 @@
     display: block;
     margin-bottom: 30px;
     width: 90vw;
-    height: 340px;
+    height: 410px;
   }
   .partners-mobile .logo-row {
     display: flex;
@@ -955,20 +955,52 @@
       auto no-repeat;
   }
   .smartfactor-logo {
-    width: 75px;
+    width: 65px;
     height: 39px;
-    background: url(../img/partners/smartfactor-logo-gray.png) top center / 75px auto no-repeat;
+    background: url(../img/partners/smartfactor-logo-gray.png) top center / 65px auto no-repeat;
   }
   .smartfactor-logo:hover {
-    background: url(../img/partners/smartfactor-logo-hover.png) top center / 75px auto no-repeat;
+    background: url(../img/partners/smartfactor-logo-hover.png) top center / 65px auto no-repeat;
   }
   .vipole-logo {
-    width: 123px;
+    width: 100px;
     height: 39px;
-    background: url(../img/partners/vipole-logo-gray.png) top center / 123px auto no-repeat;
+    background: url(../img/partners/vipole-logo-gray.png) top center / 100px auto no-repeat;
   }
   .vipole-logo:hover {
-    background: url(../img/partners/vipole-logo-hover.png) top center / 123px auto no-repeat;
+    background: url(../img/partners/vipole-logo-hover.png) top center / 100px auto no-repeat;
+  }
+  .page-logo {
+    width: 90px;
+    height: 36px;
+    background: url(../img/partners/page-logo-gray.png) top center / 90px auto no-repeat;
+  }
+  .page-logo:hover {
+    background: url(../img/partners/page-logo-hover.png) top center / 90px auto no-repeat;
+  }
+  .myicopool-logo {
+    width: 120px;
+    height: 25px;
+    background: url(../img/partners/myicopool-logo-gray.png) top center / 120px auto no-repeat;
+  }
+  .myicopool-logo:hover {
+    background: url(../img/partners/myicopool-logo-hover.png) top center / 120px auto no-repeat;
+  }
+  .pumapay-logo {
+    width: 120px;
+    height: 24px;
+    background: url(../img/partners/pumapay-logo-gray.png) top center / 120px auto no-repeat;
+  }
+  .pumapay-logo:hover {
+    background: url(../img/partners/pumapay-logo-hover.png) top center / 120px auto no-repeat;
+  }
+  .cryptopost-logo {
+    width: 120px;
+    height: 27px;
+    background: url(../img/partners/cryptopost-logo-gray.png) top center / 120px auto no-repeat;
+  }
+  .cryptopost-logo:hover {
+    background: url(../img/partners/cryptopost-logo-hover.png) top center / 120px auto no-repeat;
   }
   #join-us {
     height: auto;
@@ -1139,7 +1171,7 @@
     margin-bottom: 0;
   }
   .partners-mobile {
-    height: 430px;
+    height: 410px;
   }
   .partners-mobile .logo-row {
     height: 42px;

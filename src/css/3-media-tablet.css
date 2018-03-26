@@ -456,7 +456,7 @@
 	.partners-tablet {
 		display: block;
 		/* flex-flow: column nowrap; */
-		margin: 0 auto 50px;
+		margin: 0 auto 100px;
 		width: 90vw;
 		/* height: 250px; */
 	}
@@ -596,6 +596,9 @@
 	    padding: 0 30px;
 	}
 	/* End of Owl Carousel */
+	main .bubbles-divider .icons {
+		width: 100%;
+	}
 	main .bubbles-divider a > svg {
 		width: 52px;
 		height: 52px;
@@ -638,8 +641,8 @@
 		height: 100%;
 		padding-bottom: 0;
 		box-sizing: border-box;
-		margin-top: -150px;
-		padding-top: 130px;
+		margin-top: 0;
+		padding-top: 0;
 	}
 	footer h2 {
 		font-weight: 500;
