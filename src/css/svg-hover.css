@@ -7,10 +7,6 @@ main .main-desc .icons a:hover svg path.icon-st1 {
     fill: #00d9a2;
     transition: all .25s;
 }
-main .bubbles-divider a > svg {
-    width: 72px;
-    height: 72px;
-}
 
 .team.card .social-icons a svg path.st0 {
     fill: #88cdc8;

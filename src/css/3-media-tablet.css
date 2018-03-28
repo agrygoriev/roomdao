@@ -291,7 +291,7 @@
 		background: #ffffff;
 		position: relative;
 		top: -25px;
-		z-index: 100;
+		z-index: 50;
 		opacity: 0.9;
 	}
 	.previews {
@@ -307,8 +307,9 @@
 		color: #ffffff;
 	}
 	.tokens-emitted {
-		padding: 30px 30px;
-		height: 600px;
+		padding: 30px;
+		height: auto;
+		padding-bottom: 200px;
 	}
 	.tokens-emitted h2 {
 		font: 400 35px 'Fira Sans', sans-serif;
@@ -316,6 +317,9 @@
 	}
 	.tokens-col {
 		justify-content: flex-start;
+	}
+	.tokens-cols-mobile {
+		flex-basis: 100%;
 	}
 	.tokens-col h2 {
 		font: 400 30px 'Montserrat', sans-serif;
@@ -472,6 +476,7 @@
 	}
 	.partners-tablet .logo-row > * {
 		padding: 0 10px;
+		margin-bottom: 10px;
 	}
 	.partners-tablet .logo-col {
 		flex-flow: column nowrap;
@@ -648,12 +653,64 @@
 		font-weight: 500;
 		font-size: 25px;
 	}
+	footer #footer-desktop {
+		display: none;
+	}
+	footer #footer-mobile {
+		display: flex;
+		flex-direction: column;
+	}
+	.logo-footer {
+		order: 2;
+		margin: 10px auto;
+	}
+	footer #footer-mobile h2 {
+		order: 3;
+		padding: 20px 10% 0;
+	}
+	#footer-mobile #footer-counter {
+		order: 1;
+		width: 90%;
+		margin: -80px auto 20px;
+	}
+	#footer-mobile #counter-2 {
+		order: 2;
+		height: 100px;
+		flex: 1;
+	}
+	#footer-mobile #footer-counter h2 {
+		order: 1;
+	}
+	#footer-mobile .progress {
+		order: 3;
+		width: 90%;
+	}
+	#footer-mobile .progress-container {
+		margin-bottom: 40px;
+	}
+	#footer-mobile .progress-container .reached {
+		justify-content: space-between;
+	}
+	#footer-mobile .progress-container .number, 
+	#footer-mobile .progress-container .title {
+		color: #000000;
+	}
+	#footer-mobile .raised-container {
+		order: 4;
+	}
+	#footer-mobile .buttons {
+		order: 5;
+	}
+	footer .mobile-subscribe {
+		display: block;
+		/* height: 100%; */
+	}
 	footer .subscribe {
 		width: 85vw;
 		margin: 0 auto;
 		padding: 0;
 		box-sizing: border-box;
-		height: 370px;
+		height: 100%;
 	}
 	footer .subscribe h3 {
 		font: 300 20px 'Montserrat', sans-serif;

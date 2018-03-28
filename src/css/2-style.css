@@ -278,6 +278,7 @@ main > section > h2 {
 }
 
 /* Begin of video modal window */
+
 .video-modal {
   display: none;
   position: fixed;
@@ -292,11 +293,7 @@ main > section > h2 {
   z-index: 999;
   transition: background 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-/* .video-modal-open {
-  display: flex;
-  background: rgba(0, 0, 0, 0.8);
-  transition: background 2s cubic-bezier(0.075, 0.82, 0.165, 1);
-} */
+
 .video-modal-wrap {
   width: 100%;
   height: 100%;
@@ -330,11 +327,8 @@ main > section > h2 {
   fill: #fff;
 }
 .video-container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 10px;
-  padding-right: 10px;
+  width: 100%!important;
+  height: auto!important;
 }
 /* End of video modal window */
 
@@ -410,6 +404,7 @@ main .main-desc {
   padding: 15px;
   box-sizing: border-box;
   align-self: center;
+  cursor: pointer;
 }
 .info .youtube-video h2 {
   font: 400 16px 'Montserrat', sans-serif;
@@ -1552,7 +1547,7 @@ main .our-team .cards .team.card {
   color: #88cdc8;
 }
 .tokens-emitted {
-  height: 630px;
+  height: 100%;
   width: 100%;
   background-image: linear-gradient(
     to right,
@@ -1560,7 +1555,7 @@ main .our-team .cards .team.card {
     rgb(41, 70, 112)
   );
   box-sizing: border-box;
-  padding: 70px 8vw;
+  padding: 70px 8vw 25vh;
 }
 .tokens-emitted h2 {
   font: 500 30px "Montserrat", sans-serif;
@@ -1570,9 +1565,17 @@ main .our-team .cards .team.card {
 }
 .tokens-cols {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-flow: row nowrap;
+  justify-content: space-around;
   align-items: flex-start;
+}
+.tokens-cols-mobile {
+  display: flex;
+  /* flex-basis: 50%; */
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  flex: 1;
+  /* flex-basis: 100%; */
 }
 .tokens-cols h2 {
   margin-bottom: 0;
@@ -1581,13 +1584,14 @@ main .our-team .cards .team.card {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  padding: 0 15px 20px;
   /* height: 310px; */
 }
 .circles {
   position: relative;
   display: flex;
   flex-direction: column;
-  flex-basis: 160px;
+  flex-basis: 150px;
   justify-content: flex-end;
   /* margin: 60px auto; */
 }

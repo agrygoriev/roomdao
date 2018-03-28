@@ -374,3 +374,12 @@
     left: 50px;
   }
 }
+@media screen and (min-width: 400px) and (max-width: 800px) {
+  .tokens-cols {
+    flex-flow: row wrap;
+  }
+  .circle {
+    width: 30vw;
+    
+  }
+}
