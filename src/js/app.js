@@ -84,7 +84,7 @@ function windowScrolled() {
   $(menuLinks).addClass("black-color");
   $("nav .logo").addClass("logo-scrolled");
   $("header nav ul.menu-list").addClass("ul-scrolled");
-  
+  $("body.faq-body header .mobile-menu .logo svg path.logo-fill0").css("fill", "#202020");
 }
 function overlayLogoColor () {
   if ($(".sandwich").hasClass("sandwich-open")) {
@@ -113,6 +113,7 @@ function windowUnscrolled() {
   } else {
     $("header .sandwich span").removeClass("dark-background");
   }
+  $("body.faq-body header .mobile-menu .logo svg path.logo-fill0").css("fill", "#202020");
 }
 function getTimeRemaining() {
   var endtime = new Date(2018, 3, 20);
@@ -154,6 +155,7 @@ function updateClock() {
   }
 }
 $(document).ready(function() {
+  $("body.faq-body header .mobile-menu .logo svg path.logo-fill0").css("fill", "#202020");
   $("nav .logo").click(function(ev) {
     ev.preventDefault();
     window.setTimeout(function () {
@@ -187,6 +189,7 @@ $(document).ready(function() {
     $(".overlay-menu").toggleClass("overlay-active");
     $("header .sandwich span").toggleClass("dark-background");
     overlayLogoColor();
+    $("body.faq-body header .mobile-menu .logo svg path.logo-fill0").css("fill", "#202020");
   });
   $(window).scroll(function (ev) {
     var scroll = $(window).scrollTop();
@@ -197,31 +200,72 @@ $(document).ready(function() {
       windowUnscrolled();
     }
   });
-  $(".desktop-menu ul.menu-list > li > a").click(
-    function(ev) {
-      ev.preventDefault();
-      var hrefGoTo = $(this).attr("href");
-      var position = $(hrefGoTo).offset().top - 80;
-      // console.log('Menu clicked');
-      window.setTimeout(function() {
-        $("html, body")
-          .animate({ scrollTop: position }, 500);
-      }, 0);
+  $(".faq-collapse-btn").click(
+    function() {
+      $(this).toggleClass("clicked");
+      $(this).siblings(".faq-heading").toggleClass("closed-text-margin-bottom");
+      $(this).parent().siblings(".faq-section-text").children("p.faq-text").toggle(400);
     }
   );
-  $(".overlay-menu ul li a").click(
-    function(ev) {
-      ev.preventDefault();
-      var hrefGoTo = $(this).attr("href");
-      var position = $(hrefGoTo).offset().top - 60;
-      $(".sandwich").click();
-      $(".overlay-menu").removeClass("overlay-active");
-      window.setTimeout(function() {
-        $("html, body")
-          .animate({ scrollTop: position }, 500);
-      }, 0);
+  $(".faq-heading").click(
+    function() {
+      $(this).toggleClass("closed-text-margin-bottom");
+      $(this).siblings(".faq-collapse-btn").toggleClass("clicked");
+      $(this).parent().siblings(".faq-section-text").children("p.faq-text").toggle(400);
     }
   );
+  // $(".desktop-menu ul.menu-list > li > a").click(
+  //   function(ev) {
+  //     ev.preventDefault();
+  //     var hrefGoTo = $(this).attr("href");
+  //     if (window.location.href === "http://localhost:3000/") {
+  //       if (hrefGoTo === "#faq") {
+  //         window.location.href="faq.html";
+  //       } else {
+  //         var position = $(hrefGoTo).offset().top - 80;
+  //         window.setTimeout(function() {
+  //           $("html, body")
+  //             .animate({ scrollTop: position }, 500);
+  //         }, 0);
+  //       }
+  //     }
+  //     if (window.location.href === "http://localhost:3000/faq.html") {
+  //       if (hrefGoTo === "#mission" || hrefGoTo === "#desc" || hrefGoTo === "#roadmap-h2" || hrefGoTo === "#our-team-h2" ) {
+  //         window.location.href="http://localhost:3000/" + hrefGoTo;
+  //         var position = window.location.href.offset().top - 80;
+  //         window.setTimeout(function() {
+  //           $("html, body")
+  //             .animate({ scrollTop: position }, 500);
+  //         }, 0);
+  //       } else {
+  //         var position = $(hrefGoTo).offset().top - 80;
+  //         window.setTimeout(function() {
+  //           $("html, body")
+  //             .animate({ scrollTop: position }, 500);
+  //         }, 0);
+  //       }
+  //     }
+  //   }
+  // );
+  // $(".overlay-menu ul li a").click(
+  //   function(ev) {
+  //     ev.preventDefault();
+  //     var hrefGoTo = $(this).attr("href");
+  //     var position = $(hrefGoTo).offset().top - 60;
+  //     $(".sandwich").click();
+  //     $(".overlay-menu").removeClass("overlay-active");
+  //     if (hrefGoTo === "#faq") {
+  //       window.location.href="faq.html";
+  //     } else {
+  //       // console.log(hrefGoTo);
+  //       window.location.href="index.html";
+  //       window.setTimeout(function() {
+  //         $("html, body")
+  //           .animate({ scrollTop: position }, 500);
+  //       }, 0);
+  //     }
+  //   }
+  // );
   if (windowWidth < 1025) {
     if (windowWidth < 601) {
       $(".our-team.cards").owlCarousel({

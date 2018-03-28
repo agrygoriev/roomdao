@@ -32,7 +32,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,500&amp;subset=cyrillic" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&amp;subset=cyrillic" rel="stylesheet">
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" /> -->
-	<link rel="stylesheet" href="css/style.min.css?v=2.1.2">
+	<link rel="stylesheet" href="css/style.min.css?v=2.1.3">
 </head>
 
 <body>
@@ -99,7 +99,7 @@
 					<a href="#our-team-h2">Our team</a>
 				</li>
 				<li>
-					<a href="#">FAQ</a>
+					<a href="#faq">FAQ</a>
 				</li>
 				<!-- <li>
 					<a href="#about-us-h2">Newsroom</a>
@@ -185,9 +185,9 @@
 				<li class="overlay-menu-item">
 					<a href="#our-team-h2">Our team</a>
 				</li>
-				<!-- <li class="overlay-menu-item">
-					<a href="#">FAQ</a>
-				</li> -->
+				<li class="overlay-menu-item">
+					<a href="#faq">FAQ</a>
+				</li>
 				<!-- <li class="overlay-menu-item">
 					<a href="#about-us-h2">Newsroom</a>
 				</li> -->
@@ -196,6 +196,8 @@
 				</li> -->
 			</ul>
 		</section>
+		
+
 		<section class="side-button">
 			<div class="pig">
 				<img src="img/piggy-bank.svg" alt="">
@@ -1359,7 +1361,7 @@
 					<h2>Timothy</h2>
 					<h2>Lee</h2>
 					<h3>Advisor</h3>
-					<p class="cards-text"></p>
+					<p class="cards-text">Blockchain enthusiast and an early investor in the space and has invested in traditional stock markets and IPO’s prior to discovering cryptocurrencies back in 2015.</p>
 					<div class="social-icons">
 						<a href="https://www.facebook.com/photo.php?fbid=1525060241060709&amp;set=a.1398324937067574.1073741825.100006702433835&amp;type=3&amp;theater" target="_blank">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
@@ -1383,7 +1385,9 @@
 					<h2>Karan</h2>
 					<h2>Chinoy</h2>
 					<h3>Advisor</h3>
-					<p class="cards-text"></p>
+					<p class="cards-text">EICO - Consultant & Advisory<br/>
+							Founder & CEO of  Chinoy & Chinoy Associates, UpScale-It Management & Consulting.<br/>
+						Co-Founder & COO: NoteXC LLC - Cryptocurrency Exchange Platform</p>
 					<div class="social-icons">
 						<a href="https://www.facebook.com/chinoykaran/about?lst=100004972359146%3A100000267572068%3A1521815439" target="_blank">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
@@ -2013,6 +2017,38 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/app.js"></script>
+	<script>
+		$(".desktop-menu ul.menu-list > li > a, .overlay-menu ul li a").click(
+			function(ev) {
+			ev.preventDefault();
+			var hrefGoTo = $(this).attr("href");
+			if (hrefGoTo != "#faq") {
+				var position = $(hrefGoTo).offset().top - 80;
+				window.setTimeout(function() {
+					$("html, body")
+					.animate({ scrollTop: position }, 500);
+				}, 0);
+			} else {
+				window.location.href = "faq.html";
+			}
+			$(".sandwich").click();
+      		$(".overlay-menu").removeClass("overlay-active");
+		});
+		// $(".overlay-menu ul li a").click(
+		// 	function(ev) {
+		// 		ev.preventDefault();
+		// 		var hrefGoTo = $(this).attr("href");
+		// 		if (hrefGoTo = "#faq") {
+		// 			window.location.href = "faq.html";
+		// 		} else {
+		// 			var position = $(hrefGoTo).offset().top - 60;
+		// 			window.setTimeout(function() {
+		// 				$("html, body")
+		// 				.animate({ scrollTop: position }, 500);
+		// 			}, 0);
+		// 		}
+		// });
+	</script>
 	<script src="https://static.mailerlite.com/js/w/webforms.min.js?v3772b61f1ec61c541c401d4eadfdd02f"></script>
 </body>
 
