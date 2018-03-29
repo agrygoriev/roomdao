@@ -17,6 +17,7 @@ tag.src = "https://www.youtube.com/iframe_api";
 var player;
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+var deadline = new Date(2018, 3, 20);
 
 function onYouTubeIframeAPIReady() {
   var video = $("iframe[src^='//www.youtube.com']");
@@ -68,7 +69,7 @@ function changeSvgFill(elementsList, elColor) {
     el.style.fill = elColor;
   });
 }
-var deadline = new Date(2018, 3, 20);
+
 function windowScrolled() {
   colorInitial = colorBlack;
   // $("nav.mobile-menu .logo svg > path.logo-fill0").addClass("logo-fill-black");
@@ -155,6 +156,9 @@ function updateClock() {
   }
 }
 $(document).ready(function() {
+  if (window.scrollY) {
+    windowScrolled();
+  }
   $("body.faq-body header .mobile-menu .logo svg path.logo-fill0").css("fill", "#202020");
   $("nav .logo").click(function(ev) {
     ev.preventDefault();
@@ -194,7 +198,7 @@ $(document).ready(function() {
   $(window).scroll(function (ev) {
     var scroll = $(window).scrollTop();
     // console.log('Window is scrolled for '+ scroll + ' px');
-    if (scroll > 10) {
+    if (scroll) {
       windowScrolled();
     } else {
       windowUnscrolled();

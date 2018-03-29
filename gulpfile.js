@@ -7,6 +7,8 @@ const concatCss = require("gulp-concat-css");
 const imagemin = require("gulp-imagemin");
 const svgmin = require("gulp-svgmin");
 const htmlmin = require("gulp-htmlmin");
+const uglify = require('gulp-uglify');
+const pump = require('pump');
 const browserSync = require("browser-sync").create();
 
 const reload = browserSync.reload;
@@ -83,7 +85,13 @@ gulp.task("css:build", () => {
     .pipe(postcss(plugins))
     .pipe(gulp.dest("./dist/css"));
 })
-gulp.task("js", () => gulp.src("./src/js/*.js").pipe(gulp.dest("./dist/js/")));
+gulp.task("js", (cb) => 
+  pump([
+    gulp.src("./src/js/*.js"), 
+    uglify(), gulp.dest("./dist/js/")
+  ], 
+  cb)
+);
 gulp.task("img", () =>
   gulp
     .src("./src/img/**/*.{jpg,jpeg,png,gif,svg}")
