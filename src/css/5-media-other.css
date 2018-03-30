@@ -177,6 +177,7 @@
 	}
   .tokens-col {
     max-width: 160px;
+    padding: 0 10px 20px;
   }
   .previews h2 {
     font: 400 18px 'Montserrat';
@@ -374,7 +375,7 @@
     left: 50px;
   }
 }
-@media screen and (min-width: 400px) and (max-width: 800px) {
+@media screen and (min-width: 415px) and (max-width: 800px) {
   .tokens-cols {
     flex-flow: row wrap;
   }

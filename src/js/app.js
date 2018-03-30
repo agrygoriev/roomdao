@@ -38,8 +38,8 @@ function onYouTubeIframeAPIReady() {
 	  });
 	}).resize();
   player = new YT.Player('ytvideo', {
-    height: 'auto',
-    width: '100%',
+    // height: 'auto',
+    // width: '100%',
     videoId: 'kv9RXavURq8',
     events: {
       'onReady': onPlayerReady,

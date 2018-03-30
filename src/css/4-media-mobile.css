@@ -186,7 +186,7 @@
     margin-left: 0;
   }
   .counter-col h3 {
-    font-size: 8px;
+    font-size: 10px;
   }
   .counter-box .counter {
     height: 40px;
@@ -581,9 +581,10 @@
   }
   .tokens-cols {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     justify-content: space-between;
     margin-bottom: 50px;
+    align-items: center;
   }
   .tokens-col {
     display: flex;
@@ -609,10 +610,11 @@
     margin-bottom: 50px;
   }
   .tokens-col > .circles > .circle {
+    display: block;
+    box-sizing: border-box;
     width: 150px;
     height: 31px;
     border-width: 2px;
-    display: block;
   }
 
   /*  Pre-ICO section */
@@ -1053,6 +1055,7 @@
     padding-left: 0;
     padding-bottom: 0;
     flex-basis: auto;
+    margin-bottom: 10px;
   }
   footer #footer-mobile .counter-box .counter {
     display: flex;
