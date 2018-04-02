@@ -73,7 +73,13 @@ gulp.task("css", () => {
 gulp.task("css:build", () => {
   const plugins = [
     // uncss({ html: './src/index.html', ignore: ['*/**/jquery.min.js']}),
-    cssnext(),
+    cssnext({
+      browserslist: [
+        "> 1%",
+        "last 5 versions",
+        "ie>10"
+      ]
+    }),
     cssnano({preset: ['advanced', {
         autoprefixer: false,
       }],

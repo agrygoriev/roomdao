@@ -81,6 +81,7 @@ nav .logo {
 nav .logo.logo-scrolled {
   /* display: flex; */
   /* width: auto; */
+  width: 200px;
   padding: 0;
   /* justify-content: flex-start; */
   /* align-items: flex-start; */
@@ -92,9 +93,6 @@ nav .logo svg {
   width: 200px;
   margin-top: 12px;
   transition: ease-in-out .3s;
-}
-nav .logo.logo-scrolled {
-  width: 200px;
 }
 nav .logo.logo-scrolled svg {
   width: 120px;
@@ -1353,8 +1351,9 @@ main .our-team .cards .team.card {
   /* padding: 25px; */
 }
 .partners a:not(:last-child) {
-  margin-right: 50px;
+  margin-right: 40px;
 }
+
 /* Partners' logos */
 .comsa-logo {
   width: 187px;
@@ -1436,9 +1435,8 @@ main .our-team .cards .team.card {
     transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .tokenmarket-logo:hover {
-  background: url(../img/partners/tokenmarket-logo-hover.png) top center / 214px
-    29px no-repeat;
-    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+  background: url(../img/partners/tokenmarket-logo-hover.png) top center / 214px 29px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .smithcrown-logo {
   width: 238px;
@@ -1572,7 +1570,26 @@ main .our-team .cards .team.card {
   background: url(../img/partners/cryptopost-logo-hover.png) top center / 258px 55px no-repeat;
   transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
-
+.prico-capital-logo {
+  width: 270px;
+  height: 40px;
+  background: url(../img/partners/prico-capital-logo-gray.png) top center / 270px 40px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+}
+.prico-capital-logo:hover {
+  background: url(../img/partners/prico-capital-logo-hover.png) top center / 270px 40px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+}
+.ico-pools-gains-logo {
+  width: 183px;
+  height: 48px;
+  background: url(../img/partners/ico-pools-gains-logo-gray.png) top center / 183px 48px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+}
+.ico-pools-gains-logo:hover {
+  background: url(../img/partners/ico-pools-gains-logo-hover.png) top center / 183px 48px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+}
 /* Features section */
 
 .spider-features {

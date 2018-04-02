@@ -1018,6 +1018,26 @@
   .cryptopost-logo:hover {
     background: url(../img/partners/cryptopost-logo-hover.png) top center / 120px auto no-repeat;
   }
+  .prico-capital-logo {
+    width: 140px;
+    height: 21px;
+    background: url(../img/partners/prico-capital-logo-gray.png) top center / 140px 21px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+  }
+  .prico-capital-logo:hover {
+    background: url(../img/partners/prico-capital-logo-hover.png) top center / 140px 21px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+  }
+  .ico-pools-gains-logo {
+    width: 120px;
+    height: 31px;
+    background: url(../img/partners/ico-pools-gains-logo-gray.png) top center / 120px 31px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+  }
+  .ico-pools-gains-logo:hover {
+    background: url(../img/partners/ico-pools-gains-logo-hover.png) top center / 120px 31px no-repeat;
+    transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+  }
   #join-us {
     height: auto;
     padding: 20px;

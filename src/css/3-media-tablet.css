@@ -81,6 +81,9 @@
 	main {
 		margin: 90px auto 0;
 	}
+	main .main-desc {
+		margin: 0 10vw 60px;
+	}
 	.main-desc .info {
 		margin-right: 0;
 	}
@@ -113,6 +116,7 @@
 		justify-content: center;
 		align-items: center;
 		margin-bottom: 0;
+		flex-basis: 200px;
 	}
 	.info .buttons .subheading {
 		flex: 0 1 560px;
@@ -120,7 +124,7 @@
 		text-align: center;
 	}
 	.ani-btn {
-		margin-right: 30px;
+		margin-right: 20px;
 	}
 	.btn {
 		margin-bottom: 15px;
@@ -187,6 +191,9 @@
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 5px;
 	} */
+	main > .progress-container {
+		display: none;
+	}
 	.progress .raised-container {
 		margin-bottom: 0;
 	}
@@ -310,6 +317,7 @@
 		padding: 30px;
 		height: auto;
 		padding-bottom: 200px;
+		flex-basis: auto;
 	}
 	.tokens-emitted h2 {
 		font: 400 35px 'Fira Sans', sans-serif;
@@ -350,6 +358,7 @@
 		display: flex;
 		margin: 0 auto 90px;
 		flex-direction: column;
+		flex-basis: auto;
 		border-radius: 10px;
 	}
 	.pre-ico-cols {
@@ -381,7 +390,10 @@
 		height: 500px;
 		top: -200px;
 		right: 0;
+		left: 0;
+		margin: 0 auto;
 		order: 1;
+		flex-basis: 500px;
 	}
 	.pre-ico-col-2 h2 {
 		margin: -25px 0 10px;
@@ -468,7 +480,7 @@
 		display: flex;
 		/* height: 70px; */
 		flex-flow: row wrap;
-		justify-content: space-evenly;
+		justify-content: space-around;
 		align-items: center;
 		margin-bottom: 10px;
 		flex: 1 1 auto;
@@ -476,7 +488,7 @@
 	}
 	.partners-tablet .logo-row > * {
 		padding: 0 10px;
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 	}
 	.partners-tablet .logo-col {
 		flex-flow: column nowrap;
@@ -611,9 +623,18 @@
 	main .desc {
 		padding: 0 30px 20px;
 		margin: 0 auto 40px;
+		flex-basis: auto;
+	}
+	main .desc .col {
+		flex-basis: 100%;
 	}
 	main .cards {
 		padding: 0 30px;
+		justify-content: space-around;
+	}
+	main .cards .card {
+		flex-basis: 290px;
+		/* margin-right: 30px; */
 	}
 	main .our-team.cards .card {
 		position: relative;
@@ -672,14 +693,19 @@
 		order: 1;
 		width: 90%;
 		margin: -80px auto 20px;
+		flex-basis: 500px;
 	}
 	#footer-mobile #counter-2 {
 		order: 2;
 		height: 100px;
-		flex: 1;
+		flex: 1 1 180px;
 	}
 	#footer-mobile #footer-counter h2 {
 		order: 1;
+		margin-top: 0;
+	}
+	#footer-mobile #footer-counter .counter-col h2 {
+		padding-top: 0;
 	}
 	#footer-mobile .progress {
 		order: 3;
@@ -697,13 +723,21 @@
 	}
 	#footer-mobile .raised-container {
 		order: 4;
+		flex-basis: 100px;
+		width: 90%;
 	}
 	#footer-mobile .buttons {
 		order: 5;
+		flex-flow: row wrap;
+		justify-content: center;
+		align-items: center;
+		flex-basis: 260px;
+		margin-bottom: 30px;
 	}
 	footer .mobile-subscribe {
 		display: block;
 		/* height: 100%; */
+		margin-bottom: 30px;
 	}
 	footer .subscribe {
 		width: 85vw;
