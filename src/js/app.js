@@ -162,9 +162,14 @@ $(document).ready(function() {
   $("body.faq-body header .mobile-menu .logo svg path.logo-fill0").css("fill", "#202020");
   $("nav .logo").click(function(ev) {
     ev.preventDefault();
-    window.setTimeout(function () {
-        $('html, body').animate({ scrollTop: 0 }, "slow");
-    }, 0);
+    if (window.location.href === "http://roomdao.io/") {
+      window.setTimeout(function () {
+          $('html, body').animate({ scrollTop: 0 }, "slow");
+      }, 0);
+    } else {
+      window.location.href = "http://roomdao.io/";
+
+    }
     return false;
   });
   setInterval(function () { updateClock(); }, 1000);

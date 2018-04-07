@@ -482,7 +482,7 @@ main .main-desc {
   width: 550px;
   margin: 0;
   color: #ffffff;
-  font: 600 30px "Montserrat", sans-serif;
+  font: 600 27px "Montserrat", sans-serif;
   line-height: 1.5;
   text-align: left;
   margin-bottom: 20px;
@@ -2212,6 +2212,9 @@ footer #footer-desktop {
   margin: 0 auto;
   padding-left: 20px;
 }
+footer #footer-desktop .counter-box .counter .counter-divider {
+  margin: 5px 10px;
+}
 footer #footer-mobile {
   display: none;
 }
@@ -2372,7 +2375,7 @@ footer .counter-box h2 {
 }
 footer #counter-2 {
   height: 170px;
-  flex: 0 1 360px;
+  flex: 0 1 70px;
 }
 footer .buttons {
   display: flex;

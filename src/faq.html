@@ -352,7 +352,7 @@
                             <textarea class="form-feedback-text" placeholder="Your question"></textarea>
                         </div>
                         <div class="form-row">
-                            <button type="submit">SEND</button>
+                            <button type="submit" onclick="gtag('event', 'Send_12', {'event_category': 'Send_12', 'event_label': 'Send'});">SEND</button>
                         </div>
                     </form>
                 </div>
@@ -377,7 +377,7 @@
 									</div>
 								</div>
 								<div class="form-section horizontal ml-button-position">
-									<button class="btn btn-blue submit primary" type="submit">
+									<button class="btn btn-blue submit primary" type="submit" onclick="gtag('event', 'Subscribe', {'event_category': 'subscribe_1', 'event_label': 'subscribe_1'});">
 										<span>Subscribe</span>
 									</button>
 									<button disabled="disabled" style="display: none;" type="button" class="loading">
@@ -405,143 +405,6 @@
 				</div>
 			</div>
 		</section>
-		<div id="footer-mobile">
-			<div class="logo-footer">
-				<img src="img/roomdao-logo-center.svg" alt="Logo">
-			</div>
-			<h2>JOIN TOKENSALE AND GET BONUSES UP TO 30%</h2>
-			<section class="counter-box" id="footer-counter">
-				<h2>RDC PRESALE STARTS</h2>
-				<section class="counter" id="counter-2">
-					<div class="counter-col">
-						<h2>
-							<span class="days">30</span>
-						</h2>
-						<h3>days</h3>
-					</div>
-					<span class="counter-divider">:</span>
-					<div class="counter-col">
-						<h2>
-							<span class="hours">11</span>
-						</h2>
-						<h3>hours</h3>
-					</div>
-					<span class="counter-divider">:</span>
-					<div class="counter-col">
-						<h2>
-							<span class="minutes">45</span>
-						</h2>
-						<h3>minutes</h3>
-					</div>
-					<span class="counter-divider">:</span>
-					<div class="counter-col">
-						<h2>
-							<span class="seconds">07</span>
-						</h2>
-						<h3>seconds</h3>
-					</div>
-				</section>
-				<section class="progress">
-					<div class="progress-container">
-						<div class="bonuses-progress-bar">
-							<ul class="bonuses-list">
-								<li class="raised-line">
-									<span class="raised-num">0</span>K</li>
-								<li class="line-money-container">
-									<span class="line-money"></span>
-								</li>
-							</ul>
-						</div>
-						<div class="reached">
-							<div class="reached-bar">
-								<div class="number">Reached in 48 hours</div>
-								<div class="title">(2,673 contributors)</div>
-							</div>
-							<div class="largest-proTech">
-								<div class="number">Largest PropTech ICO</div>
-								<span class="raised-contributors title">(
-								<span class="raised-contributors-num">2342</span> contributors)</span>
-							</div>
-						</div>
-					</div>
-				</section>
-				<div class="raised-container">
-					<div class="raised-row">
-						<div class="raised-col">
-							<div class="raised-sum">
-								<h3>
-									<span class="raised-sum-value">0</span> BTC</h3>
-								<p class="raised-sum-title">RAISED</p>
-							</div>
-						</div>
-						<div class="raised-col">
-							<div class="raised-sum">
-								<h3>
-									<span class="raised-sum-value">0</span> ETH</h3>
-								<p class="raised-sum-title">RAISED</p>
-							</div>
-						</div>
-						<div class="raised-col">
-							<div class="raised-sum">
-								<h3>
-									<span class="raised-sum-value">620 000</span></h3>
-								<p class="raised-sum-title">RAISED</p>
-							</div>
-						</div>
-						<div class="raised-col">
-							<div class="raised-sum">
-								<h3>
-									<span class="raised-sum-value">3 600 000</span>
-								</h3>
-								<p class="raised-sum-title">RDC</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="buttons">
-					<a download href="docs/roomdao_whitepaper_en.pdf" class="btn ani-btn">
-						<span class="btn-text">
-							Download Whitepaper
-						</span>
-						<span class="whitepaper-logo">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486 486">
-								<g fill="#ffffff">
-									<path d="M452.5 285c15 0 27 12 27 27v147c0 15-12 27-27 27h-418c-15 0-28-12-28-27V312c0-15 13-27 28-27s27 12 27 27v119h364V312c0-15 12-27 27-27z"
-									/>
-									<path d="M224.5 346l-110-110c-11-11-11-27 0-38s27-11 38 0l64 63V27c0-15 12-27 27-27s27 12 27 27v234l63-63c11-11 28-11 39 0s11 27 0 38l-110 110c-5 5-12 8-19 8s-14-3-19-8z"
-									/>
-								</g>
-							</svg>
-						</span>
-					</a>
-					<a href="https://docs.google.com/forms/d/e/1FAIpQLSeBgIkvB4SX8M61av21hdit8-JUkemnNP1Glr9Nlfykd6fVsg/viewform" target="_blank" class="btn ani-btn">
-						<span class="btn-text">
-							Buy tokens
-						</span>
-						<span class="whitepaper-logo">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
-								<path d="M25.856 10.641C21.673 19.5 20.312 19.5 19.5 19.5h-8c-2.802 0-4.949-1.648-5.47-4.2-.016-.078-1.6-7.853-2.005-10.025C3.826 4.21 3.32 3.5 1.5 3.5a1.5 1.5 0 1 1 0-3C4.52.5 6.464 2 6.974 4.724c.401 2.149 1.98 9.898 1.996 9.977.319 1.566 1.722 1.8 2.53 1.8h7.605c.817-.878 2.679-4.261 4.038-7.141a1.502 1.502 0 0 1 1.997-.716c.75.353 1.07 1.247.716 1.997zM10.5 20.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm9 0a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm-4.837-8.156c.1.081.223.12.346.12s.244-.039.346-.12c.1-.079 2.828-2.74 4.316-4.954a.556.556 0 0 0 .028-.574.555.555 0 0 0-.49-.295h-2.226s-.217-4.291-.359-4.49c-.206-.294-1.057-.494-1.616-.494-.561 0-1.427.2-1.634.494-.141.198-.328 4.49-.328 4.49h-2.255a.559.559 0 0 0-.464.869c1.489 2.215 4.237 4.875 4.336 4.954z" fill="#ffffff"/>
-							</svg>
-						</span>
-					</a>
-					<a download href="docs/roomdao_presentation_en.pdf" class="btn ani-btn">
-						<span class="btn-text">
-							Download Presentation
-						</span>
-						<span class="whitepaper-logo">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486 486">
-								<g fill="#ffffff">
-									<path d="M452.5 285c15 0 27 12 27 27v147c0 15-12 27-27 27h-418c-15 0-28-12-28-27V312c0-15 13-27 28-27s27 12 27 27v119h364V312c0-15 12-27 27-27z"
-									/>
-									<path d="M224.5 346l-110-110c-11-11-11-27 0-38s27-11 38 0l64 63V27c0-15 12-27 27-27s27 12 27 27v234l63-63c11-11 28-11 39 0s11 27 0 38l-110 110c-5 5-12 8-19 8s-14-3-19-8z"
-									/>
-								</g>
-							</svg>
-						</span>
-					</a>
-				</div>
-			</section>
-		</div>
 		<section class="mobile-subscribe">
 			<section id="mlb2-8090812" class="ml-subscribe-form ml-subscribe-form-8090812 subscribe">
 				<h2>Subscribe for news and get 5 roomcoins</h2>
@@ -569,7 +432,7 @@
 				<div class="subscribe-form ml-block-success" style="display:none">
 					<div class="form-section">
 						<p>Thank you! You have successfully subscribed to our newsletter.</p>
-					</div>
+					</div>	
 				</div>
 				<script>
 					function ml_webform_success_8090812() {
