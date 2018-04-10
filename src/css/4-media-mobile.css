@@ -655,7 +655,7 @@
     margin-bottom: 40px;
   }
   .pre-ico-col-2 h2 {
-    font: 400 30px 'Fira Sans', sans-serif;
+    font: 400 27px 'Fira Sans', sans-serif;
     margin-bottom: 0;
   }
   .pre-ico-col-2 ul {
@@ -668,6 +668,7 @@
   }
   .pre-ico-col-2 ul li h3 {
     font: 400 14px 'Fira Sans', sans-serif;
+    margin: 2px;
   }
   .pre-ico-col-2 ul li p {
     font: 300 14px 'Fira Sans', sans-serif;
@@ -685,7 +686,7 @@
   }
   .pre-ico-col-2 > .bubbles.bubble-1 {
     top: 5px;
-    left: 247px;
+    left: 260px;
     width: 50px;
     height: 50px;
     background: #9eccc7;
@@ -763,7 +764,7 @@
   }
   main .our-team.cards .card {
     width: 270px;
-    height: 430px;
+    height: 460px;
     margin-right: 30px;
     position: relative;
   }
@@ -797,17 +798,17 @@
     max-width: 95vw;
     margin: 0 15px;
   }
-  .partners,
+  /* .partners,
   .partners-tablet {
     display: none;
-  }
+  } */
   #partners-h2 {
     margin-bottom: 20px;
     height: 20px;
     display: block;
     width: 100%;
   }
-  .partners-mobile {
+  .partners {
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
@@ -815,7 +816,7 @@
     flex: 1 1 auto;
     /* height: 100%; */
   }
-  .partners-mobile .logo-row {
+  .partners .logo-row {
     display: flex;
     height: 100%;
     flex-flow: row wrap;
@@ -825,17 +826,17 @@
     flex-basis: 1 1 auto;
     min-height: 100px;
   }
-  .partners-mobile .logo-row > * {
+  .partners .logo-row > * {
     margin: 0 auto 10px;
   }
-  .partners-mobile .logo-col {
+  .partners .logo-col {
     /* height: 47px; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
   }
-  .partners-mobile .logo-col > * {
+  .partners .logo-col > * {
     margin: 0 auto 5px;
   }
   .comsa-logo {
@@ -1096,7 +1097,9 @@
     display: none;
   }
   footer .progress .progress-container {
-    margin-bottom: 0;
+    margin-bottom: 20px;
+    flex-basis: auto;
+    height: 100%;
   }
   #footer-mobile .progress-container .largest-proTech,
   #footer-mobile .progress-container .reached-bar {
@@ -1307,20 +1310,20 @@
   .bubbles-text > .btn {
     margin-bottom: 0;
   }
-  .partners-mobile {
+  .partners {
     height: auto;
     width: 100vw;
     justify-content: flex-start;
     flex-basis: auto;
     margin-bottom: 20px;
   }
-  .partners-mobile .logo-row {
+  .partners .logo-row {
     height: 42px;
   }
-  .partners-mobile .logo-col {
+  .partners .logo-col {
     height: auto;
   }
-  .partners-mobile .logo-row .icowatch-logo {
+  .partners .logo-row .icowatch-logo {
     margin-right: 15px;
   }
   .pre-ico-col-2 {

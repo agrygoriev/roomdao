@@ -530,6 +530,7 @@ main .main-desc {
   box-sizing: border-box;
   align-self: center;
   cursor: pointer;
+  margin-bottom: 30px;
 }
 .info .youtube-video h2 {
   font: 400 16px 'Montserrat', sans-serif;
@@ -541,7 +542,11 @@ main .main-desc {
   width: 45px;
   opacity: 1;
 }
-
+.info .ico-widgets {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
 .main-desc .counter-box {
   margin-top: 15px;
 }
@@ -681,7 +686,7 @@ main .main-desc {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 .counter-box > h2 {
   font-family: "Montserrat", sans-serif;
@@ -750,12 +755,12 @@ main .main-desc {
   color: #fff;
 }
 .progress-container .cap-targets {
-  display: flex;
+  /* display: flex; */
+  display: none;
   justify-content: space-between;
   align-self: center;
   width: 80%;
   margin-bottom: 20px;
-  visibility: hidden;
 }
 .progress-container .hard-cap,
 .progress-container .soft-cap {
@@ -791,7 +796,7 @@ main .main-desc {
   top: 10px;
 }
 .progress-container .reached {
-  display: flex;
+  display: none ;
   flex: 1 1 100%;
 }
 .progress-container .largest-proTech {
@@ -914,47 +919,40 @@ main > .progress-container .bonuses-progress-bar .bonuses-list li .line-money,
 }
 
 /* Raised container*/
-footer .raised-container,
-.progress .raised-container {
+.raised-container {
   display: flex;
   flex-flow: row nowrap;
-  flex-basis: 80%;
-  padding: 15px;
-  margin: 0 20px 30px;
+  /* flex-basis: auto; */
+  padding: 15px 0;
+  margin: 0 20px;
   border-top: 1px solid #bbbdbd;
   border-bottom: 1px solid #bbbdbd;
   box-sizing: border-box;
-}
-footer .raised-container {
   width: 490px;
+  flex-basis: 80px;
 }
-footer .raised-container .raised-row,
-.progress .raised-container .raised-row {
+.raised-container .raised-row {
   display: flex;
   flex-flow: row;
   justify-content: space-between;
   width: 100%;
 }
-footer .raised-container .raised-col,
-.progress .raised-container .raised-col {
+.raised-container .raised-col {
   display: flex;
   flex-flow: row;
   padding-right: 0;
 }
-footer .raised-container .raised-col:not(:last-of-type),
-.progress .raised-container .raised-col:not(:last-of-type) {
+.raised-container .raised-col:not(:last-of-type) {
   border-right: 1px solid #bbbdbd;
   padding-right: 35px;
   padding-left: 10px;
 }
-footer .raised-container .raised-sum h3,
-.progress .raised-container .raised-sum h3 {
+.raised-container .raised-sum h3 {
   font: 400 20px "Fira Sans", sans-serif;
   color: #000000;
   line-height: 1;
 }
-footer .raised-container .raised-sum p,
-.progress .raised-container .raised-sum p {
+.raised-container .raised-sum p {
   font: 400 12px "Fira Sans", sans-serif;
   color: #bbbdbd;
 }
@@ -1217,7 +1215,7 @@ main .our-team.cards .card h3 {
   height: 40px;
   font: 500 14px 'Montserrat', sans-serif;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   line-height: 1.5;
 }
 main .our-team.cards {
@@ -1257,9 +1255,11 @@ main .our-team .cards .team.card {
   filter: grayscale(100%);
   box-shadow: 3px 4px 20px rgba(32, 32, 32, 0.25);
   border-radius: 50%;
+  transition: all 1s;
 }
 .team.card > .photo > img:hover {
   filter: none;
+  transition: all .3s;
 }
 .team.card > .cards-text {
   line-height: 1.8;
@@ -1316,16 +1316,18 @@ main .our-team .cards .team.card {
 #partners-h2 {
   margin-bottom: 60px;
 }
-.partners-tablet,
-.partners-mobile {
-  display: none;
-}
 .partners {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-around;
   max-width: 1140px;
   margin: 0 auto 120px;
+}
+.partners h3 {
+  color: #294670;
+  font: 500 32px 'Montserrat',sans-serif;
+  text-align: center;
+  margin: 30px auto;
 }
 .partners .logo-row {
   display: flex;
@@ -1558,6 +1560,16 @@ main .our-team .cards .team.card {
 }
 .pumapay-logo:hover {
   background: url(../img/partners/pumapay-logo-hover.png) top center / 250px 49px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+}
+.orbi-logo {
+  width: 230px;
+  height: 55px;
+  background: url(../img/partners/orbi-logo-gray.png) top center / 230px 55px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+}
+.orbi-logo:hover {
+  background: url(../img/partners/orbi-logo-hover.png) top center / 230px 55px no-repeat;
   transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
 .cryptopost-logo {
@@ -1884,7 +1896,7 @@ main .our-team .cards .team.card {
   margin-bottom: 15px;
 }
 .pre-ico-col-2 h2 {
-  margin: -20px 0 30px;
+  margin: 0;
   font: 500 35px "Montserrat", sans-serif;
 }
 .pre-ico-col-2 h3 {
@@ -2367,6 +2379,9 @@ footer .counter-box {
   flex: 0 0 260px;
   justify-content: flex-start;
   margin-top: -80px;
+}
+footer .counter-box .counter {
+  margin-bottom: 10px;
 }
 footer .counter-box h2 {
   color: #000000;

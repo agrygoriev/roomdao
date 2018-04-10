@@ -169,11 +169,11 @@
   .counter-col h2 .seconds {
     height: auto;
   }
-  .progress .raised-container .raised-col {
+  .raised-container .raised-col {
 		flex: 1 1 auto;
 		justify-content: center;
 		align-items: center;
-		width: 25%;
+		width: auto;
 	}
   .tokens-col {
     max-width: 160px;

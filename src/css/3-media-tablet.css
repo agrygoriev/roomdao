@@ -194,13 +194,16 @@
 	main > .progress-container {
 		display: none;
 	}
-	.progress .raised-container {
+	.raised-container .raised-col:not(:last-of-type) {
+		padding: 0;
+	}
+	.raised-container {
 		margin-bottom: 0;
 	}
-	.progress .raised-container .raised-sum h3 {
+	.raised-container .raised-sum h3 {
 		font-size: 20px;
 	}
-	.progress .raised-container .raised-col {
+	.raised-container .raised-col {
 		flex: 1 1 auto;
 		justify-content: center;
 		align-items: center;
@@ -465,18 +468,18 @@
 	.articles .dots {
 		margin-bottom: 60px;
 	} */
-	.partners,
+	/* .partners,
 	.partners-mobile {
 		display: none;
-	}
-	.partners-tablet {
+	} */
+	.partners {
 		display: block;
 		/* flex-flow: column nowrap; */
 		margin: 0 auto 100px;
 		width: 90vw;
 		/* height: 250px; */
 	}
-	.partners-tablet .logo-row	{
+	.partners .logo-row	{
 		display: flex;
 		/* height: 70px; */
 		flex-flow: row wrap;
@@ -486,11 +489,11 @@
 		flex: 1 1 auto;
 		/* padding: 10px; */
 	}
-	.partners-tablet .logo-row > * {
+	.partners .logo-row > * {
 		padding: 0 10px;
 		margin-bottom: 20px;
 	}
-	.partners-tablet .logo-col {
+	.partners .logo-col {
 		flex-flow: column nowrap;
 		justify-content: space-between;
 		width: 200px;
@@ -653,6 +656,9 @@
 	.team.card > .social-icons {
 		bottom: 10px;
 	}
+	.team.card > .social-icons a {
+		bottom: -40px;
+	}
 	/* main .our-team > .dots {
 		margin-bottom: 10px;
 	} */
@@ -697,8 +703,8 @@
 	}
 	#footer-mobile #counter-2 {
 		order: 2;
-		height: 100px;
-		flex: 1 1 180px;
+		height: 90px;
+		flex: 1 1 90px;
 	}
 	#footer-mobile #footer-counter h2 {
 		order: 1;
@@ -723,15 +729,16 @@
 	}
 	#footer-mobile .raised-container {
 		order: 4;
-		flex-basis: 100px;
+		flex-basis: 70px;
 		width: 90%;
+		margin-bottom: 30px;
 	}
 	#footer-mobile .buttons {
 		order: 5;
 		flex-flow: row wrap;
 		justify-content: center;
 		align-items: center;
-		flex-basis: 260px;
+		flex-basis: 120px;
 		margin-bottom: 30px;
 	}
 	footer .mobile-subscribe {
