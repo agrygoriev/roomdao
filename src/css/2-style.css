@@ -545,7 +545,7 @@ main .main-desc {
 .info .ico-widgets {
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  width: 80%;
 }
 .main-desc .counter-box {
   margin-top: 15px;
