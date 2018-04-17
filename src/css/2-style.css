@@ -1522,6 +1522,16 @@ main .our-team .cards .team.card {
   background: url(../img/partners/vipole-logo-hover.png) top center / 155px 49px no-repeat;
   transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
 }
+.rentberry-logo {
+  width: 222px;
+  height: 55px;
+  background: url(../img/partners/rentberry-logo-gray.png) top center / 222px 55px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+}
+.rentberry-logo:hover {
+  background: url(../img/partners/rentberry-logo-hover.png) top center / 222px 55px no-repeat;
+  transition: all .5s cubic-bezier(.31,-.105,.43,1.4);
+}
 .smartfactor-logo {
   width: 106px;
   height: 55px;
