@@ -204,7 +204,8 @@ header .side-button .col {
   opacity: 0;
   transition: all 1s;
 } */
-header .side-button .close-side-btn {
+header .side-button .close-side-btn,
+header .bought-ticker .close-side-btn {
   position: absolute;
   top: -30px;
   left: -130px;
@@ -216,7 +217,8 @@ header .side-button .close-side-btn {
   box-shadow: 0 0 10px 2px rgba(41, 70, 112, 0.25);
   /* transition: all 1s; */
 }
-header .side-button .close-side-btn span {
+header .side-button .close-side-btn span,
+header .bought-ticker .close-side-btn span {
   display: block;
   position: absolute;
   height: 2px;
@@ -227,11 +229,13 @@ header .side-button .close-side-btn span {
   transform: rotate(45deg);
   /* transition: all 1s; */
 }
-header .side-button .close-side-btn span:last-of-type {
+header .side-button .close-side-btn span:last-of-type,
+header .bought-ticker .close-side-btn span:last-of-type {
   transform: rotate(-45deg);
   /* transition: all 1s; */
 }
-header .side-button .col.col-closed .close-side-btn {
+header .side-button .col.col-closed .close-side-btn,
+header .bought-ticker .col.col-closed .close-side-btn {
   opacity: 0;
   transition: all 1s;
 }
@@ -262,6 +266,53 @@ header .side-button .col.col-closed a.buy-btn {
   margin: auto;
   transition: all 1s;
 }
+
+/* Bought ticker*/
+header .bought-ticker {
+  display: block;
+  width: 230px;
+  height: 130px;
+  position: absolute;
+  top: 460px;
+  left: -225px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px 20px 25px 15px;
+  border-left: solid 10px #00d9a2;
+  box-shadow: 0 0 18px 0 rgba(41, 70, 112, 0.25);
+  /* transform: translateX(0px); */
+  transition: all 1s ease-out;
+  opacity: 0;
+}
+header .bought-ticker.showed {
+  transform: translateX(230px);
+  opacity: 1;
+}
+header .bought-ticker .col {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 100%;
+}
+header .bought-ticker .bought-text {
+  font: 400 14px 'Fira Sans', sans-serif;
+  color: #000000;
+}
+header .bought-ticker .bought-text #bought-value {
+  font-weight: 500;
+}
+header .bought-ticker .bought-subheading {
+  font: 400 12px 'Fira Sans', sans-serif;
+  color: #979797;
+}
+header .bought-ticker .close-side-btn {
+  left: 185px;
+  top: 10px;
+}
+
+
 
 main {
   display: flex;

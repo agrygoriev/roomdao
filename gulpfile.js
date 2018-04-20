@@ -44,7 +44,7 @@ gulp.task("html", () =>
     .src("./src/*.html")
     .pipe(
       htmlmin({
-        collapseWhitespace: true,
+        collapseWhitespace: false,
         removeComments: true,
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,

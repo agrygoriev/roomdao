@@ -69,7 +69,13 @@ function changeSvgFill(elementsList, elColor) {
     el.style.fill = elColor;
   });
 }
-
+function overlayLogoColor () {
+  if ($(".sandwich").hasClass("sandwich-open")) {
+    $("nav .logo > svg path.logo-fill0").css("fill", colorBlack);
+  } else {
+    $("nav .logo > svg path.logo-fill0").css("fill", colorWhite);
+  }
+}
 function windowScrolled() {
   colorInitial = colorBlack;
   // $("nav.mobile-menu .logo svg > path.logo-fill0").addClass("logo-fill-black");
@@ -87,13 +93,7 @@ function windowScrolled() {
   $("header nav ul.menu-list").addClass("ul-scrolled");
   $("body.faq-body header .mobile-menu .logo svg path.logo-fill0").css("fill", "#202020");
 }
-function overlayLogoColor () {
-  if ($(".sandwich").hasClass("sandwich-open")) {
-    $("nav .logo > svg path.logo-fill0").css("fill", colorBlack);
-  } else {
-    $("nav .logo > svg path.logo-fill0").css("fill", colorWhite);
-  }
-}
+
 function windowUnscrolled() {
   // $("nav.mobile-menu .logo svg > path.logo-fill0").removeClass("logo-fill-black");
   // changeSvgFill(navLogoPath, colorWhite);
@@ -117,7 +117,7 @@ function windowUnscrolled() {
   $("body.faq-body header .mobile-menu .logo svg path.logo-fill0").css("fill", "#202020");
 }
 function getTimeRemaining() {
-  var endtime = new Date(2018, 3, 20);
+  var endtime = new Date(2018, 4, 20);
   // console.log("Endtime = " + endtime);
   var remainingTimeInMs = Date.parse(endtime) - Date.parse(new Date());
   var seconds = Math.floor((remainingTimeInMs / 1000) % 60);
@@ -154,6 +154,9 @@ function updateClock() {
   function prefixZero(n) {
     return (n < 10 ? '0' : '') + n;
   }
+}
+function boughtTickerShow() {
+  
 }
 $(document).ready(function() {
   if (window.scrollY) {
